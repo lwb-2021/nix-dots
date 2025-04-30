@@ -10,6 +10,7 @@
             ./hardware-configuration.nix
             ./system-config/audio.nix
             ./system-config/bluetooth.nix
+            ./system-config/kernel.nix
             ./system-config/network.nix
             ./system-config/nvidia.nix
             
