@@ -15,16 +15,16 @@
             url = "github:nix-community/nixvim";
             inputs.nixpkgs.follows = "nixpkgs";
         };
+        ags.url = "github:Aylur/ags";
     };
     outputs = { self, nixpkgs, home-manager, nixvim , ... }@inputs: {
         nixosConfigurations.lwb = nixpkgs.lib.nixosSystem {
             system = "x86_64-linux";
-            specialArgs = { inherit inputs;};
+            specialArgs = { inherit inputs; };
             modules = [
                 ./configuration.nix 
                 nixvim.nixosModules.default
                 ./nixvim
-
                 home-manager.nixosModules.home-manager {
                     home-manager.useGlobalPkgs = true;
                     home-manager.useUserPackages = true;
@@ -42,7 +42,6 @@
                         trusted-public-keys = [
                             "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
                         ];
-
                     };
                 }
             ];

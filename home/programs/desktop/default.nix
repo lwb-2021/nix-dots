@@ -1,12 +1,10 @@
 { config, pkgs, ... }: {
     imports = [
         ./hyprland
-        ./waybar.nix
+        ./ags
     ];
     home.packages = with pkgs;[
         mako
-
-        xfce.thunar
         xarchiver
     ];
 
