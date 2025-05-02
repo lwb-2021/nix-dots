@@ -8,6 +8,7 @@
   };
   imports = [
     ./config/i18n.nix
+    ./programs/apps.nix
     ./programs/desktop
     ./programs/fonts.nix
     ./programs/minecraft.nix
