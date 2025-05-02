@@ -9,26 +9,7 @@
         xfce.thunar
         xarchiver
     ];
-    
 
-
-    programs.waybar = {
-        enable = true;
-        settings = [
-        {
-            mainBar = {
-                layer = "top";
-                position = "top";
-                height = 24;
-                modules-left = [];
-                modules-center = [];
-                modules-right = [];
-            };
-        }
-
-        ];
-
-    };
     xdg = {
         portal = {
             enable = true;
