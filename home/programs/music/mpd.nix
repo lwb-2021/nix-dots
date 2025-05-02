@@ -8,9 +8,9 @@
             }
         '';
     };
-    services.mpd-mpris = {
+    services.mpdris2 = {
         enable = true;
-        mpd.useLocal = true;
+        multimediaKeys = true;
     };
     home.packages = with pkgs;[
         mpc
