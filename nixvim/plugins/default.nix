@@ -1,5 +1,5 @@
 {
-    bufferline = import ./cmp.nix;
+    bufferline = import ./bufferline.nix;
 
     cmp = import ./cmp.nix;
 
