@@ -1,7 +1,6 @@
 { config, pkgs, ... }: {
     imports = [
         ./hyprland
-        ./thunar.nix
         ./waybar.nix
     ];
     home.packages = with pkgs;[
