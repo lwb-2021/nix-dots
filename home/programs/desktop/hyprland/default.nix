@@ -1,5 +1,6 @@
 { config, pkgs, lib, ... }: {
     imports = [
+        ./effects.nix
         ./environment.nix
         ./keymap.nix
     ];
