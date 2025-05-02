@@ -1,6 +1,7 @@
 { config, pkgs, ... }: {
     imports = [
         ./hyprland
+        ./waybar.nix
     ];
     home.packages = with pkgs;[
         mako
