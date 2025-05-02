@@ -8,6 +8,9 @@
     wayland.windowManager.hyprland = {
         enable = true;
         package = null;
+        plugins = with pkgs[
+            hyprlandPlugins.hyprexpo
+        ];
     };
 
 }
