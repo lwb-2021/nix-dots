@@ -1,4 +1,6 @@
 {
+    bufferline = import ./cmp.nix;
+
     cmp = import ./cmp.nix;
 
     neogit = import ./neogit.nix;
