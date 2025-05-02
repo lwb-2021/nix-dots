@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }: {
     boot = {
-        kernelPackages = pkgs.linuxKernel.kernels.linux_zen;
+        kernelPackages = pkgs.linuxPackages_zen;
         extraModulePackages = with config.boot.kernelPackages; [ nvidiaPackages.stable ];
     }; 
 
