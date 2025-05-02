@@ -17,6 +17,8 @@
             ./system-config/va-api.nix
             
             ./system-config/fish-shell.nix
+
+            ./system-config/gc.nix
             
             ./system-config/hyprland.nix
             ./system-config/hyprland-autostart.nix
@@ -118,11 +120,11 @@
 # List packages installed in system profile. To search, run:
 # $ nix search wget
     environment.systemPackages = [
-#pkgs.neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+        #pkgs.neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
         pkgs.wget
-            pkgs.git
-            pkgs.kitty
-#inputs.firefox.packages.${pkgs.system}.firefox-nightly-bin
+        pkgs.git
+        pkgs.kitty
+        #inputs.firefox.packages.${pkgs.system}.firefox-nightly-bin
     ];
     # Some programs need SUID wrappers, can be configured further or are
 # started in user sessions.
