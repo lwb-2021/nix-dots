@@ -44,6 +44,7 @@
                         ];
                     };
                 }
+                ./home/programs/desktop/ags/flake-module.nix
             ];
         };
     };
