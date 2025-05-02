@@ -11,6 +11,7 @@
     ./programs/apps.nix
     ./programs/desktop
     ./programs/fonts.nix
+    ./programs/kdeconnect.nix
     ./programs/minecraft.nix
     ./programs/themes.nix
     ./programs/rime.nix
