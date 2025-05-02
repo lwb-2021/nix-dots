@@ -26,6 +26,7 @@
                 nixvim.nixosModules.default
                 ./nixvim
                 home-manager.nixosModules.home-manager {
+                    imports = [ ./home/programs/desktop/ags/flake-module.nix ];
                     home-manager.useGlobalPkgs = true;
                     home-manager.useUserPackages = true;
                     home-manager.users.lwb = import ./home/lwb.nix;
@@ -44,7 +45,7 @@
                         ];
                     };
                 }
-                ./home/programs/desktop/ags/flake-module.nix
+                
             ];
         };
     };
