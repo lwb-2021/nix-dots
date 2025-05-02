@@ -7,7 +7,6 @@
                 "$mod, R, exec, rofi -show drun"
                 "$mod, W, exec, rofi -show window"
                 "$mod, C, killactive"
-                "$mod, SHIFT, C, forcekillactive"
                 "$mod, F, togglefloating"
             ]
             ++ (
