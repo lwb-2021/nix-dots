@@ -112,7 +112,7 @@
 # };
     users.users.lwb = {
         isNormalUser = true;
-        extraGroups = [ "wheel" ];
+        extraGroups = [ "wheel" "gamemode" ];
     };
 
     programs.firefox.enable = true;
