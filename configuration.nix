@@ -86,6 +86,8 @@
 
 # Enable touchpad support (enabled default in most desktopManager).
     services.libinput.enable = true;
+    services.gvfs.enable = true;
+    services.tumbler.enable = true;
 
     services.v2raya = {
         enable = true;
