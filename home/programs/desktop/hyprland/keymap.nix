@@ -8,6 +8,11 @@
                 "$mod, W, exec, rofi -show window"
                 "$mod, C, killactive"
                 "$mod, F, togglefloating"
+                "$mainMod, l, movefocus, l"
+                "$mainMod, h, movefocus, r"
+                "$mainMod, k, movefocus, u"
+                "$mainMod, j, movefocus, d"
+
             ]
             ++ (
                 builtins.concatLists(builtins.genList(i:
