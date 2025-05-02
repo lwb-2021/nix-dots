@@ -13,7 +13,7 @@
     ./programs/fonts.nix
     ./programs/kdeconnect.nix
     ./programs/minecraft.nix
-    ./programs/music
+    ./programs/media
     ./programs/themes.nix
     ./programs/rime.nix
     ./programs/rofi.nix
