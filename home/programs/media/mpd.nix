@@ -8,10 +8,6 @@
             }
         '';
     };
-    services.mpdris2 = {
-        enable = true;
-        multimediaKeys = true;
-    };
     home.packages = with pkgs;[
         mpc
     ];
