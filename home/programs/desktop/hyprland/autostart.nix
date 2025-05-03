@@ -9,7 +9,7 @@
             ];
         };
         settings.exec-once = [
-            "waybar"
+            "ags run"
         ];
     };
 
