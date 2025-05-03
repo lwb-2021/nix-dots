@@ -1,6 +1,7 @@
 { config, pkgs, lib, ... }: {
     imports = [
         ./autostart.nix
+        ./display.nix
         ./effects.nix
         ./environment.nix
         ./keymap.nix
