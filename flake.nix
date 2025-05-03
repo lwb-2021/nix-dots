@@ -28,7 +28,6 @@
                 home-manager.nixosModules.home-manager {
                     imports = [ 
                         ./home/programs/desktop/ags/flake-module.nix 
-                        ./system-config/unfree.nix
                     ];
                     home-manager.useGlobalPkgs = true;
                     home-manager.useUserPackages = true;

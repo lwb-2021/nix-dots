@@ -20,7 +20,6 @@
 
             ./system-config/gc.nix
             
-            ./system-config/unfree.nix
             ./system-config/hyprland.nix
             ./system-config/hyprland-autostart.nix
             ./system-config/thunar.nix

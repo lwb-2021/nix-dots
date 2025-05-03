@@ -9,7 +9,6 @@
   imports = [
     ./config/i18n.nix
     ./programs/apps.nix
-    ./programs/code.nix
     ./programs/desktop
     ./programs/fonts.nix
     ./programs/kdeconnect.nix
