@@ -3,5 +3,7 @@
         ./mpd.nix
         ./mpris.nix
         ./ncmpcpp.nix
+
+        ./mpv.nix
     ];
 }
