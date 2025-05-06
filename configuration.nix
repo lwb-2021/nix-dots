@@ -22,7 +22,10 @@
             
             ./system-config/hyprland.nix
             ./system-config/hyprland-autostart.nix
+            
             ./system-config/thunar.nix
+
+            ./system-config/gaming.nix # steam is not supported(?) by home manager
 
             ./system-config/fix.nix
         ];
