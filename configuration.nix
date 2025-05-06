@@ -23,6 +23,8 @@
             ./system-config/hyprland.nix
             ./system-config/hyprland-autostart.nix
             ./system-config/thunar.nix
+
+            ./system-config/fix.nix
         ];
 
 # Use the systemd-boot EFI boot loader.
