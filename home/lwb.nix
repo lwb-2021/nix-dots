@@ -8,15 +8,18 @@
   };
   imports = [
     ./config/i18n.nix
-    ./programs/apps.nix
-    ./programs/code.nix
     ./programs/desktop
+    ./programs/media
+
+    ./programs/apps.nix
+    ./programs/aria2.nix
+    ./programs/code.nix
     ./programs/fonts.nix
     ./programs/kdeconnect.nix
     ./programs/minecraft.nix
-    ./programs/media
-    ./programs/themes.nix
     ./programs/rime.nix
     ./programs/rofi.nix
+    #./programs/syncthing.nix
+    ./programs/themes.nix
   ];
 }
