@@ -17,6 +17,7 @@
             ./system-config/va-api.nix
             
             ./system-config/fish-shell.nix
+            ./system-config/proxy.nix
 
             ./system-config/gc.nix
             
@@ -93,22 +94,7 @@
     services.libinput.enable = true;
    
 
-    services.v2raya = {
-        enable = true;
-    };
-    services.tor = {
-        enable = true;
-        client.enable = true;
-        settings = {
-            UseBridges = true;
-            ClientTransportPlugin = "webtunnel exec ${pkgs.obfs4}/bin/lyrebird";
-            Bridge = [ 
-                "webtunnel [2001:db8:c525:22a6:6b6a:e916:9ef7:8152]:443 8A1EE5824071CA39E7D76BD579FB2AEF2B52E524 url=https://c.img-cdn.net/yE4s7KehTFyj/ ver=0.0.1"
-                "webtunnel [2001:db8:345b:f823:7fe0:dec9:ee74:7525]:443 98A44ED60781F69A41B3CB4DCBA5ECE70D0AF247 url=https://b.img-cdn.net/3DV2SZvE8CrQ/ ver=0.0.1"
-            ];
-        };
-    };
-
+    
 # Define a user account. Don't forget to set a password with ‘passwd’.
 # users.users.alice = {
 #   isNormalUser = true;
