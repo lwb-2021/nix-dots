@@ -10,7 +10,7 @@
             ./hardware-configuration.nix
 
             ./system-config/unfree.nix
-            ./system-config/secret.nix
+            ./system-config/sops.nix
 
             ./system-config/audio.nix
             ./system-config/bluetooth.nix
@@ -173,6 +173,5 @@
 #
 # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
     system.stateVersion = "25.05"; # Did you read the comment?
-
 }
 

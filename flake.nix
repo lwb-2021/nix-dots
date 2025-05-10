@@ -12,8 +12,12 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
         ags.url = "github:Aylur/ags";
+        sops-nix = {
+            url = "github:Mic92/sops-nix";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
     };
-    outputs = { self, nixpkgs, home-manager, nixvim , ... }@inputs: {
+    outputs = { self, nixpkgs, home-manager, nixvim , sops-nix,  ... }@inputs: {
         nixosConfigurations.lwb = nixpkgs.lib.nixosSystem {
             system = "x86_64-linux";
             specialArgs = { inherit inputs; };
@@ -43,7 +47,7 @@
                         ];
                     };
                 }
-                
+                sops-nix.nixosModules.sops
             ];
         };
     };
