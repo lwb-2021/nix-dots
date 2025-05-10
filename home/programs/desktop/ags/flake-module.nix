@@ -4,7 +4,16 @@
         programs.ags = {
             enable = true;
             configDir = null;
-            extraPackages = with pkgs; [
+            extraPackages = with inputs.ags.packages.${pkgs.system};[
+                battery
+                mpris
+                tray
+                hyprland
+                notifd
+                network
+                bluetooth
+                powerprofiles
+                wireplumber
             ];
         };
         home.stateVersion = "25.05";
