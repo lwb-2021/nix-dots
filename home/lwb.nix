@@ -8,6 +8,8 @@
   };
   imports = [
     ./config/i18n.nix
+    ./config/mime.nix
+
     ./programs/desktop
     ./programs/media
 
