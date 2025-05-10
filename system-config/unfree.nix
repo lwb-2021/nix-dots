@@ -7,6 +7,10 @@
         "steam-unwrapped"
         "steam-run"
         "xow_dongle-firmware"
+
+        "qq"
+        "wechat-uos"
+        "obsidian"
     ];
 
 }
