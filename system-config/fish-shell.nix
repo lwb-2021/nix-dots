@@ -1,5 +1,7 @@
 { config, lib, pkgs, ...}:{
   environment.systemPackages = with pkgs; [
+    psmisc
+
     bat
     eza
     fastfetch
