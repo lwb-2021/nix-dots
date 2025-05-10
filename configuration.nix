@@ -8,6 +8,9 @@
     imports =
         [ # Include the results of the hardware scan.
             ./hardware-configuration.nix
+
+            ./system-config/unfree.nix
+
             ./system-config/audio.nix
             ./system-config/bluetooth.nix
             ./system-config/kernel.nix

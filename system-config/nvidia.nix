@@ -4,11 +4,7 @@
         enable = true;
     };
     services.xserver.videoDrivers = ["nvidia"];
-    nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-        "nvidia-x11"
-        "nvidia-settings"
-    ]; # so nvidia fuck you
-    hardware.nvidia = {
+        hardware.nvidia = {
         modesetting.enable = true;
 
         powerManagement.enable = true; # false
