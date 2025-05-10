@@ -20,6 +20,8 @@
             
             ./system-config/va-api.nix
             ./system-config/proxy.nix
+
+            ./system-config/openssh.nix
             
             ./system-config/fish-shell.nix
 
