@@ -23,6 +23,9 @@
                 Enabled = true;
                 UseOpenSSH = true;
             };
+            FdoSecrets = {
+                Enabled = true;
+            };
         };
     };
 

@@ -1,6 +1,7 @@
 { config, pkgs, lib, ... }: {
     wayland.windowManager.hyprland = {
         systemd = {
+            enable = true;
             extraCommands = [
                 "systemctl --user stop hyprpolkitagent.service"
                 "systemctl --user stop hyprland-session.target"
@@ -9,6 +10,7 @@
             ];
         };
         settings.exec-once = [
+            "keepassxc"
             "ags run"
         ];
     };
