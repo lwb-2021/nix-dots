@@ -7,10 +7,11 @@
     };
 
     environment.systemPackages = with pkgs;[
-        gamemode
         mangohud
 
     ];
+
+    programs.gamemode.enable = true;
     
     hardware.xone.enable = true; 
 }
