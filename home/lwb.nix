@@ -16,10 +16,11 @@
     ./programs/code.nix
     ./programs/fonts.nix
     ./programs/kdeconnect.nix
+    ./programs/keepassxc.nix
     ./programs/minecraft.nix
     ./programs/rime.nix
     ./programs/rofi.nix
-    #./programs/syncthing.nix
+    ./programs/syncthing.nix
     ./programs/themes.nix
   ];
 }
