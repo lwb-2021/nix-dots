@@ -19,6 +19,10 @@
                 ShowTrayIcon=true;
                 TrayIconAppearance="colorful";
             };
+            SSHAgent = {
+                Enabled = true;
+                UseOpenSSH = true;
+            };
         };
     };
 
