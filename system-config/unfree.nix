@@ -10,6 +10,10 @@
 
         "qq"
         "wechat-uos"
+
+        "wemeet"
+        "libwemeetwrap"
+
         "obsidian"
     ];
 

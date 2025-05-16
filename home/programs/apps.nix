@@ -2,6 +2,7 @@
     home.packages = with pkgs;[
         qq
         wechat-uos
+        wemeet
         
         obsidian
     ];
