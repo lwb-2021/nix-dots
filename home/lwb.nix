@@ -9,6 +9,7 @@
   imports = [
     ./config/i18n.nix
     ./config/mime.nix
+    ./config/thunar.nix
 
     ./programs/desktop
     ./programs/media
