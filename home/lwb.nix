@@ -12,6 +12,7 @@
     ./config/thunar.nix
 
     ./programs/desktop
+    ./programs/development
     ./programs/media
 
     ./programs/apps.nix
@@ -25,5 +26,7 @@
     ./programs/rofi.nix
     ./programs/syncthing.nix
     ./programs/themes.nix
+
+    ./programs/development/python.nix
   ];
 }
