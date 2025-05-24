@@ -1,20 +1,22 @@
 { config, lib, pkgs, ... }: {
-    nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-        "nvidia-x11"
-        "nvidia-settings"
-        "steam"
-        "steam-original"
-        "steam-unwrapped"
-        "steam-run"
-        "xow_dongle-firmware"
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+    "nvidia-x11"
+    "nvidia-settings"
+    "steam"
+    "steam-original"
+    "steam-unwrapped"
+    "steam-run"
+    "xow_dongle-firmware"
 
-        "qq"
-        "wechat-uos"
+    "qq"
+    "wechat-uos"
 
-        "wemeet"
-        "libwemeetwrap"
+    "wemeet"
+    "libwemeetwrap"
 
-        "obsidian"
-    ];
+    "obsidian"
+
+    "vscode-extension-MS-python-vscode-pylance" # fuck you ms
+  ];
 
 }
