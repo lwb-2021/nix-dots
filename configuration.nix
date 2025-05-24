@@ -15,6 +15,7 @@
             ./system-config/kernel.nix
             ./system-config/network.nix
             ./system-config/nvidia.nix
+            ./system-config/tlp.nix
 
             ./system-config/va-api.nix
             ./system-config/proxy.nix
