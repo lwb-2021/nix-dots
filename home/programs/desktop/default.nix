@@ -1,7 +1,6 @@
 { config, pkgs, ... }: {
     imports = [
-        ./hyprland
-        ./hyprlock.nix
+        ./hypr
         ./ags
     ];
     home.packages = with pkgs;[
