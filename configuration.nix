@@ -21,7 +21,7 @@
 
             ./system-config/openssh.nix
 
-            ./system-config/fish-shell.nix
+            ./system-config/cli.nix
 
             ./system-config/gc.nix
 
