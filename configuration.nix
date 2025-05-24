@@ -5,10 +5,8 @@
 { config, lib, pkgs, inputs, ... }:
 
 {
-    imports =
-        [ # Include the results of the hardware scan.
+    imports =[ # Include the results of the hardware scan.
             ./hardware-configuration.nix
-
             ./system-config/unfree.nix
             ./system-config/sops.nix
 
@@ -17,19 +15,19 @@
             ./system-config/kernel.nix
             ./system-config/network.nix
             ./system-config/nvidia.nix
-            
+
             ./system-config/va-api.nix
             ./system-config/proxy.nix
 
             ./system-config/openssh.nix
-            
+
             ./system-config/fish-shell.nix
 
             ./system-config/gc.nix
-            
+
             ./system-config/hyprland.nix
             ./system-config/hyprland-autostart.nix
-            
+
             ./system-config/thunar.nix
 
             ./system-config/gaming.nix # steam is not supported(?) by home manager
@@ -98,9 +96,9 @@
 
 # Enable touchpad support (enabled default in most desktopManager).
     services.libinput.enable = true;
-   
 
-    
+
+
 # Define a user account. Don't forget to set a password with ‘passwd’.
 # users.users.alice = {
 #   isNormalUser = true;
@@ -119,13 +117,13 @@
 # List packages installed in system profile. To search, run:
 # $ nix search wget
     environment.systemPackages = [
-        #pkgs.neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+#pkgs.neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
         pkgs.wget
-        pkgs.git
-        pkgs.kitty
-        #inputs.firefox.packages.${pkgs.system}.firefox-nightly-bin
+            pkgs.git
+            pkgs.kitty
+#inputs.firefox.packages.${pkgs.system}.firefox-nightly-bin
     ];
-    # Some programs need SUID wrappers, can be configured further or are
+# Some programs need SUID wrappers, can be configured further or are
 # started in user sessions.
 # programs.mtr.enable = true;
 # programs.gnupg.agent = {
@@ -147,10 +145,23 @@
 
     nix.settings = {
         experimental-features = [ "nix-command" "flakes" ];
+        substituters = [
+            "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
+            "https://mirrors.ustc.edu.cn/nix-channels/store"
+            "https://cache.nixos.org"
+        ];
+        trusted-public-keys = [
+            "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
+        ];
+
         extra-substituters = lib.mkForce [ 
             "https://hyprland.cachix.org"
+            "https://devenv.cachix.org"
         ];
-        extra-trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
+        extra-trusted-public-keys = [
+            "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
+            "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw="
+        ];
     };
 # Copy the NixOS configuration file and link it from the resulting system
 # (/run/current-system/configuration.nix). This is useful in case you
