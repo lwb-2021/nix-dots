@@ -18,6 +18,11 @@
         ms-toolsai.jupyter-renderers
         ms-toolsai.jupyter-keymap
 
+        
+        rust-lang.rust-analyzer
+
+        tamasfe.even-better-toml
+
 
 
       ];
