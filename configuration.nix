@@ -5,187 +5,188 @@
 { config, lib, pkgs, inputs, ... }:
 
 {
-    imports =[ # Include the results of the hardware scan.
-            ./hardware-configuration.nix
-            ./system-config/unfree.nix
-            ./system-config/sops.nix
+  imports = [ # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ./system-config/unfree.nix
+    ./system-config/sops.nix
 
-            ./system-config/audio.nix
-            ./system-config/bluetooth.nix
-            ./system-config/kernel.nix
-            ./system-config/network.nix
-            ./system-config/nvidia.nix
-            ./system-config/tlp.nix
+    ./system-config/audio.nix
+    ./system-config/bluetooth.nix
+    ./system-config/kernel.nix
+    ./system-config/network.nix
+    ./system-config/nvidia.nix
+    ./system-config/tlp.nix
 
-            ./system-config/va-api.nix
-            ./system-config/proxy.nix
+    ./system-config/va-api.nix
+    ./system-config/proxy.nix
 
-            ./system-config/openssh.nix
+    ./system-config/openssh.nix
 
-            ./system-config/cli.nix
+    ./system-config/cli.nix
 
-            ./system-config/gc.nix
+    ./system-config/gc.nix
 
-            ./system-config/hyprland.nix
-            ./system-config/hyprland-autostart.nix
+    ./system-config/dm.nix
+    ./system-config/system-themes.nix
+    ./system-config/hyprland.nix
 
-            ./system-config/thunar.nix
+    ./system-config/thunar.nix
 
-            ./system-config/gaming.nix # steam is not supported(?) by home manager
+    ./system-config/gaming.nix # steam is not supported(?) by home manager
 
-            ./system-config/fix.nix
-        ];
+    ./system-config/fix.nix
+  ];
 
-# Use the systemd-boot EFI boot loader.
-#boot.loader.systemd-boot.enable = true;
-#boot.loader.efi.canTouchEfiVariables = true;
-    boot.loader = {
-        efi = {
-            canTouchEfiVariables = true;
-            efiSysMountPoint = "/boot/efi";
-        };
-        grub = {
-            enable = true;
-            efiSupport = true;
-            device = "nodev";
-            extraEntries = ''
+  # Use the systemd-boot EFI boot loader.
+  #boot.loader.systemd-boot.enable = true;
+  #boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader = {
+    efi = {
+      canTouchEfiVariables = true;
+      efiSysMountPoint = "/boot/efi";
+    };
+    grub = {
+      enable = true;
+      efiSupport = true;
+      device = "nodev";
+      extraEntries = ''
                 menuentry "Windows"{
                     search --file --no-floppy --set=root /EFI/Microsoft/Boot/bootmgfw.efi
                         chainloader (''${root})/EFI/Microsoft/Boot/bootmgfw.efi
                 }
-            '';
-        };
+      '';
     };
+  };
 
-# networking.hostName = "nixos"; # Define your hostname.
-# Pick only one of the below networking options.
-# networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-# networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  # networking.hostName = "nixos"; # Define your hostname.
+  # Pick only one of the below networking options.
+  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  # networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
-# Set your time zone.
-    time.timeZone = "Asia/Shanghai";
+  # Set your time zone.
+  time.timeZone = "Asia/Shanghai";
 
-# Configure network proxy if necessary
-# networking.proxy.default = "http://user:password@proxy:port/";
-# networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+  # Configure network proxy if necessary
+  # networking.proxy.default = "http://user:password@proxy:port/";
+  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
-# Select internationalisation properties.
-# i18n.defaultLocale = "en_US.UTF-8";
-# console = {
-#   font = "Lat2-Terminus16";
-#   keyMap = "us";
-#   useXkbConfig = true; # use xkb.options in tty.
-# };
-    i18n.defaultLocale = "en_US.UTF-8";
-    i18n.supportedLocales = ["en_US.UTF-8/UTF-8" "zh_CN.UTF-8/UTF-8"];
-# Enable the X11 windowing system.
-# services.xserver.enable = true;
-
-
-
-
-# Configure keymap in X11
-# services.xserver.xkb.layout = "us";
-# services.xserver.xkb.options = "eurosign:e,caps:escape";
-
-# Enable CUPS to print documents.
-    services.printing.enable = true;
-
-# Enable sound.
-# services.pulseaudio.enable = true;
-# OR
-
-# Enable touchpad support (enabled default in most desktopManager).
-    services.libinput.enable = true;
+  # Select internationalisation properties.
+  # i18n.defaultLocale = "en_US.UTF-8";
+  # console = {
+  #   font = "Lat2-Terminus16";
+  #   keyMap = "us";
+  #   useXkbConfig = true; # use xkb.options in tty.
+  # };
+  i18n.defaultLocale = "en_US.UTF-8";
+  i18n.supportedLocales = ["en_US.UTF-8/UTF-8" "zh_CN.UTF-8/UTF-8"];
+  # Enable the X11 windowing system.
+  # services.xserver.enable = true;
 
 
 
-# Define a user account. Don't forget to set a password with ‘passwd’.
-# users.users.alice = {
-#   isNormalUser = true;
-#   extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-#   packages = with pkgs; [
-#     tree
-#   ];
-# };
-    users.users.lwb = {
-        isNormalUser = true;
-        extraGroups = [ "wheel" "gamemode" ];
-    };
 
-    programs.firefox.enable = true;
+  # Configure keymap in X11
+  # services.xserver.xkb.layout = "us";
+  # services.xserver.xkb.options = "eurosign:e,caps:escape";
 
-# List packages installed in system profile. To search, run:
-# $ nix search wget
-    environment.systemPackages = [
-#pkgs.neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-        pkgs.wget
-            pkgs.git
-            pkgs.kitty
-#inputs.firefox.packages.${pkgs.system}.firefox-nightly-bin
+  # Enable CUPS to print documents.
+  services.printing.enable = true;
+
+  # Enable sound.
+  # services.pulseaudio.enable = true;
+  # OR
+
+  # Enable touchpad support (enabled default in most desktopManager).
+  services.libinput.enable = true;
+
+
+
+  # Define a user account. Don't forget to set a password with ‘passwd’.
+  # users.users.alice = {
+  #   isNormalUser = true;
+  #   extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+  #   packages = with pkgs; [
+  #     tree
+  #   ];
+  # };
+  users.users.lwb = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" "gamemode" ];
+  };
+
+  programs.firefox.enable = true;
+
+  # List packages installed in system profile. To search, run:
+  # $ nix search wget
+  environment.systemPackages = [
+    #pkgs.neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    pkgs.wget
+    pkgs.git
+    pkgs.kitty
+    #inputs.firefox.packages.${pkgs.system}.firefox-nightly-bin
+  ];
+  # Some programs need SUID wrappers, can be configured further or are
+  # started in user sessions.
+  # programs.mtr.enable = true;
+  # programs.gnupg.agent = {
+  #   enable = true;
+  #   enableSSHSupport = true;
+  # };
+
+  # List services that you want to enable:
+
+  # Enable the OpenSSH daemon.
+  # services.openssh.enable = true;
+
+  # Open ports in the firewall.
+  # networking.firewall.allowedTCPPorts = [ ... ];
+  # networking.firewall.allowedUDPPorts = [ ... ];
+  # Or disable the firewall altogether.
+  networking.firewall.enable = false;
+
+
+  nix.settings = {
+    experimental-features = [ "nix-command" "flakes" ];
+    substituters = [
+      "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
+      "https://mirrors.ustc.edu.cn/nix-channels/store"
+      "https://cache.nixos.org"
     ];
-# Some programs need SUID wrappers, can be configured further or are
-# started in user sessions.
-# programs.mtr.enable = true;
-# programs.gnupg.agent = {
-#   enable = true;
-#   enableSSHSupport = true;
-# };
+    trusted-public-keys = [
+      "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
+    ];
 
-# List services that you want to enable:
+    extra-substituters = lib.mkForce [ 
+      "https://hyprland.cachix.org"
+      "https://devenv.cachix.org"
+    ];
+    extra-trusted-public-keys = [
+      "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
+      "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw="
+    ];
+  };
+  # Copy the NixOS configuration file and link it from the resulting system
+  # (/run/current-system/configuration.nix). This is useful in case you
+  # accidentally delete configuration.nix.
+  # system.copySystemConfiguration = true;
 
-# Enable the OpenSSH daemon.
-# services.openssh.enable = true;
-
-# Open ports in the firewall.
-# networking.firewall.allowedTCPPorts = [ ... ];
-# networking.firewall.allowedUDPPorts = [ ... ];
-# Or disable the firewall altogether.
-    networking.firewall.enable = false;
-
-
-    nix.settings = {
-        experimental-features = [ "nix-command" "flakes" ];
-        substituters = [
-            "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
-            "https://mirrors.ustc.edu.cn/nix-channels/store"
-            "https://cache.nixos.org"
-        ];
-        trusted-public-keys = [
-            "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
-        ];
-
-        extra-substituters = lib.mkForce [ 
-            "https://hyprland.cachix.org"
-            "https://devenv.cachix.org"
-        ];
-        extra-trusted-public-keys = [
-            "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
-            "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw="
-        ];
-    };
-# Copy the NixOS configuration file and link it from the resulting system
-# (/run/current-system/configuration.nix). This is useful in case you
-# accidentally delete configuration.nix.
-# system.copySystemConfiguration = true;
-
-# This option defines the first version of NixOS you have installed on this particular machine,
-# and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
-#
-# Most users should NEVER change this value after the initial install, for any reason,
-# even if you've upgraded your system to a new NixOS release.
-#
-# This value does NOT affect the Nixpkgs version your packages and OS are pulled from,
-# so changing it will NOT upgrade your system - see https://nixos.org/manual/nixos/stable/#sec-upgrading for how
-# to actually do that.
-#
-# This value being lower than the current NixOS release does NOT mean your system is
-# out of date, out of support, or vulnerable.
-#
-# Do NOT change this value unless you have manually inspected all the changes it would make to your configuration,
-# and migrated your data accordingly.
-#
-# For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
-    system.stateVersion = "25.05"; # Did you read the comment?
+  # This option defines the first version of NixOS you have installed on this particular machine,
+  # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
+  #
+  # Most users should NEVER change this value after the initial install, for any reason,
+  # even if you've upgraded your system to a new NixOS release.
+  #
+  # This value does NOT affect the Nixpkgs version your packages and OS are pulled from,
+  # so changing it will NOT upgrade your system - see https://nixos.org/manual/nixos/stable/#sec-upgrading for how
+  # to actually do that.
+  #
+  # This value being lower than the current NixOS release does NOT mean your system is
+  # out of date, out of support, or vulnerable.
+  #
+  # Do NOT change this value unless you have manually inspected all the changes it would make to your configuration,
+  # and migrated your data accordingly.
+  #
+  # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
+  system.stateVersion = "25.05"; # Did you read the comment?
 }
 

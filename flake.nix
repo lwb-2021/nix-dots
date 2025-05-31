@@ -30,13 +30,13 @@
         nixvim.nixosModules.default
         ./nixvim
         home-manager.nixosModules.home-manager {
+          home-manager.extraSpecialArgs = { inherit inputs; };
           imports = [ 
             ./home/programs/desktop/ags/flake-module.nix
-            ./home/programs/desktop/hypr/hyprland/flake-module.nix
           ];
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.lwb = import ./home/lwb.nix;
+          home-manager.users.lwb = import ./home/lwb.nix;  
         }	
         sops-nix.nixosModules.sops
       ];
