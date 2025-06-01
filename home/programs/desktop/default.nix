@@ -1,26 +1,28 @@
 { config, pkgs, inputs, ... }: {
-    imports = [
-        ./hypr
-        ./ags
-    ];
-    home.packages = with pkgs;[
-        mako
-        xarchiver
-    ];
+  imports = [
+    ./hypr
+    ./ags
 
-    xdg = {
-        portal = {
-            enable = true;
-            extraPortals = with pkgs; [
-                xdg-desktop-portal
-                xdg-desktop-portal-gtk
-            ];
-            config.common.default = "*";
-        };
-        userDirs = {
-            enable = true;
-            createDirectories = true;
-        };
+    ./kitty.nix
+  ];
+  home.packages = with pkgs;[
+    mako
+    xarchiver
+  ];
+
+  xdg = {
+    portal = {
+      enable = true;
+      extraPortals = with pkgs; [
+        xdg-desktop-portal
+        xdg-desktop-portal-gtk
+      ];
+      config.common.default = "*";
     };
+    userDirs = {
+      enable = true;
+      createDirectories = true;
+    };
+  };
 
 }

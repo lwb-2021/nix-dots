@@ -16,7 +16,6 @@
     ./system-config/network.nix
     ./system-config/nvidia.nix
     ./system-config/tlp.nix
-
     ./system-config/va-api.nix
     ./system-config/proxy.nix
 
@@ -114,15 +113,12 @@
     extraGroups = [ "wheel" "gamemode" ];
   };
 
-  programs.firefox.enable = true;
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = [
     #pkgs.neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     pkgs.wget
     pkgs.git
-    pkgs.kitty
     #inputs.firefox.packages.${pkgs.system}.firefox-nightly-bin
   ];
   # Some programs need SUID wrappers, can be configured further or are
