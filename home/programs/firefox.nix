@@ -5,5 +5,6 @@
     policies = {
 
     };
+    profiles.default = {};
   };
 }
