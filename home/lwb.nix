@@ -19,6 +19,7 @@
     ./programs/apps.nix
     ./programs/aria2.nix
     ./programs/code.nix
+    ./programs/firefox.nix
     ./programs/fonts.nix
     ./programs/kdeconnect.nix
     ./programs/keepassxc.nix
