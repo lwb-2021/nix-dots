@@ -30,10 +30,15 @@
         nixvim.nixosModules.default
         ./nixvim
         home-manager.nixosModules.home-manager {
-          home-manager.extraSpecialArgs = { inherit inputs; };
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.lwb = import ./home/lwb.nix;  
+          home-manager = {
+            backupFileExtension = "hm.bak";
+            extraSpecialArgs = { inherit inputs; };
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            verbose = true;
+            users.lwb = ./home/lwb.nix;
+          };
+
         }	
         sops-nix.nixosModules.sops
       ];

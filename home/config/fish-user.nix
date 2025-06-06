@@ -1,28 +1,28 @@
 { config, lib, pkgs, ... }: {
 
-    programs.starship = {
-        enable = true;
-    };
-    programs.fish = {
-        enable = true;
-        
-        shellInit = ''
+  programs.starship = {
+    enable = true;
+  };
+  programs.fish = {
+    enable = true;
+
+    shellInit = ''
             test ! -e "$HOME/.x-cmd.root/local/data/fish/rc.fish" || source "$HOME/.x-cmd.root/local/data/fish/rc.fish"
-        '';
-        functions = { 
-            gitignore = "curl -sL https://www.gitignore.io/api/$argv";
-        };
+    '';
+    functions = { 
+      gitignore = "curl -sL https://www.gitignore.io/api/$argv";
     };
-    programs.bash = {
-        enable = true;
-    };
-    programs.bash = {
-        bashrcExtra = ''
-            if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]
-            then
-                shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=""
-                exec ${pkgs.fish}/bin/fish $LOGIN_OPTION
-            fi
-        '';
-    };
+  };
+  programs.bash = {
+    enable = true;
+  };
+  programs.bash = {
+    bashrcExtra = ''
+           if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]
+           then
+               shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=""
+               exec ${pkgs.fish}/bin/fish $LOGIN_OPTION
+           fi
+    '';
+  };
 }
