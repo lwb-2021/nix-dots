@@ -1,9 +1,4 @@
 { config, pkgs, inputs, ... }: {
-  imports = [
-    ./hypr
-    ./ags
-    ./kitty.nix
-  ];
   home.packages = with pkgs;[
     mako
     xarchiver

@@ -16,24 +16,33 @@
     ./config/mime.nix
     ./config/thunar.nix
 
-    ./programs/desktop
-    ./programs/development
+
+
     ./programs/media
 
     ./programs/apps.nix
-    ./programs/aria2.nix
-    ./programs/code.nix
-    ./programs/firefox.nix
-    ./programs/fonts.nix
-    ./programs/kdeconnect.nix
-    ./programs/keepassxc.nix
-    ./programs/minecraft.nix
-    ./programs/rime.nix
-    ./programs/rofi.nix
-    ./programs/syncthing.nix
-    ./programs/themes.nix
 
+    ./programs/desktop
+    ./programs/desktop/ags
+    ./programs/desktop/hypr
+    ./programs/desktop/apps/kitty.nix
+    ./programs/desktop/apps/rofi.nix
+    ./programs/desktop/fonts.nix
+    ./programs/desktop/rime.nix
+    ./programs/desktop/themes.nix
+
+    ./programs/development
+    ./programs/development/code.nix
     ./programs/development/python.nix
     ./programs/development/git.nix
+
+    ./programs/game/minecraft.nix
+
+    ./programs/network/aria2.nix
+    ./programs/network/firefox.nix
+    ./programs/network/kdeconnect.nix
+    ./programs/network/syncthing.nix
+
+    ./programs/security/keepassxc.nix
   ];
 }
