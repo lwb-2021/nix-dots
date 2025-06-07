@@ -10,7 +10,7 @@
 
         # toolkit-specific scale
         exec-once = [
-            "echo 'Xft.dpi: 154' | xrdb -merge"
+            "echo 'Xft.dpi: 153.6' | xrdb -merge"
         ];
 
     };   
