@@ -6,6 +6,10 @@
     "Xcursor.size" = 24;
     "Xft.dpi" = 153.6;
   };
+  programs.git = {
+    userName = "lwb";
+    userEmail = "lwb-2021@qq.com";
+  };
   imports = [
     ./config/fish-user.nix
     ./config/i18n.nix
@@ -30,5 +34,6 @@
     ./programs/themes.nix
 
     ./programs/development/python.nix
+    ./programs/development/git.nix
   ];
 }
