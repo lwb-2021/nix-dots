@@ -17,9 +17,11 @@
     ./system-config/nvidia.nix
     ./system-config/tlp.nix
     ./system-config/va-api.nix
+    
     ./system-config/proxy.nix
 
     ./system-config/openssh.nix
+    ./system-config/zerotier.nix
 
     ./system-config/cli.nix
 

@@ -9,6 +9,8 @@
     "steam-run"
     "xow_dongle-firmware"
 
+    "zerotierone"
+
     "qq"
     "wechat-uos"
 
