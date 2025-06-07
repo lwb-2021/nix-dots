@@ -1,7 +1,8 @@
 { config, lib, pkgs, ... }: {
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) ([
     "nvidia-x11"
     "nvidia-settings"
+    
     "steam"
     "steam-original"
     "steam-unwrapped"
@@ -16,7 +17,8 @@
 
     "obsidian"
 
-    "vscode-extension-MS-python-vscode-pylance" # fuck you ms
-  ];
-
+    "vscode-extension-MS-python-vscode-pylance"
+  ]
+    ++ lib.mapAttrsToList (n: lib.getName) (lib.filterAttrs (n: v: lib.isDerivation v) pkgs.cudaPackages)
+  );
 }
