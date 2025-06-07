@@ -9,9 +9,15 @@
     shellInit = ''
             test ! -e "$HOME/.x-cmd.root/local/data/fish/rc.fish" || source "$HOME/.x-cmd.root/local/data/fish/rc.fish"
     '';
+    shellAliases = {
+      ls = "eza --icons=auto";
+    };
     functions = { 
       gitignore = "curl -sL https://www.gitignore.io/api/$argv";
     };
+    plugins = [
+    ];
+
   };
   programs.bash = {
     enable = true;
