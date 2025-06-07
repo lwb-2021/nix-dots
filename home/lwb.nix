@@ -44,5 +44,7 @@
     ./programs/network/syncthing.nix
 
     ./programs/security/keepassxc.nix
+
+    ./programs/system/yazi.nix
   ];
 }
