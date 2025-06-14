@@ -18,7 +18,7 @@
             termguicolors = true;
             showmode = false;
         };
-        
+        colorschemes.vscode.enable = true;       
         
     };
 }
