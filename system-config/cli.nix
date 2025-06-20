@@ -1,24 +1,26 @@
 { config, lib, pkgs, ... }: {
-    programs.fish = {
-        enable = true;
-    };
-    environment.systemPackages = with pkgs; [
-        psmisc
+  programs.fish = {
+    enable = true;
+  };
+  environment.systemPackages = with pkgs; [
+    psmisc
 
-        bat
-        eza
-        fastfetch
-        fzf
- 
-        fishPlugins.fzf-fish
+    bat
+    eza
+    fastfetch
+    fzf
 
-    ];
-    programs.fish = {
-        interactiveShellInit = ''
+    p7zip-rar
+
+    fishPlugins.fzf-fish
+
+  ];
+  programs.fish = {
+    interactiveShellInit = ''
             set fish_greeting
             fish_vi_key_bindings
             fastfetch
-        '';
-    };
+    '';
+  };
 
 }
