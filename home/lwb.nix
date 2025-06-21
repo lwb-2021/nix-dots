@@ -43,6 +43,8 @@
     ./programs/network/kdeconnect.nix
     ./programs/network/syncthing.nix
 
+    ./programs/research/zotero.nix
+
     ./programs/security/keepassxc.nix
 
     ./programs/system/yazi.nix
