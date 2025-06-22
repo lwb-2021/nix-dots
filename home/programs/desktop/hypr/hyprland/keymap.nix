@@ -4,7 +4,7 @@
       "$mod" = "SUPER";
       bind = [
         "$mod, Q, exec, kitty -1"
-        "$mod, E, exec, kitty -1 yazi"
+        "$mod, E, exec, thunar"
         "$mod, R, exec, rofi -show drun"
         "$mod, W, exec, rofi -show window"
         "$mod, C, killactive"
