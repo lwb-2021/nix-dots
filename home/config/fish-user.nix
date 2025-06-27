@@ -15,10 +15,6 @@
     functions = { 
       gitignore = "curl -sL https://www.gitignore.io/api/$argv";
     };
-    plugins = [
-      { name = "sponge"; src = pkgs.fishPlugins.sponge.src; }
-    ];
-
   };
   programs.bash = {
     enable = true;

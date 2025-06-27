@@ -13,6 +13,7 @@
     p7zip-rar
 
     fishPlugins.fzf-fish
+    fishPlugins.sponge
 
   ];
   programs.fish = {
