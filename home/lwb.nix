@@ -22,6 +22,8 @@
 
     ./programs/apps.nix
 
+    ./programs/compatibility/wine.nix
+
     ./programs/desktop
     ./programs/desktop/ags
     ./programs/desktop/hypr
