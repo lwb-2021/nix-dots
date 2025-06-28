@@ -1,6 +1,7 @@
 { config, pkgs, lib, ... }: {
     imports = [ 
-        ./plugins 
+        ./colorscheme.nix
+        ./plugins
     ];
     programs.nixvim = {
         enable = true;
@@ -18,7 +19,7 @@
             termguicolors = true;
             showmode = false;
         };
-        colorschemes.vscode.enable = true;       
+            
         
     };
 }
