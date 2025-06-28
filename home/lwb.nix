@@ -36,6 +36,7 @@
     ./programs/development/python.nix
     ./programs/development/git.nix
 
+    ./programs/game/lutris.nix
     ./programs/game/minecraft.nix
 
     ./programs/network/aria2.nix
