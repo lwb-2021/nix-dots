@@ -54,6 +54,7 @@
 
     ./programs/security/keepassxc.nix
 
+    ./programs/system/pay-respect.nix
     ./programs/system/yazi.nix
   ];
 }
