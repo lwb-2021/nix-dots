@@ -1,9 +1,11 @@
 { config, lib, pkgs, ... }: {
-    home.packages = with pkgs;[
-        qq
-        wechat-uos
-        wemeet
-        
-        obsidian
-    ];
+  home.packages = with pkgs;[
+    qq
+    wechat-uos
+    wemeet
+
+
+    calibre
+    obsidian
+  ];
 }
