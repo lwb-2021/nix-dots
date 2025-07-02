@@ -29,6 +29,7 @@
     ./programs/desktop/ags
     ./programs/desktop/hypr
     ./programs/desktop/apps/kitty.nix
+    ./programs/desktop/apps/nomacs.nix
     ./programs/desktop/apps/rofi.nix
     ./programs/desktop/fonts.nix
     ./programs/desktop/rime.nix
