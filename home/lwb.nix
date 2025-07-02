@@ -22,7 +22,6 @@
 
     ./programs/apps.nix
 
-    ./programs/compatibility/distro-box.nix
     ./programs/compatibility/wine.nix
 
     ./programs/desktop
