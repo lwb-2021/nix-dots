@@ -162,7 +162,7 @@
       "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
     ];
 
-    extra-substituters = lib.mkForce [ 
+    extra-substituters = [ 
       "https://nix-community.cachix.org"
       "https://hyprland.cachix.org"
       "https://yazi.cachix.org"
