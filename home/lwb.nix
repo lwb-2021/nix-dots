@@ -57,4 +57,5 @@
     ./programs/system/pay-respect.nix
     ./programs/system/yazi.nix
   ];
+  programs.home-manager.enable = true;
 }

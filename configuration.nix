@@ -24,6 +24,7 @@
     ./system-config/openssh.nix
     ./system-config/zerotier.nix
     ./system-config/docker.nix
+    ./system-config/obs-studio.nix
 
     ./system-config/cli.nix
 
