@@ -13,8 +13,10 @@
     fastfetch
     fd
     fzf
+    procs
     ripgrep
     tealdeer
+    zoxide
     
     p7zip-rar
 
