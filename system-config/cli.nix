@@ -4,12 +4,18 @@
   };
   environment.systemPackages = with pkgs; [
     psmisc
-
+    
+    asciinema
     bat
+    btop-cuda
+    dust
     eza
     fastfetch
+    fd
     fzf
-
+    ripgrep
+    tealdeer
+    
     p7zip-rar
 
     fishPlugins.fzf-fish
