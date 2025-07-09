@@ -3,6 +3,8 @@
     enable = true;
   };
   environment.systemPackages = with pkgs; [
+    nix-output-monitor
+
     psmisc
     
     asciinema
