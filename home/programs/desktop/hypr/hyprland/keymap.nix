@@ -5,8 +5,7 @@
       bind = [
         "$mod, Q, exec, kitty -1"
         "$mod, E, exec, thunar"
-        "$mod, R, exec, rofi -show drun"
-        "$mod, W, exec, rofi -show window"
+        "$mod, R, exec, anyrun"
         "$mod, C, killactive"
         "$mod, F, togglefloating"
         "$mod, l, movefocus, l"

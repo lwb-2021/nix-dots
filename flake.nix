@@ -9,6 +9,10 @@
       inputs.hyprland.follows = "hyprland";
     };
     yazi.url = "github:sxyazi/yazi";
+    anyrun = {
+      url = "github:anyrun-org/anyrun";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -34,16 +38,15 @@
         ./configuration.nix 
         nixvim.nixosModules.default
         ./nixvim
-        home-manager.nixosModules.home-manager {
+        home-manager.nixosModules.home-manager 
+        {
           home-manager = {
             backupFileExtension = "hm.bak";
             extraSpecialArgs = { inherit inputs; };
             useGlobalPkgs = true;
             useUserPackages = true;
-            verbose = true;
             users.lwb = ./home/lwb.nix;
           };
-
         }	
         sops-nix.nixosModules.sops
       ];

@@ -29,7 +29,7 @@
     ./programs/desktop/hypr
     ./programs/desktop/apps/kitty.nix
     ./programs/desktop/apps/nomacs.nix
-    ./programs/desktop/apps/rofi.nix
+    ./programs/desktop/apps/anyrun.nix
     ./programs/desktop/fonts.nix
     ./programs/desktop/rime.nix
     ./programs/desktop/themes.nix
@@ -56,6 +56,7 @@
 
     ./programs/system/pay-respect.nix
     ./programs/system/yazi.nix
+    ./programs/system/zellij.nix
   ];
   programs.home-manager.enable = true;
 }
