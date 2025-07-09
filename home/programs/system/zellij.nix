@@ -5,7 +5,7 @@
     enableFishIntegration = true;
     settings = {
       theme = "tokyo-night-dark";
-
+      show_startup_tips = false;     
     };
   };
 
