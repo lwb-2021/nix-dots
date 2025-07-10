@@ -25,10 +25,9 @@
     extraCss = /*css */ ''
         window {
           background-color: transparent;
+          * { background-color: unset; }
         }
-        box {
-          background-color: unset;
-        }
+    
     '';
 
   };
