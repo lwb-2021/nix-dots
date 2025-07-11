@@ -23,7 +23,7 @@
 
         tamasfe.even-better-toml
 
-
+        github.copilot
 
       ];
     };

@@ -21,6 +21,7 @@
 
     "obsidian"
 
+    "vscode-extension-github-copilot"
     "vscode-extension-MS-python-vscode-pylance"
   ]
     ++ lib.mapAttrsToList (n: lib.getName) (lib.filterAttrs (n: v: lib.isDerivation v) pkgs.cudaPackages)
