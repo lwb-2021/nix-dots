@@ -7,5 +7,11 @@
 
     calibre
     obsidian
+
+    readest
   ];
+
+  xdg.mimeApps.defaultApplications = {
+    "x-scheme-handler/readest" = "readest.desktop";
+  };
 }

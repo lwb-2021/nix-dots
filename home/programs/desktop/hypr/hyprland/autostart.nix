@@ -11,7 +11,6 @@
     };
     settings.exec-once = [
       "keepassxc"
-      "calibre --start-in-tray"
       "ags run"
     ];
   };
