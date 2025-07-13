@@ -2,7 +2,7 @@
   programs.zellij = {
     enable = true;
     attachExistingSession = true;
-    #exitShellOnExit = true;
+    exitShellOnExit = false;
     enableFishIntegration = true;
     settings = {
       theme = "tokyo-night-dark";
