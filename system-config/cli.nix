@@ -18,7 +18,10 @@
     procs
     ripgrep
     tealdeer
+    toolong
     zoxide
+
+    just
     
     p7zip-rar
 
