@@ -1,25 +1,27 @@
 { config, pkgs, lib, ... }: {
-    imports = [ 
-        ./colorscheme.nix
-        ./plugins
-    ];
-    programs.nixvim = {
-        enable = true;
-        viAlias = true;
-        vimAlias = true;
+  imports = [ 
+    ./colorscheme.nix
+    ./plugins
 
-        opts = {
-            tabstop = 2;
-            softtabstop = 2;
-            shiftwidth = 2;
-            expandtab = true;
+    ./lsp.nix
+  ];
+  programs.nixvim = {
+    enable = true;
+    viAlias = true;
+    vimAlias = true;
 
-            number = true;
-            cursorline = true;
-            termguicolors = true;
-            showmode = false;
-        };
-            
-        
+    opts = {
+      tabstop = 2;
+      softtabstop = 2;
+      shiftwidth = 2;
+      expandtab = true;
+
+      number = true;
+      cursorline = true;
+      termguicolors = true;
+      showmode = false;
     };
+
+
+  };
 }
