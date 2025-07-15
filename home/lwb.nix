@@ -29,6 +29,8 @@
     ./programs/desktop/apps/kitty.nix
     ./programs/desktop/apps/nomacs.nix
     ./programs/desktop/apps/anyrun.nix
+    ./programs/desktop/apps/copyq.nix
+
     ./programs/desktop/fonts.nix
     ./programs/desktop/rime.nix
     ./programs/desktop/themes.nix
