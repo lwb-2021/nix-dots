@@ -25,9 +25,6 @@
         Enabled = true;
         UseOpenSSH = true;
       };
-      FdoSecrets = {
-        Enabled = true;
-      };
     };
   };
   xdg.autostart.entries = [

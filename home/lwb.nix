@@ -52,6 +52,7 @@
     ./programs/research/zotero.nix
 
     ./programs/security/keepassxc.nix
+    ./programs/security/keyring.nix
 
     ./programs/shell/pay-respect.nix
     ./programs/shell/yazi.nix
