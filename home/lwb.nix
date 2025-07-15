@@ -53,9 +53,9 @@
 
     ./programs/security/keepassxc.nix
 
-    ./programs/system/pay-respect.nix
-    ./programs/system/yazi.nix
-    ./programs/system/zellij.nix
+    ./programs/shell/pay-respect.nix
+    ./programs/shell/yazi.nix
+    ./programs/shell/zellij.nix
   ];
   programs.home-manager.enable = true;
 }
