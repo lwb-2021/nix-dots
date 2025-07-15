@@ -1,21 +1,28 @@
-programs.nixvim.lsp = {
-  enable = true;
-  servers = {
-    # Rust 语言服务器
-    rust-analyzer = {
+{ config, lib, pkgs, ... }:{
+  programs.nixvim.plugins = {
+    lsp = {
       enable = true;
-      #installCargo = true;
-      #installRustc = true;
-      settings = {
-        checkOnSave = {
-          command = "clippy";
-          allFeatures = true;
+      servers = {
+        # Rust
+        rust_analyzer = {
+          enable = true;
+          settings = {
+            installRustc = false;
+            installCargo = false;
+            checkOnSave = true;
+            diagnostics = {
+              disabled = ["unresolved-proc-macro"];
+            };
+          };
         };
-        diagnostics = {
-          disabled = ["unresolved-proc-macro"];
-        };
+
+
       };
     };
-
+    lspkind = {
+      enable = true;
+      mode = "symbol";
+      preset = "codicons";
+    };
   };
-};
+}
