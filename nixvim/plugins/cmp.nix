@@ -3,9 +3,10 @@
   autoEnableSources = true;
   settings = {
     sources = [
-      { name = "nvim_lsp"; }
-      { name = "path"; }
-      { name = "buffer"; }
+      { name = "nvim_lsp"; priority = 1000; }
+      { name = "path"; priority = 800; }
+      { name = "buffer"; priority = 600; }
+      { name = "cmp-ai"; }
     ];
     mapping = {
       __raw = ''
@@ -41,6 +42,7 @@
       };
     };
     formatting = {
+      fields = [ "kind" "abbr" "menu" ];
     };
   };
 }

@@ -3,6 +3,7 @@
     bufferline = import ./bufferline.nix;
 
     cmp = import ./cmp.nix;
+    cmp-ai = import ./cmp-ai.nix;
 
     neogit = import ./neogit.nix;
 
@@ -10,7 +11,6 @@
 
     treesitter = import ./treesitter.nix pkgs;
     web-devicons.enable = true;
-
 
     rainbow-delimiters = import ./rainbow-delimiters.nix;
 
