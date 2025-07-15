@@ -11,7 +11,8 @@
           floats = "dark";
           functions = { };
           keywords = {
-            italic = true;
+            bold = true;
+            fg = "#9d7cd8";
           };
           sidebars = "dark";
           variables = { };
