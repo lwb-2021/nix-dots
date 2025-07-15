@@ -10,7 +10,6 @@
       ];
     };
     settings.exec-once = [
-      "keepassxc"
       "ags run"
     ];
   };
