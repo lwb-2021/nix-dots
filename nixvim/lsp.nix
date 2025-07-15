@@ -6,9 +6,10 @@
         # Rust
         rust_analyzer = {
           enable = true;
+          installRustc = false;
+          installCargo = false;
+
           settings = {
-            installRustc = false;
-            installCargo = false;
             checkOnSave = true;
             diagnostics = {
               disabled = ["unresolved-proc-macro"];
