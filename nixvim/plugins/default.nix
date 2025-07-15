@@ -1,5 +1,7 @@
 { pkgs, ... }: {
   programs.nixvim.plugins = {
+    alpha = import ./alpha.nix;
+
     bufferline = import ./bufferline.nix;
 
     cmp = import ./cmp.nix;
