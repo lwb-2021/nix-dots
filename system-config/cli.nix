@@ -6,7 +6,7 @@
     nix-output-monitor
 
     psmisc
-    
+
     asciinema
     bat
     btop-cuda
@@ -21,7 +21,7 @@
     toolong
 
     just
-    
+
     p7zip-rar
 
     gemini-cli
@@ -34,7 +34,6 @@
     interactiveShellInit = ''
             set fish_greeting
             fish_vi_key_bindings
-            fastfetch
     '';
   };
 

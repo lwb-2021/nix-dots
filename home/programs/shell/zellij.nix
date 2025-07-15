@@ -15,6 +15,9 @@ if status is-interactive
 
     zellij attach -c default
 end
+if status is-interactive and set -q ZELLIJ
+    fastfetch
+end
 
   '';
 
