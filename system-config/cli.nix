@@ -19,7 +19,6 @@
     ripgrep
     tealdeer
     toolong
-    zoxide
 
     just
     
