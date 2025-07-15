@@ -25,6 +25,8 @@
     
     p7zip-rar
 
+    gemini-cli
+
     fishPlugins.fzf-fish
     fishPlugins.sponge
 
