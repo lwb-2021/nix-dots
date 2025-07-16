@@ -17,9 +17,9 @@
     ./system-config/nvidia.nix
     ./system-config/tlp.nix
     ./system-config/va-api.nix
-    
+
     ./system-config/proxy.nix
-  
+
     ./system-config/android.nix
     ./system-config/openssh.nix
     ./system-config/zerotier.nix
@@ -30,11 +30,14 @@
 
     ./system-config/gc.nix
 
-    ./system-config/dm.nix
-    ./system-config/system-themes.nix
-    ./system-config/hyprland.nix
+    ./system-config/software/appimage.nix
 
-    ./system-config/thunar.nix
+    ./system-config/desktop-environment/applications.nix
+    ./system-config/desktop-environment/dm.nix
+    ./system-config/desktop-environment/hyprland.nix
+    ./system-config/desktop-environment/theme.nix
+    ./system-config/desktop-environment/xdg.nix
+
 
     ./system-config/gaming.nix # steam is not supported(?) by home manager
 
@@ -59,6 +62,8 @@
                         chainloader (''${root})/EFI/Microsoft/Boot/bootmgfw.efi
                 }
       '';
+      theme = pkgs.catppuccin-grub.override { flavor = "mocha"; };
+      gfxmodeEfi = "1920x1080";
     };
   };
 
