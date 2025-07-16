@@ -33,6 +33,11 @@
       url = "github:nixpak/nixpak";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs = { self, nixpkgs, home-manager, nixvim , sops-nix, yazi, nixpak, ... }@inputs: {
     nixosConfigurations.lwb = nixpkgs.lib.nixosSystem {
