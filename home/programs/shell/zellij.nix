@@ -10,10 +10,13 @@
   };
   programs.fish.shellInitLast = /* fish */ ''
 if status is-interactive
-    and test "$TERM_PROGRAM" != "vscode"
-    and not set -q ZELLIJ
+    if test "$TERM_PROGRAM" != "vscode"
+        and not set -q ZELLIJ
 
-    zellij attach -c default
+        zellij attach -c default
+    else
+        fastfetch | lolcat
+    end
 end
 
   '';

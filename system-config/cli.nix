@@ -5,6 +5,10 @@
   environment.systemPackages = with pkgs; [
     nix-output-monitor
 
+    lolcat
+    carbon-now-cli
+    cowsay
+
     psmisc
 
     asciinema
