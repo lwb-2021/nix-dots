@@ -24,26 +24,17 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    
     sops-nix = {
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    nixpak = {
-      url = "github:nixpak/nixpak";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
-  outputs = { self, nixpkgs, home-manager, nixvim , sops-nix, yazi, nixpak, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, nixvim , sops-nix, yazi,  ... }@inputs: {
     nixosConfigurations.lwb = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };
-      modules = let
-        mkNixPak = nixpak.lib.nixpak {
-          lib = nixpkgs.legacyPackages.x86_64-linux.lib;
-          pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        };
-      in [
+      modules = [
         ./configuration.nix 
         nixvim.nixosModules.default
         ./nixvim
@@ -51,7 +42,7 @@
         {
           home-manager = {
             backupFileExtension = "hm.bak";
-            extraSpecialArgs = { inherit inputs; mkNixPak = mkNixPak; };
+            extraSpecialArgs = { inherit inputs; };
             useGlobalPkgs = true;
             useUserPackages = true;
             users.lwb = ./home/lwb.nix;
