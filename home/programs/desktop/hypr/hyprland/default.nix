@@ -6,6 +6,7 @@
     ./environment.nix
     ./keymap.nix
     ./rules.nix
+    ./plugins/hyprexpo.nix
   ];
   wayland.windowManager.hyprland = {
     enable = true;
