@@ -1,7 +1,17 @@
-{ config, lib, pkgs, ... }: {
+{ config, lib, pkgs, mkNixPak, ... }@inp: {
   home.packages = with pkgs;[
     qq
-    wechat 
+    (pkgs.makeDesktopItem {
+      name = "WeChat";
+      desktopName = "微信";
+      exec = "wechat %U";
+      terminal = false;
+      icon = "wechat";
+      type = "Application";
+      categories = [ "Utility" ];
+      comment = "微信桌面版";
+    })
+    (import ../../pkgs/wechat-pak.nix inp)
     wemeet
 
 
