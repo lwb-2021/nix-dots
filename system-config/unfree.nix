@@ -14,7 +14,7 @@
     "zerotierone"
 
     "qq"
-    "wechat-uos"
+    "wechat"
 
     "wemeet"
     "libwemeetwrap"
