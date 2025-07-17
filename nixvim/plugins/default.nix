@@ -4,6 +4,9 @@
 
     bufferline = import ./bufferline.nix;
 
+    comment = import ./comment.nix;
+    nvim-autopairs = import ./autopairs.nix;
+
     cmp = import ./cmp.nix;
     cmp-ai = import ./cmp-ai.nix;
 
