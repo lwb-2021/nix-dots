@@ -1,4 +1,4 @@
-{ config, lib, pkgs, mkNixPak, ... }@inp: {
+{ config, lib, pkgs, ... }@params: {
   home.packages = with pkgs;[
     qq
     (pkgs.makeDesktopItem {
@@ -11,7 +11,7 @@
       categories = [ "Utility" ];
       comment = "微信桌面版";
     })
-    (import ../../pkgs/wechat-pak.nix inp)
+    (import ../../pkgs/wechat-pak.nix params)
     wemeet
 
 

@@ -1,36 +1,39 @@
-{ config, pkgs, inputs, ... }: {
+{ config, pkgs, ... }: {
   programs.firefox = {
     enable = true;
     languagePacks = ["en-US" "zh-CN"];
     policies = {};
     profiles.default = {
-      id = 0;
+      id = 1;
       name = "default";
       isDefault = true;
     };
     profiles.lwb = {
       name = "lwb";
-      packages = with inputs.nur.legacyPackages.${pkgs.system}.repos.rycee.firefox-addons; [
-        # Downloader
-        aria2-integration
-        single-file
+      isDefault = false;
+      extensions = {
+        packages = with pkgs.nur.repos.rycee.firefox-addons; [
+          # Downloader
+          aria2-integration
+          single-file
 
-        auto-tab-discard # Performance
+          auto-tab-discard # Performance
 
-        # UI
-        darkreader
-        sidebery
+          # UI
+          darkreader
+          sidebery
 
-        # Connector
-        keepassxc-browser
-        zotero-connector
+          # Connector
+          keepassxc-browser
+          zotero-connector
 
-        # Improvements
-        ublock-origin
-        redirector
+          # Improvements
+          ublock-origin
+          redirector
 
-        tampermonkey # Script
-      ];
+          tampermonkey # Script
+        ];
+      };
       settings = {
         toolkit.legacyUserProfileCustomizations.stylesheets = true;
         extensions.autoDisableScopes = 0;

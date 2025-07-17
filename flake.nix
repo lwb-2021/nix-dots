@@ -39,18 +39,23 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = { self, nixpkgs, home-manager, nixvim , sops-nix, yazi, nixpak, nur, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
     nixosConfigurations.lwb = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };
-      modules = let
-        mkNixPak = nixpak.lib.nixpak {
-          lib = nixpkgs.legacyPackages.x86_64-linux.lib;
-          pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        };
-      in [
+      modules =  [
+        {
+          nixpkgs.overlays = [
+            (final: prev: {
+              nur = import inputs.nur {
+                nurpkgs = prev;
+                pkgs = prev;
+              };
+            })
+          ];
+        }
         ./configuration.nix 
-        nixvim.nixosModules.default
+        inputs.nixvim.nixosModules.default
         ./nixvim
         home-manager.nixosModules.home-manager 
         {
@@ -58,15 +63,14 @@
             #sharedModules = [
             # nur.modules.homeManager.default
             #];
-
             backupFileExtension = "hm.bak";
-            extraSpecialArgs = { inherit inputs; mkNixPak = mkNixPak; };
+            extraSpecialArgs = { inherit inputs; };
             useGlobalPkgs = true;
             useUserPackages = true;
             users.lwb = ./home/lwb.nix;
           };
         }	
-        sops-nix.nixosModules.sops
+        inputs.sops-nix.nixosModules.sops
       ];
     };
   };
