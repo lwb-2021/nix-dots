@@ -1,23 +1,22 @@
 { pkgs, ... }: {
   programs.nixvim.plugins = {
-    alpha = import ./alpha.nix;
+    alpha = import ./ui/alpha.nix;
+    bufferline = import ./ui/bufferline.nix;
+    neogit = import ./ui/neogit.nix;
+    nvim-tree = import ./ui/nvim-tree.nix;
 
-    bufferline = import ./bufferline.nix;
+    comment = import ./editing/comment.nix;
+    nvim-autopairs = import ./editing/autopairs.nix;
 
-    comment = import ./comment.nix;
-    nvim-autopairs = import ./autopairs.nix;
+    cmp = import ./cmp/cmp.nix;
+    cmp-ai = import ./cmp/cmp-ai.nix;
 
-    cmp = import ./cmp.nix;
-    cmp-ai = import ./cmp-ai.nix;
 
-    neogit = import ./neogit.nix;
 
-    nvim-tree = import ./nvim-tree.nix;
-
-    treesitter = import ./treesitter.nix pkgs;
+    treesitter = import ./highlight/treesitter.nix pkgs;
     web-devicons.enable = true;
 
-    rainbow-delimiters = import ./rainbow-delimiters.nix;
+    rainbow-delimiters = import ./highlight/rainbow-delimiters.nix;
 
     which-key = import ./which-key.nix;
   };

@@ -1,6 +1,6 @@
 {
   enable = true;
   settings = {
-    provider = "HF";
+    #provider = "HF";
   };
 }
