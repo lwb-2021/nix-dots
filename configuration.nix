@@ -7,30 +7,32 @@
 {
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ./system-config/unfree.nix
-    ./system-config/sops.nix
 
-    ./system-config/audio.nix
-    ./system-config/bluetooth.nix
-    ./system-config/kernel.nix
-    ./system-config/network.nix
-    ./system-config/nvidia.nix
-    ./system-config/tlp.nix
-    ./system-config/va-api.nix
 
-    ./system-config/proxy.nix
 
-    ./system-config/android.nix
-    ./system-config/openssh.nix
-    ./system-config/zerotier.nix
-    ./system-config/docker.nix
-    ./system-config/obs-studio.nix
+    ./system-config/system/bootloader.nix
+    ./system-config/system/kernel.nix
+    ./system-config/system/gc.nix
+    ./system-config/system/nix.nix
+    ./system-config/system/nixpkgs.nix
 
-    ./system-config/cli.nix
+    ./system-config/devices/audio.nix
+    ./system-config/devices/bluetooth.nix
 
-    ./system-config/gc.nix
 
-    ./system-config/software/appimage.nix
+    ./system-config/devices/render/nvidia.nix
+    ./system-config/devices/render/va-api.nix
+
+    ./system-config/devices/power/tlp.nix
+
+    ./system-config/devices/network/network.nix
+    ./system-config/devices/network/proxy
+    ./system-config/devices/network/openssh.nix
+    ./system-config/devices/network/zerotier.nix
+
+
+    ./system-config/security/sops.nix
+
 
     ./system-config/desktop-environment/applications.nix
     ./system-config/desktop-environment/dm.nix
@@ -39,7 +41,13 @@
     ./system-config/desktop-environment/xdg.nix
 
 
-    ./system-config/gaming.nix # steam is not supported(?) by home manager
+    ./system-config/software/appimage.nix
+    ./system-config/software/command-line.nix
+    ./system-config/software/virt/docker.nix
+
+    ./system-config/software/apps/android.nix
+    ./system-config/software/apps/gaming.nix
+    ./system-config/software/apps/obs-studio.nix
 
     ./system-config/fix.nix
   ];
@@ -47,25 +55,7 @@
   # Use the systemd-boot EFI boot loader.
   #boot.loader.systemd-boot.enable = true;
   #boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader = {
-    efi = {
-      canTouchEfiVariables = true;
-      efiSysMountPoint = "/boot/efi";
-    };
-    grub = {
-      enable = true;
-      efiSupport = true;
-      device = "nodev";
-      extraEntries = ''
-                menuentry "Windows"{
-                    search --file --no-floppy --set=root /EFI/Microsoft/Boot/bootmgfw.efi
-                        chainloader (''${root})/EFI/Microsoft/Boot/bootmgfw.efi
-                }
-      '';
-      theme = pkgs.catppuccin-grub.override { flavor = "mocha"; };
-      gfxmodeEfi = "1920x1080";
-    };
-  };
+
 
   # networking.hostName = "nixos"; # Define your hostname.
   # Pick only one of the below networking options.
@@ -155,33 +145,7 @@
   networking.firewall.enable = false;
 
 
-  nix.settings = {
-    experimental-features = [ "nix-command" "flakes" ];
-    substituters = [
-      "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
-      "https://mirror.sjtu.edu.cn/nix-channels/store"
-      "https://mirrors.ustc.edu.cn/nix-channels/store"
-      "https://cache.nixos.org"
-    ];
-    trusted-public-keys = [
-      "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
-    ];
 
-    extra-substituters = [ 
-      "https://nix-community.cachix.org"
-      "https://hyprland.cachix.org"
-      "https://yazi.cachix.org"
-      "https://anyrun.cachix.org"
-      "https://devenv.cachix.org"
-    ];
-    extra-trusted-public-keys = [
-      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-      "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
-      "yazi.cachix.org-1:Dcdz63NZKfvUCbDGngQDAZq6kOroIrFoyO064uvLh8k="
-      "anyrun.cachix.org-1:pqBobmOjI7nKlsUMV25u9QHa9btJK65/C8vnO3p346s="
-      "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw="
-    ];
-  };
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
   # accidentally delete configuration.nix.
