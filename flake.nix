@@ -39,7 +39,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = { self, nixpkgs, home-manager, nixvim , sops-nix, yazi, nixpak, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, nixvim , sops-nix, yazi, nixpak, nur, ... }@inputs: {
     nixosConfigurations.lwb = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };
@@ -55,6 +55,10 @@
         home-manager.nixosModules.home-manager 
         {
           home-manager = {
+            #sharedModules = [
+            # nur.modules.homeManager.default
+            #];
+
             backupFileExtension = "hm.bak";
             extraSpecialArgs = { inherit inputs; mkNixPak = mkNixPak; };
             useGlobalPkgs = true;
