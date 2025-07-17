@@ -12,11 +12,19 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
-  
-  fileSystems."/" =
+
+  fileSystems."/" = {
+    device = "tmpfs";
+    fsType = "tmpfs";
+    # 必须设置 mode=755，否则默认的权限将是 777，导致 OpenSSH 报错并拒绝用户登录
+    options = [ "relatime" "mode=755" ];
+  };
+
+
+  fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/72ecbffd-d1fb-4ff9-93f5-a056c0cb5fb7";
       fsType = "btrfs";
-      options = [ "compress=zstd" "subvol=@" ];
+      options = [ "compress=zstd" "subvol=@boot" ];
     };
 
   fileSystems."/home" =

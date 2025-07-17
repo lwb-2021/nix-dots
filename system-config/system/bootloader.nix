@@ -1,5 +1,6 @@
 { pkgs, ... }: {
   boot = {
+    tmp.useTmpfs = true;
     loader = {
       efi = {
         canTouchEfiVariables = true;
