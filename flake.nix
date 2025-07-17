@@ -33,6 +33,7 @@
       url = "github:nixpak/nixpak";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    impermanence.url = "github:nix-community/impermanence";
 
     nur = {
       url = "github:nix-community/NUR";
@@ -54,6 +55,7 @@
             })
           ];
         }
+        inputs.impermanence.nixosModules.impermanence
         ./configuration.nix 
         inputs.nixvim.nixosModules.default
         ./nixvim

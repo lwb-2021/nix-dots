@@ -30,6 +30,11 @@
       fsType = "btrfs";
       options = [ "noatime" "compress=zstd" "subvol=@nix" ];
     };
+  fileSystems."/var" =
+    { device = "/dev/disk/by-uuid/72ecbffd-d1fb-4ff9-93f5-a056c0cb5fb7";
+      fsType = "btrfs";
+      options = [ "noatime" "compress=zstd" "subvol=@var" ];
+    };
   fileSystems."/boot/efi" = {
     device = "/dev/disk/by-uuid/4AE8-94AF";
     fsType = "vfat";
