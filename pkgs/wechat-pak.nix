@@ -1,4 +1,4 @@
-{ lib, mkNixPak, ... }: (mkNixPak { config = { pkgs, sloth, ... }: {
+{ lib, mkNixPak, pkgs, ... }: (mkNixPak { config = { sloth, ... }: {
   flatpak = {
     appId = "com.tencent.wechat";
   };
@@ -20,13 +20,10 @@
     ];
     bind.ro = [
       "/etc/passwd"
-      "/etc/ssl/certs/ca-bundle.crt"
-      "/etc/ssl/certs/ca-certificates.crt"
-      "/etc/pki/tls/certs/ca-bundle.crt"
     ];
-    network = true;
+    
     sockets = {
-      #x11 = true;
+      x11 = true;
       wayland = true;
       pipewire = true;
     };
@@ -42,6 +39,9 @@
   app = {
     package = pkgs.wechat;
   };
-  imports = [ ./base/nix-pak-gui.nix ];
+  imports = [ 
+    ./base/nix-pak-gui.nix 
+    ./base/nix-pak-network.nix
+  ];
 };
 }).config.script
