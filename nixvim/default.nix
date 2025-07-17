@@ -1,6 +1,7 @@
 { config, pkgs, lib, ... }: {
   imports = [ 
     ./colorscheme.nix
+    ./keymaps.nix
     ./plugins
 
     ./lsp.nix
@@ -9,6 +10,8 @@
     enable = true;
     viAlias = true;
     vimAlias = true;
+
+    clipboard.providers.wl-copy.enable = true;
 
     opts = {
       tabstop = 2;
