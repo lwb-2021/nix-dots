@@ -12,7 +12,6 @@
     # 你要映射的文件夹
     directories = [
       "/etc/NetworkManager/system-connections"
-      "/etc/v2raya"
       "/root"
     ];
 
