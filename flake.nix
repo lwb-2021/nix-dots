@@ -45,16 +45,7 @@
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };
       modules =  [
-        {
-          nixpkgs.overlays = [
-            (final: prev: {
-              nur = import inputs.nur {
-                nurpkgs = prev;
-                pkgs = prev;
-              };
-            })
-          ];
-        }
+        ./overlays
         inputs.impermanence.nixosModules.impermanence
         ./configuration.nix 
         inputs.nixvim.nixosModules.default
@@ -62,9 +53,6 @@
         home-manager.nixosModules.home-manager 
         {
           home-manager = {
-            #sharedModules = [
-            # nur.modules.homeManager.default
-            #];
             backupFileExtension = "hm.bak";
             extraSpecialArgs = { inherit inputs; };
             useGlobalPkgs = true;
