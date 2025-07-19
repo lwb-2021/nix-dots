@@ -1,8 +1,16 @@
 { config, pkgs, ... }: {
   programs.firefox = {
     enable = true;
-    languagePacks = ["en-US" "zh-CN"];
-    policies = {};
+    languagePacks = [ "zh-CN" "en-US" ];
+    policies = {
+      ExtensionSettings = {
+        "{32662a95-d1c0-40d9-b68b-aa682008c05c}" = {
+          installation_mode = "normal_installed";
+          install_url = "https://addons.mozilla.org/firefox/downloads/file/4101199/minimalist_dark_and_purple_tab-3.0.xpi";
+          private_browsing = true;
+        };
+      };
+    };
     profiles.default = {
       id = 1;
       name = "default";
@@ -35,13 +43,16 @@
         ];
       };
       settings = {
-        toolkit.legacyUserProfileCustomizations.stylesheets = true;
-        extensions.autoDisableScopes = 0;
+        "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+        "extensions.autoDisableScopes" = 0;
       };
 
       userChrome = ''
       #TabsToolbar {
         display: none !important;
+      }
+      #sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] #sidebar-header {
+        visibility: collapse !important;
       }
       #sidebar-splitter {
         opacity: 0 !important;
