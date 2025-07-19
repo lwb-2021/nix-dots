@@ -4,11 +4,14 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     ags.url = "github:Aylur/ags";
+    
     hyprland.url = "git+https://github.com/hyprwm/Hyprland.git?shallow=1";
     hyprland-plugins = {
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
     };
+
+
     yazi.url = "github:sxyazi/yazi";
     anyrun = {
       url = "github:anyrun-org/anyrun";
@@ -54,6 +57,9 @@
         home-manager.nixosModules.home-manager 
         {
           home-manager = {
+            sharedModules = [
+              inputs.sops-nix.homeManagerModules.sops
+            ];
             backupFileExtension = "hm.bak";
             extraSpecialArgs = { inherit inputs; };
             useGlobalPkgs = true;

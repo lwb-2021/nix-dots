@@ -59,6 +59,8 @@
     ./programs/shell/pay-respect.nix
     ./programs/shell/yazi.nix
     ./programs/shell/zellij.nix
+
+    ./programs/study/anki.nix
   ];
   programs.home-manager.enable = true;
 }
