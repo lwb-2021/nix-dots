@@ -45,6 +45,9 @@
       settings = {
         "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
         "extensions.autoDisableScopes" = 0;
+
+        "font.language.group" = "zh-CN";
+        "intl.accept_languages" = "zh-CN, zh, zh-TW, zh-HK, en-US, en";
       };
 
       userChrome = ''
