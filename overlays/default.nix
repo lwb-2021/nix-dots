@@ -1,3 +1,6 @@
 { inputs, ... }: {
-  imports = [ ./nur.nix ];
+  imports = [
+    ./fix.nix
+    ./nur.nix
+  ];
 }

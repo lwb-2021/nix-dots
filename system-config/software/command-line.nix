@@ -22,7 +22,7 @@
     procs
     ripgrep
     tealdeer
-    toolong
+    #toolong
 
     just
 
@@ -33,7 +33,7 @@
     fishPlugins.fzf-fish
     fishPlugins.sponge
 
-  ];
+  ] ++ (if !pkgs.python3Packages.textual.meta.broken then [pkgs.toolong] else []);
   programs.fish = {
     interactiveShellInit = ''
             set fish_greeting

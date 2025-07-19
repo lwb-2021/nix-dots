@@ -2,6 +2,7 @@
   description = "My NixOS flake";
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+
     ags.url = "github:Aylur/ags";
     hyprland.url = "git+https://github.com/hyprwm/Hyprland.git?shallow=1";
     hyprland-plugins = {

@@ -2,6 +2,7 @@
   services.mihomo = {
     enable = true;
     tunMode = true;
+    webui = pkgs.metacubexd;
     configFile = ./mihomo-config.yaml;
   };
   environment.persistence."/nix/persistence" = {
@@ -10,9 +11,6 @@
     ];
 
   };
-  environment.systemPackages = with pkgs;[
-    sparkle
-  ];
   services.tor = {
     enable = true;
     client.enable = true;
