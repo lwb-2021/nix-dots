@@ -24,6 +24,10 @@
       termguicolors = true;
       showmode = false;
     };
+    globals = {
+      mapleader = " ";
+      maplocalleader = " ";
+    };
 
 
   };
