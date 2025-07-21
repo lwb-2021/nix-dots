@@ -11,6 +11,16 @@
     ];
 
   };
+  environment.systemPackages = [
+    (pkgs.makeDesktopItem {
+      desktopName = "Mihomo WebUI";
+      name = "mihomo-webui";
+      url = "http://127.0.0.1:9090/ui/#";
+      icon = "preferences-system-network-proxy";
+      type = "Link";
+    })
+
+  ];
   services.tor = {
     enable = true;
     client.enable = true;
