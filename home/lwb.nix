@@ -48,6 +48,7 @@
     ./programs/network/firefox.nix
     ./programs/network/kdeconnect.nix
     ./programs/network/syncthing.nix
+    ./programs/network/thunderbird.nix
 
     ./programs/research/office.nix
     ./programs/research/pandoc.nix
@@ -62,5 +63,11 @@
 
     ./programs/study/anki.nix
   ];
+  accounts.email.accounts."qq" = {
+    address = "lwb-2021@qq.com";
+    realName = "lwb";
+    primary = true;
+    thunderbird.enable = true;
+  };
   programs.home-manager.enable = true;
 }
