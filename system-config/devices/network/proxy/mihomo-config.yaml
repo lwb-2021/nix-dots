@@ -121,7 +121,8 @@ rules:
   - GEOSITE,cn,DIRECT
   - GEOIP,CN,DIRECT,no-resolve
 
+  - GEOSITE,gfw,Proxy
 
-  - MATCH,Proxy
+  - MATCH,DIRECT
 
 
