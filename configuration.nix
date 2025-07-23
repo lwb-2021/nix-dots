@@ -111,8 +111,8 @@
   # };
   users.users.lwb = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "gamemode" ];
-    hashedPassword = "$2b$16$qFb2QsYtTJSUUIOvLrJm/ej84e3Gen1k5UyvCUil8Xl/sWKXT/a9a";
+    extraGroups = [ "wheel" "gamemode" "networkmanager" ];
+    hashedPassword = "$2b$12$r02jnhT1jH6OkfUj.wZ6r.gj20Wgp9t2orHiYgoVSnyV1/f9mSQMy";
   };
 
   # List packages installed in system profile. To search, run:
