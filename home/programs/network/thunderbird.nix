@@ -5,4 +5,7 @@
       isDefault = true;
     };
   };
+  home.packages = with pkgs;[
+    birdtray
+  ];
 }
