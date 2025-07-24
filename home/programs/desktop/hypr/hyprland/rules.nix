@@ -8,7 +8,12 @@
 
         "float, class:org.kde.kdeconnect.handler"
         "center, class:org.kde.kdeconnect.handler"
+        
         "float, class:(waydroid)(.*)"
+        "noblur, class:(waydroid)(.*)"
+
+        "float, class:(扩展： (Aria2 下载器集成组件))(.*)"
+
       ];
     };
   };
