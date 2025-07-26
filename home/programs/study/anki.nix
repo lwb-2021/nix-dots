@@ -1,16 +1,18 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, ... }: rec {
   programs.anki = {
     enable = true;
     addons = with pkgs.ankiAddons;[
       anki-connect
     ];
     language = "zh_CN";
+    theme = "dark";
     style = "native";
     sync = {
       autoSync = true;
       autoSyncMediaMinutes = 120;
       username = "lwb-2021@qq.com";
-      passwordFile = config.sops.templates."anki-pwd.txt".path;
+      passwordFile = ../../../git-crypted/anki-password.txt;
     };
   };
+
 }
