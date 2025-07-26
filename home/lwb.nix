@@ -13,6 +13,7 @@
   imports = [
     ./config/fish-user.nix
     ./config/i18n.nix
+    ./config/sops.nix
     ./config/thunar.nix
 
 
