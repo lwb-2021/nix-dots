@@ -8,4 +8,9 @@
   home.packages = with pkgs;[
     birdtray
   ];
+  xdg.autostart.entries = [
+    "${pkgs.birdtray}/share/applications/com.ulduzsoft.Birdtray.desktop"
+  ];
+
+
 }
