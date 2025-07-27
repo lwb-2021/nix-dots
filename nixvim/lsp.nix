@@ -3,6 +3,21 @@
     lsp = {
       enable = true;
       servers = {
+        # Nix
+        nixd = {
+          enable = true;
+        };
+
+        # Python
+        pyright = {
+          enable = true;
+            
+        };
+        
+        # Typescript
+        ts_ls = {
+          enable = true;
+        };
         # Rust
         rust_analyzer = {
           enable = true;
