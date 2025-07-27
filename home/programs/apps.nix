@@ -15,10 +15,8 @@
     wemeet
 
 
-    calibre
     obsidian
 
-    readest
   ];
 
   xdg.mimeApps.defaultApplications = {

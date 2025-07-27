@@ -26,6 +26,7 @@
 
     ./programs/daily/office.nix
     ./programs/daily/pandoc.nix
+    ./programs/daily/ebook.nix
 
     ./programs/desktop
     ./programs/desktop/ags

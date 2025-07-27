@@ -5,8 +5,8 @@
       sort = "-time";
       layer = "overlay";
       background-color = "#2e34407f";
-      width = 160;
-      height = 90;
+      width = 240;
+      height = 60;
       border-size = 1;
       border-color = "#99c0d0";
       border-radius = 12;
