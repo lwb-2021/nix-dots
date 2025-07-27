@@ -24,6 +24,9 @@
 
     ./programs/compatibility/wine.nix
 
+    ./programs/daily/office.nix
+    ./programs/daily/pandoc.nix
+
     ./programs/desktop
     ./programs/desktop/ags
     ./programs/desktop/hypr
@@ -51,8 +54,7 @@
     ./programs/network/syncthing.nix
     ./programs/network/thunderbird.nix
 
-    ./programs/research/office.nix
-    ./programs/research/pandoc.nix
+    
     ./programs/research/zotero.nix
 
     ./programs/security/keepassxc.nix
