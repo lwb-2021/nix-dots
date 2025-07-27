@@ -27,6 +27,7 @@
 
     just
 
+    ffmpeg-full
     p7zip-rar
 
     gemini-cli
