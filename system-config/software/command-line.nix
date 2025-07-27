@@ -19,6 +19,7 @@
     fastfetch
     fd
     fzf
+    glow
     procs
     ripgrep
     tealdeer
