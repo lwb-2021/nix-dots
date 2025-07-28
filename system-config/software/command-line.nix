@@ -9,11 +9,15 @@
     carbon-now-cli
     cowsay
 
+    nettools
     psmisc
+    jq
+    
 
     asciinema
     bat
     btop-cuda
+    cyme
     dust
     eza
     fastfetch

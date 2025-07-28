@@ -61,6 +61,11 @@
     ./programs/security/keepassxc.nix
     ./programs/security/keyring.nix
 
+    ./programs/shell/bat.nix
+    ./programs/shell/eza.nix
+    ./programs/shell/fastfetch.nix
+    ./programs/shell/jq.nix
+    ./programs/shell/navi.nix
     ./programs/shell/pay-respect.nix
     ./programs/shell/yazi.nix
     ./programs/shell/zellij.nix
