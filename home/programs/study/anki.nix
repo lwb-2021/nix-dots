@@ -11,6 +11,7 @@
       autoSync = true;
       autoSyncMediaMinutes = 120;
       username = "lwb-2021@qq.com";
+      passwordFile = ./anki-pwd.txt;
     };
   };
 
