@@ -12,8 +12,9 @@
         "float, class:(waydroid)(.*)"
         "noblur, class:(waydroid)(.*)"
 
-        "float, class:(扩展： (Aria2 下载器集成组件))(.*)"
-
+        "float, title:(扩展： (Aria2 下载器集成组件))(.*)"
+        
+        "opacity 0.9, class:^(kitty)$"
       ];
     };
   };
