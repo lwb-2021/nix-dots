@@ -44,6 +44,7 @@
 
     ./system-config/software/appimage.nix
     ./system-config/software/command-line.nix
+    ./system-config/software/fhs.nix
     ./system-config/software/virt/docker.nix
 
     ./system-config/software/apps/android.nix
@@ -111,7 +112,7 @@
   # };
   users.users.lwb = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "gamemode" "networkmanager" ];
+    extraGroups = [ "wheel" "gamemode" "networkmanager" "plugdev" "dialout" ];
     hashedPassword = "$2b$12$r02jnhT1jH6OkfUj.wZ6r.gj20Wgp9t2orHiYgoVSnyV1/f9mSQMy";
   };
 
