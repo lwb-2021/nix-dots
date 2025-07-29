@@ -1,7 +1,22 @@
 { config, pkgs, lib, ... }: {
+  home.packages = with pkgs;[
+    dex
+  ];
+  home.file.".config/autostart.sh" = {
+    executable = true;
+    text = ''
+      #!/usr/bin/env bash
+      ags run &
+      sleep 2s
+      dex -a
+      element-desktop --hidden &
+    '';
+  };
+
   wayland.windowManager.hyprland = {
     systemd = {
       enable = true;
+      enableXdgAutostart = false;
       extraCommands = [
         "systemctl --user stop hyprpolkitagent.service"
         "systemctl --user stop hyprland-session.target"
@@ -10,7 +25,7 @@
       ];
     };
     settings.exec-once = [
-      "ags run"
+      "~/.config/autostart.sh &"
     ];
   };
 
