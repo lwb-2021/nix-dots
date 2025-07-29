@@ -33,6 +33,7 @@
 
 
     ./system-config/security/sops.nix
+    ./system-config/security/crypt.nix
 
 
     ./system-config/desktop-environment/applications.nix

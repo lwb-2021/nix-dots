@@ -1,5 +1,5 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs;[
-    git-agecrypt
+    git-crypt
   ];
 }
