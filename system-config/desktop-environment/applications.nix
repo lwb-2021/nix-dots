@@ -11,6 +11,8 @@
   environment.systemPackages = with pkgs;[
     xfce.exo
     kitty
+
+    wl-clipboard
   ];
 
 
