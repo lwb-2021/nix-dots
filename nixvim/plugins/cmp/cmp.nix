@@ -7,6 +7,7 @@
       { name = "path"; priority = 800; }
       { name = "buffer"; priority = 600; }
       { name = "cmp-ai"; }
+      { name = "conventionalcommits"; priority = 1200; }
     ];
     mapping = {
       __raw = ''
