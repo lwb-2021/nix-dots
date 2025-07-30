@@ -15,4 +15,5 @@
       wireplumber
     ];
   };
+  autostart.prepareCommands = [ "ags run & sleep 1s" ];
 }

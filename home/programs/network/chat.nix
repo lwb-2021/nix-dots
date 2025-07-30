@@ -5,5 +5,8 @@
     };
 
   };
+  autostart.commands = [
+    "element-desktop --hidden &"
+  ];
 
 }

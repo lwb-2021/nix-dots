@@ -1,5 +1,9 @@
-{ config, lib, pkgs, ... }: {
-  services.copyq = {
-    enable = true;
-  };
+{ pkgs, ... }: {
+  home.packages = with pkgs;[
+    copyq
+  ];
+  autostart.commands = [
+    "copyq --start-server"
+  ];
+  
 }
