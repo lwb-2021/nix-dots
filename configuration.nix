@@ -51,6 +51,7 @@
     ./system-config/software/apps/android.nix
     ./system-config/software/apps/gaming.nix
     ./system-config/software/apps/obs-studio.nix
+    ./system-config/software/apps/zenity.nix
 
     ./system-config/fix.nix
   ];
