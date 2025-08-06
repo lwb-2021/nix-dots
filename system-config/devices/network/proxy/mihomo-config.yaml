@@ -122,6 +122,7 @@ rules:
   - GEOIP,CN,DIRECT,no-resolve
 
   - GEOSITE,gfw,Proxy
+  - DOMAIN-KEYWORD,gitlab,Proxy
 
   - MATCH,DIRECT
 
