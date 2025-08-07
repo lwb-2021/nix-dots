@@ -28,7 +28,7 @@ in (mkNixPak { config = { sloth, ... }: {
 
       sockets = {
         x11 = true;
-        #wayland = true;
+        wayland = true;
         pipewire = true;
       };
       bind.dev = [
