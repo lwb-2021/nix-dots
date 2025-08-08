@@ -17,8 +17,12 @@
     ./config/thunar.nix
 
 
+    ./programs/media/lyrics.nix
+    ./programs/media/mpd.nix
+    ./programs/media/mpris.nix
+    ./programs/media/mpv.nix
+    ./programs/media/ncmpcpp.nix
 
-    ./programs/media
 
     ./programs/apps.nix
 
