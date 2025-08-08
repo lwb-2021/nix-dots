@@ -14,12 +14,12 @@
           "$mod, R, exec, ${config.wayland.launcher.exec}"
           "$mod, C, killactive"
           "$mod, F, togglefloating"
-          "$mod, l, movefocus, l"
-          "$mod, h, movefocus, r"
-          "$mod, k, movefocus, u"
-          "$mod, j, movefocus, d"
+          "$mod, K, movefocus, u"
+          "$mod, J, movefocus, d"
+          
           "$mod, Tab, hyprexpo:expo, toggle"
-
+          "$mod, H, layoutmsg, move -col"
+          "$mod, L, layoutmsg, move +col"
         ]
           ++ (
             builtins.concatLists(builtins.genList(i:

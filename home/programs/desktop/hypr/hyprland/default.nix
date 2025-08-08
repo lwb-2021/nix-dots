@@ -7,12 +7,14 @@
     ./keymap.nix
     ./rules.nix
     ./plugins/hyprexpo.nix
+    ./plugins/hyprscrolling.nix
   ];
   wayland.windowManager.hyprland = {
     enable = true;
     package = null;
     plugins = with inputs.hyprland-plugins.packages.${pkgs.system};[
       hyprexpo
+      hyprscrolling
     ];
   };
 
