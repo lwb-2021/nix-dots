@@ -11,13 +11,7 @@
       inputs.hyprland.follows = "hyprland";
     };
 
-
     yazi.url = "github:sxyazi/yazi";
-    anyrun = {
-      url = "github:anyrun-org/anyrun";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";

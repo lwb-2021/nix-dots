@@ -3,7 +3,7 @@
     qq
     (pkgs.makeDesktopItem {
       name = "WeChat";
-      desktopName = "微信";
+      desktopName = "WeChat";
       exec = "wechat %U";
       terminal = false;
       icon = "wechat";
@@ -12,8 +12,9 @@
       comment = "微信桌面版";
     })
     (import ../../pkgs/wechat-pak.nix params)
-    wemeet
 
+    
+    wemeet
 
     obsidian
 
