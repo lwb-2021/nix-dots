@@ -16,6 +16,7 @@
     ./system-config/system/nix.nix
     ./system-config/system/nixpkgs.nix
     ./system-config/system/stateless.nix
+    ./system-config/system/swap.nix
 
     ./system-config/devices/audio.nix
     ./system-config/devices/bluetooth.nix
