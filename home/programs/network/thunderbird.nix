@@ -3,6 +3,7 @@
     enable = true;
     profiles.default = {
       isDefault = true;
+      extensions = [];
     };
   };
   home.packages = with pkgs;[

@@ -77,11 +77,16 @@
 
     ./programs/study/anki.nix
   ];
-  accounts.email.accounts."qq" = {
+  accounts.email.accounts."QQ" = {
     address = "lwb-2021@qq.com";
+    userName = "lwb-2021@qq.com";
     realName = "lwb";
     primary = true;
     thunderbird.enable = true;
+    imap = {
+      host = "imap.qq.com";
+      port = 993;
+    };
   };
   programs.home-manager.enable = true;
 }
