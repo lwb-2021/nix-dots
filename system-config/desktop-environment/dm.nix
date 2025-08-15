@@ -15,7 +15,7 @@
         icon_theme_name = lib.mkForce "BeautyLine";
 
         # GTK theme name
-        theme_name = lib.mkForce "Graphite-purple-Dark-compact";
+        theme_name = lib.mkForce "catppuccin-mocha-mauve-compact+black";
       };
     };
   };

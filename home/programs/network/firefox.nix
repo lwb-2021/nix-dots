@@ -4,11 +4,6 @@
     languagePacks = [ "zh-CN" "en-US" ];
     policies = {
       ExtensionSettings = {
-        "{32662a95-d1c0-40d9-b68b-aa682008c05c}" = {
-          installation_mode = "normal_installed";
-          install_url = "https://addons.mozilla.org/firefox/downloads/file/4101199/minimalist_dark_and_purple_tab-3.0.xpi";
-          private_browsing = true;
-        };
         "{e2488817-3d73-4013-850d-b66c5e42d505}" = {
           enabled = true; 
           initialize = true; 
@@ -35,6 +30,9 @@
       extensions = {
         force = true;
         packages = with pkgs.nur.repos.rycee.firefox-addons; [
+          # Theme
+          catppuccin-mocha-mauve
+
           # Downloader
           aria2-integration
           single-file
@@ -80,7 +78,7 @@
       settings = {
         # 基础设置
         "extensions.autoDisableScopes" = 0;
-        "extensions.activeThemeID" = "{32662a95-d1c0-40d9-b68b-aa682008c05c}";
+        "extensions.activeThemeID" = "{76aabc99-c1a8-4c1e-832b-d4f2941d5a7a}";
 
         "font.language.group" = "zh-CN";
         "intl.locale.requested" = "zh-CN,en-US";

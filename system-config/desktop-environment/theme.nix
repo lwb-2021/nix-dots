@@ -2,12 +2,11 @@
   environment.systemPackages = with pkgs;[
     phinger-cursors
     beauty-line-icon-theme
-    (graphite-gtk-theme.override {
-      themeVariants = [ "purple" ];
-      sizeVariants = [ "compact" ];
+    (catppuccin-gtk.override {
+      accents = [ "mauve" ];
+      size = "compact";
       tweaks = [ "black" ];
-      wallpapers = true;
-      withGrub = true;
+      variant = "mocha";
     })
   ];
 

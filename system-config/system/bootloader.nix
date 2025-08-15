@@ -16,8 +16,11 @@
                         chainloader (''${root})/EFI/Microsoft/Boot/bootmgfw.efi
                 }
         '';
-        theme = pkgs.catppuccin-grub.override { flavor = "mocha"; };
-        gfxmodeEfi = "1920x1080";
+        theme = (pkgs.catppuccin-grub.override { 
+          flavor = "mocha"; 
+        });
+        font = "${pkgs.unifont}/share/fonts/opentype/unifont.otf";
+        fontSize = 32;
       };
     };
   };
