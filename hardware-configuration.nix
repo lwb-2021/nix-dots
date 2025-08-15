@@ -24,24 +24,24 @@
   fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/72ecbffd-d1fb-4ff9-93f5-a056c0cb5fb7";
       fsType = "btrfs";
-      options = [ "compress=zstd" "subvol=@boot" ];
+      options = [ "ssd" "compress=zstd" "subvol=@boot" ];
     };
 
   fileSystems."/home" =
     { device = "/dev/disk/by-uuid/72ecbffd-d1fb-4ff9-93f5-a056c0cb5fb7";
       fsType = "btrfs";
-      options = [ "compress=zstd" "subvol=@home" ];
+      options = [ "ssd" "noatime" "compress=zstd" "subvol=@home" ];
     };
 
   fileSystems."/nix" =
     { device = "/dev/disk/by-uuid/72ecbffd-d1fb-4ff9-93f5-a056c0cb5fb7";
       fsType = "btrfs";
-      options = [ "noatime" "compress=zstd" "subvol=@nix" ];
+      options = [ "ssd" "noatime" "compress=zstd" "subvol=@nix" ];
     };
   fileSystems."/var" =
     { device = "/dev/disk/by-uuid/72ecbffd-d1fb-4ff9-93f5-a056c0cb5fb7";
       fsType = "btrfs";
-      options = [ "noatime" "compress=zstd" "subvol=@var" ];
+      options = [ "ssd" "noatime" "compress=zstd" "subvol=@var" ];
     };
   fileSystems."/boot/efi" = {
     device = "/dev/disk/by-uuid/4AE8-94AF";
