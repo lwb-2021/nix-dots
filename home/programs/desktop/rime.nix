@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: { 
+{ pkgs, ... }: { 
   i18n = { 
     inputMethod = { 
       enable = true; 
@@ -7,7 +7,9 @@
         addons = with pkgs;[
           fcitx5-gtk
           fcitx5-rime
-          fcitx5-mellow-themes
+          (catppuccin-fcitx5.overrideAttrs {
+            preInstall = "bash ./enable-rounded.sh";
+          })
         ]; 
         waylandFrontend = true; 
         settings = {
@@ -19,8 +21,8 @@
           };
           addons = { 
             classicui.globalSection = {
-              Theme = "kwinblur-mellow-graphite-dark";
-              # DarkTheme = "plasma"; 
+              Theme = "catppuccin-mocha-mauve";
+              DarkTheme = "catppuccin-mocha-mauve"; 
             };
           };
         };
