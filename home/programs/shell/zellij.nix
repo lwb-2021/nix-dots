@@ -3,8 +3,7 @@
     enable = true;
     enableFishIntegration = false;
     settings = {
-      theme = "tokyo-night-dark";
-      show_startup_tips = false;    
+      show_startup_tips = false;
       default_mode = "locked";
     };
   };

@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ lib, pkgs, ... }: {
   boot = {
     tmp.useTmpfs = true;
     loader = {
@@ -16,11 +16,8 @@
                         chainloader (''${root})/EFI/Microsoft/Boot/bootmgfw.efi
                 }
         '';
-        theme = (pkgs.catppuccin-grub.override { 
-          flavor = "mocha"; 
-        });
-        font = "${pkgs.unifont}/share/fonts/opentype/unifont.otf";
-        fontSize = 32;
+        font = lib.mkForce "${pkgs.unifont}/share/fonts/opentype/unifont.otf";
+        fontSize = lib.mkForce 32;
       };
     };
   };

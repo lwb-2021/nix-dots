@@ -4,6 +4,5 @@
     settings = {
       cursor_trail = 3;     
     };
-    themeFile = "Catppuccin-Mocha";
   };
 }

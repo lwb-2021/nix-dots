@@ -3,21 +3,21 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-    ags.url = "github:Aylur/ags";
-    
-    hyprland.url = "git+https://github.com/hyprwm/Hyprland.git?shallow=1";
-    hyprland-plugins = {
-      url = "github:hyprwm/hyprland-plugins";
-      inputs.hyprland.follows = "hyprland";
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    nixvim = {
-      url = "github:nix-community/nixvim";
+    
+    impermanence.url = "github:nix-community/impermanence";
+    
+    nixpak = {
+      url = "github:nixpak/nixpak";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -26,17 +26,26 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixpak = {
-      url = "github:nixpak/nixpak";
+    
+    catppuccin = {
+      url = "github:catppuccin/nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    impermanence.url = "github:nix-community/impermanence";
+    
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
-    nur = {
-      url = "github:nix-community/NUR";
-      inputs.nixpkgs.follows = "nixpkgs";
+
+    ags.url = "github:Aylur/ags";
+
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland.git?shallow=1";
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
     };
-  };
+};
   outputs = { self, nixpkgs, home-manager, ... }@inputs: {
     nixosConfigurations.lwb = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
@@ -48,10 +57,12 @@
         inputs.nixvim.nixosModules.default
         ./nixvim
         home-manager.nixosModules.home-manager 
+        inputs.catppuccin.nixosModules.catppuccin
         {
           home-manager = {
             sharedModules = [
               inputs.sops-nix.homeManagerModules.sops
+              inputs.catppuccin.homeModules.catppuccin
             ];
             backupFileExtension = "hm.bak";
             extraSpecialArgs = { inherit inputs; };

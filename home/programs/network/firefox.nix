@@ -21,10 +21,6 @@
         };
       };
     };
-    profiles.default-bak = {
-      id = 1145;
-      isDefault = false;
-    };
     profiles.default = {
       isDefault = true;
       extensions = {
@@ -32,7 +28,7 @@
         packages = with pkgs.nur.repos.rycee.firefox-addons; [
           # Theme
           catppuccin-mocha-mauve
-
+  
           # Downloader
           aria2-integration
           single-file
@@ -79,7 +75,7 @@
         # 基础设置
         "extensions.autoDisableScopes" = 0;
         "extensions.activeThemeID" = "{76aabc99-c1a8-4c1e-832b-d4f2941d5a7a}";
-
+        
         "font.language.group" = "zh-CN";
         "intl.locale.requested" = "zh-CN,en-US";
 

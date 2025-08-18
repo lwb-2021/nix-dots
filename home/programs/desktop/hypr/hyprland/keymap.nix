@@ -1,6 +1,9 @@
-{ config, pkgs, lib, ... }: {
+{ config, lib, ... }: {
   options = with lib;{
     wayland.launcher.exec = mkOption {
+      type = types.str;
+    };
+    wayland.screenshot.exec = mkOption {
       type = types.str;
     };
   };
@@ -16,10 +19,12 @@
           "$mod, F, togglefloating"
           "$mod, K, movefocus, u"
           "$mod, J, movefocus, d"
-          
+
           "$mod, Tab, hyprexpo:expo, toggle"
           "$mod, H, layoutmsg, move -col"
           "$mod, L, layoutmsg, move +col"
+
+          ", Print, exec, ${config.wayland.screenshot.exec}"
         ]
           ++ (
             builtins.concatLists(builtins.genList(i:

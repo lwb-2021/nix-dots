@@ -7,9 +7,6 @@
         addons = with pkgs;[
           fcitx5-gtk
           fcitx5-rime
-          (catppuccin-fcitx5.overrideAttrs {
-            preInstall = "bash ./enable-rounded.sh";
-          })
         ]; 
         waylandFrontend = true; 
         settings = {
@@ -22,11 +19,13 @@
           addons = { 
             classicui.globalSection = {
               Theme = "catppuccin-mocha-mauve";
-              DarkTheme = "catppuccin-mocha-mauve"; 
+               
             };
           };
         };
       };
     };
   };
+  catppuccin.fcitx5.apply = false;
+  catppuccin.fcitx5.enableRounded = true;
 }
