@@ -17,4 +17,5 @@ rebuild-for flake:
 activate-hm-for-current-user: (activate-hm "$USER")
 
 activate-hm user:
+  export HOME_MANAGER_BACKUP_EXT=hm.bak
   eval (systemctl show -p ExecStart --value home-manager-{{user}}.service | grep -oP "argv\[\]=\K[^;]+")
