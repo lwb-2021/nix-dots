@@ -1,4 +1,4 @@
-{ ... }: {
+{ pkgs, ... }: {
   services.mako = {
     enable = true;
     settings = {
@@ -12,5 +12,8 @@
       font="\"Source Han Sans CN\" 12";
     };
   };
+  home.packages = with pkgs;[
+    libnotify
+  ];
 
 }
