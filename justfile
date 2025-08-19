@@ -9,13 +9,12 @@ update:
 build:
   nixos-rebuild build --log-format internal-json --flake &| nom --json
 
-rebuild: (rebuild-for ".#") && activate-hm-for-current-user
+rebuild: (rebuild-for ".#") && activate-hm
 
 rebuild-for flake:
   sudo true; nixos-rebuild switch --sudo --log-format internal-json --flake {{flake}} &| nom --json
 
-activate-hm-for-current-user: (activate-hm "$USER")
+activate-hm: (activate-hm-for ".#$USER")
 
-activate-hm user:
-  export HOME_MANAGER_BACKUP_EXT=hm.bak
-  eval (systemctl show -p ExecStart --value home-manager-{{user}}.service | grep -oP "argv\[\]=\K[^;]+")
+activate-hm-for flake:
+  home-manager switch --flake {{flake}} -b hm.bak

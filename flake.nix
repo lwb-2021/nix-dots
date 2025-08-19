@@ -50,42 +50,48 @@
       inputs.hyprland.follows = "hyprland";
     };
   };
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
-    nixosConfigurations.lwb = let
+  outputs = { self, nixpkgs, home-manager, ... }@inputs: 
+    let
+      system = "x86_64-linux";
+      pkgs = import nixpkgs {
+        localSystem = {
+          inherit system;
+        };
+      };
       pkgs-native = import nixpkgs {
         localSystem = {
           gcc.arch = "alderlake";
           gcc.tune = "alderlake";
-          system = "x86_64-linux";
+          inherit system;
         };
       };
-    in  
-      nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = { inherit pkgs-native inputs; };
-        modules =  [
-          ./overlays
-          inputs.impermanence.nixosModules.impermanence
-          ./configuration.nix 
-          inputs.nixvim.nixosModules.default
-          ./nixvim
-          home-manager.nixosModules.home-manager 
-          inputs.catppuccin.nixosModules.catppuccin
-          {
-            home-manager = {
-              sharedModules = [
-                inputs.sops-nix.homeManagerModules.sops
-                inputs.catppuccin.homeModules.catppuccin
-              ];
-              backupFileExtension = "hm.bak";
-              extraSpecialArgs = { inherit pkgs-native inputs; };
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users.lwb = ./home/lwb.nix;
-            };
-          }	
-          inputs.sops-nix.nixosModules.sops
+    in
+      {
+      nixosConfigurations.lwb =   
+        nixpkgs.lib.nixosSystem {
+          inherit system;
+          specialArgs = { inherit pkgs-native inputs; };
+          modules =  [
+            ./nixpkgs-settings
+
+            inputs.impermanence.nixosModules.impermanence
+            ./configuration.nix 
+            inputs.nixvim.nixosModules.default
+            ./nixvim
+            inputs.catppuccin.nixosModules.catppuccin
+            inputs.sops-nix.nixosModules.sops
+          ];
+        };
+      homeConfigurations.lwb = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+
+        modules = [
+          ./nixpkgs-settings
+          inputs.sops-nix.homeManagerModules.sops
+          inputs.catppuccin.homeModules.catppuccin
+          ./home/lwb.nix
         ];
+        extraSpecialArgs = { inherit pkgs-native inputs; };
       };
-  };
+    };
 }

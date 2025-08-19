@@ -14,7 +14,6 @@
     ./system-config/system/kernel.nix
     ./system-config/system/gc.nix
     ./system-config/system/nix.nix
-    ./system-config/system/nixpkgs.nix
     ./system-config/system/stateless.nix
     ./system-config/system/swap.nix
 
@@ -127,6 +126,7 @@
     git
     gparted
     #inputs.firefox.packages.${pkgs.system}.firefox-nightly-bin
+    home-manager
   ];
   environment.variables = {
     EDITOR = "nvim";
@@ -149,7 +149,7 @@
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   networking.firewall.enable = false;
-
+  
 
 
   # Copy the NixOS configuration file and link it from the resulting system

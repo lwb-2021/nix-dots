@@ -11,7 +11,7 @@
         "editor.acceptSuggestionOnEnter" = "smart";
 
         "editor.cursorBlinking" = "smooth";
-        "editor.cursorSmoothCaretAnimation" = true;
+        "editor.cursorSmoothCaretAnimation" = "on";
         "editor.smoothScrolling" = true;
 
         "editor.formatOnPaste" = true;
