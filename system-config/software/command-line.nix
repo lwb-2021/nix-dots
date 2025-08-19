@@ -46,5 +46,9 @@
             fish_vi_key_bindings
     '';
   };
-
+  
+  programs.nh = {
+    enable = true;
+    flake = "/home/lwb/NixOS-Configuration";
+  };
 }
