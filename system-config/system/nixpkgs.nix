@@ -22,10 +22,10 @@
 
       "obsidian"
 
-      "vscode-extension-github-copilot"
-      "vscode-extension-MS-python-vscode-pylance"
-
       "tampermonkey"
+
+      "vscode-extension-ms-python-vscode-pylance"
+      "vscode-extension-github-copilot"
     ]
       ++ lib.mapAttrsToList (n: lib.getName) (lib.filterAttrs (n: v: lib.isDerivation v) pkgs.cudaPackages)
     );

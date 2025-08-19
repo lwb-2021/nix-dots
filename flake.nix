@@ -8,14 +8,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    
+
     impermanence.url = "github:nix-community/impermanence";
-    
+
     nixpak = {
       url = "github:nixpak/nixpak";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -26,14 +26,18 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    
+
     catppuccin = {
       url = "github:catppuccin/nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    
+
     nixvim = {
       url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nix-vscode-extensions = {
+      url = "github:nix-community/nix-vscode-extensions";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -45,34 +49,43 @@
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
     };
-};
+  };
   outputs = { self, nixpkgs, home-manager, ... }@inputs: {
-    nixosConfigurations.lwb = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      specialArgs = { inherit inputs; };
-      modules =  [
-        ./overlays
-        inputs.impermanence.nixosModules.impermanence
-        ./configuration.nix 
-        inputs.nixvim.nixosModules.default
-        ./nixvim
-        home-manager.nixosModules.home-manager 
-        inputs.catppuccin.nixosModules.catppuccin
-        {
-          home-manager = {
-            sharedModules = [
-              inputs.sops-nix.homeManagerModules.sops
-              inputs.catppuccin.homeModules.catppuccin
-            ];
-            backupFileExtension = "hm.bak";
-            extraSpecialArgs = { inherit inputs; };
-            useGlobalPkgs = true;
-            useUserPackages = true;
-            users.lwb = ./home/lwb.nix;
-          };
-        }	
-        inputs.sops-nix.nixosModules.sops
-      ];
-    };
+    nixosConfigurations.lwb = let
+      pkgs-native = import nixpkgs {
+        localSystem = {
+          gcc.arch = "alderlake";
+          gcc.tune = "alderlake";
+          system = "x86_64-linux";
+        };
+      };
+    in  
+      nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit pkgs-native inputs; };
+        modules =  [
+          ./overlays
+          inputs.impermanence.nixosModules.impermanence
+          ./configuration.nix 
+          inputs.nixvim.nixosModules.default
+          ./nixvim
+          home-manager.nixosModules.home-manager 
+          inputs.catppuccin.nixosModules.catppuccin
+          {
+            home-manager = {
+              sharedModules = [
+                inputs.sops-nix.homeManagerModules.sops
+                inputs.catppuccin.homeModules.catppuccin
+              ];
+              backupFileExtension = "hm.bak";
+              extraSpecialArgs = { inherit pkgs-native inputs; };
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.lwb = ./home/lwb.nix;
+            };
+          }	
+          inputs.sops-nix.nixosModules.sops
+        ];
+      };
   };
 }
