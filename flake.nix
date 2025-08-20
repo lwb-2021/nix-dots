@@ -53,25 +53,21 @@
   outputs = { self, nixpkgs, home-manager, ... }@inputs: 
     let
       system = "x86_64-linux";
-      pkgs = import nixpkgs {
-        inherit (import ./nixpkgs-settings { inherit inputs; }) config overlay;
+      pkgs-native = import nixpkgs {
+        config = import ./nixpkgs-settings/config.nix { inherit (nixpkgs) lib; };
         localSystem = {
-          inherit system;
-        };
-        crossSystem = {
           gcc.arch = "alderlake";
           gcc.tune = "alderlake";
+          inherit system;
+        };
+      };
+
+      pkgs = import nixpkgs {
+        inherit (import ./nixpkgs-settings { inherit pkgs-native inputs; inherit (nixpkgs) lib; }) config overlays;
+        localSystem = {
           inherit system;
         };
 
-      };
-      pkgs-native = import nixpkgs {
-        inherit (import ./nixpkgs-settings { inherit inputs; }) config overlay;
-        localSystem = {
-          gcc.arch = "alderlake";
-          gcc.tune = "alderlake";
-          inherit system;
-        };
       };
     in
       {

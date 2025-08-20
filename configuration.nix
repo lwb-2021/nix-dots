@@ -8,6 +8,8 @@
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
 
+    ./system-config/toolchain.nix
+
 
 
     ./system-config/system/bootloader.nix

@@ -1,7 +1,7 @@
-{ config, lib, pkgs, pkgs-native, ... }: {
+{ config, lib, pkgs,... }: {
   boot = {
-    kernelPackages = pkgs-native.linuxPackages_zen;
-    extraModulePackages = with config.boot.kernelPackages; [ nvidiaPackages.stable v4l2loopback];
+    kernelPackages = pkgs.linuxPackages_zen;
+    extraModulePackages = with config.boot.kernelPackages; [ nvidiaPackages.stable v4l2loopback ];
   }; 
 
 }
