@@ -54,11 +54,19 @@
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
+        inherit (import ./nixpkgs-settings { inherit inputs; }) config overlay;
         localSystem = {
           inherit system;
         };
+        crossSystem = {
+          gcc.arch = "alderlake";
+          gcc.tune = "alderlake";
+          inherit system;
+        };
+
       };
       pkgs-native = import nixpkgs {
+        inherit (import ./nixpkgs-settings { inherit inputs; }) config overlay;
         localSystem = {
           gcc.arch = "alderlake";
           gcc.tune = "alderlake";
@@ -69,10 +77,9 @@
       {
       nixosConfigurations.lwb =   
         nixpkgs.lib.nixosSystem {
-          inherit system;
+          inherit pkgs;
           specialArgs = { inherit pkgs-native inputs; };
           modules =  [
-            ./nixpkgs-settings
 
             inputs.impermanence.nixosModules.impermanence
             ./configuration.nix 
@@ -86,7 +93,6 @@
         inherit pkgs;
 
         modules = [
-          ./nixpkgs-settings
           inputs.sops-nix.homeManagerModules.sops
           inputs.catppuccin.homeModules.catppuccin
           ./home/lwb.nix

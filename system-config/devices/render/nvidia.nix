@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, ... }:
 {
   hardware.graphics = {
     enable = true;
@@ -27,8 +27,5 @@
     };
   };
 
-  nixpkgs.config = {
-    cudaSupport = true;
-  };
 
 }

@@ -1,6 +1,5 @@
 { ... }: {
-  imports = [
-    ./nixpkgs.nix
-    ./overlays
-  ];
+  config = import ./config.nix;
+  overlays = import ./overlays;
+  
 }

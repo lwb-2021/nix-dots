@@ -1,33 +1,34 @@
-{ lib, pkgs, ... }: {
-  nixpkgs.config = {
-    allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) ([
-      "p7zip"
+{ lib, ... }: {
+  allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) ([
+    "p7zip"
 
-      "nvidia-x11"
-      "nvidia-settings"
+    "nvidia-x11"
+    "nvidia-settings"
 
-      "steam"
-      "steam-original"
-      "steam-unwrapped"
-      "steam-run"
-      "xow_dongle-firmware"
+    "steam"
+    "steam-original"
+    "steam-unwrapped"
+    "steam-run"
+    "xow_dongle-firmware"
 
-      "zerotierone"
+    "zerotierone"
 
-      "qq"
-      "wechat"
+    "qq"
+    "wechat"
 
-      "wemeet"
-      "libwemeetwrap"
+    "wemeet"
+    "libwemeetwrap"
 
-      "obsidian"
+    "obsidian"
 
-      "tampermonkey"
+    "tampermonkey"
 
-      "vscode-extension-ms-python-vscode-pylance"
-      "vscode-extension-github-copilot"
-    ]
-      ++ lib.mapAttrsToList (n: lib.getName) (lib.filterAttrs (n: v: lib.isDerivation v) pkgs.cudaPackages)
-    );
+    "vscode-extension-ms-python-vscode-pylance"
+    "vscode-extension-github-copilot"
+  ]);
+  cudaSupport = true;
+  packageOverrides = pkgs: {
+    intel-vaapi-driver = pkgs.intel-vaapi-driver.override { enableHybridCodec = true; };
   };
+
 }

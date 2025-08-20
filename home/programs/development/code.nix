@@ -24,6 +24,7 @@
       };
       extensions = with pkgs.vscode-marketplace;[
         # Basic
+        alefragnani.project-manager
         usernamehw.errorlens
 
         

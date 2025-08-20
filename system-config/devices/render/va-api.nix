@@ -1,7 +1,4 @@
-{ config, lib, pkgs, ... }: {
-    nixpkgs.config.packageOverrides = pkgs: {
-        intel-vaapi-driver = pkgs.intel-vaapi-driver.override { enableHybridCodec = true; };
-    };
+{ pkgs, ... }: {
     hardware.graphics = { 
         enable = true;
         extraPackages = with pkgs; [
