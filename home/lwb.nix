@@ -35,13 +35,14 @@
     ./programs/desktop
     ./programs/desktop/ags
     ./programs/desktop/hypr
-    ./programs/desktop/apps/kitty.nix
+    
     ./programs/desktop/apps/nomacs.nix
-    #./programs/desktop/apps/anyrun.nix
     ./programs/desktop/apps/copyq.nix
+
 
     ./programs/desktop/apps/launcher
     ./programs/desktop/apps/screenshot
+    ./programs/desktop/apps/terminal
 
     ./programs/desktop/fonts.nix
     ./programs/desktop/rime.nix
