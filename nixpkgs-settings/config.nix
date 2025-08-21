@@ -52,6 +52,7 @@
     "tampermonkey"
 
     "vscode-extension-ms-python-vscode-pylance"
+    "vscode-extension-mhutchie-git-graph"
     "vscode-extension-github-copilot"
   ];
   cudaSupport = true;

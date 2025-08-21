@@ -21,6 +21,24 @@
         "file.autoGuessEncoding" = true;
 
         "window.dialogueStyle" = "custom";
+
+        "nix.enableLanguageServer" = true;
+        "nix.serverPath" = "${pkgs.nixd}/bin/nixd";
+        "nix.serverSettings" = {
+          "nixd" = {
+            # "formatting": {
+            #   "command": ["nixfmt"],
+            # },
+            "options" = {
+              "nixos" = {
+                "expr" = "(builtins.getFlake \"./.\").nixosConfigurations.lwb.options";
+              };
+              "home-manager" = {
+                "expr" = "(builtins.getFlake \"./.\").homeConfigurations.lwb.options";
+              };
+            };
+          };
+        };
       };
       extensions = with pkgs.vscode-marketplace;[
         # Basic
@@ -31,6 +49,7 @@
         # Git
         codezombiech.gitignore
         donjayamanne.githistory
+        mhutchie.git-graph
         vivaxy.vscode-conventional-commits
         
         github.vscode-github-actions
@@ -39,7 +58,8 @@
 
         # Nix
         mkhl.direnv
-        bbenoist.nix
+        # bbenoist.nix
+        jnoortheen.nix-ide
 
 
         # Languages
