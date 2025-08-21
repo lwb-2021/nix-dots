@@ -1,8 +1,13 @@
-{ config, lib, pkgs, ... }: {
-  home.packages = with pkgs;[
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+{
+  home.packages = with pkgs; [
     libreoffice-fresh
     pkgs.jdk17
   ];
-
 
 }

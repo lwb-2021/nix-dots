@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   wayland.windowManager.hyprland.settings.plugin.hyprexpo = {
     columns = 3;
     enable_gesture = true;

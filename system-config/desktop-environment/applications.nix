@@ -1,19 +1,24 @@
-{ config, lib, pkgs, ... }: {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+{
   programs.thunar = {
     enable = true;
-    plugins = with pkgs.xfce;[
+    plugins = with pkgs.xfce; [
       thunar-archive-plugin
     ];
   };
   programs.xfconf.enable = true;
   services.gvfs.enable = true;
   services.tumbler.enable = true;
-  environment.systemPackages = with pkgs;[
+  environment.systemPackages = with pkgs; [
     xfce.exo
     kitty
 
     wl-clipboard
   ];
-
 
 }

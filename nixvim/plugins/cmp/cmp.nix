@@ -3,11 +3,23 @@
   autoEnableSources = true;
   settings = {
     sources = [
-      { name = "nvim_lsp"; priority = 1000; }
-      { name = "path"; priority = 800; }
-      { name = "buffer"; priority = 600; }
+      {
+        name = "nvim_lsp";
+        priority = 1000;
+      }
+      {
+        name = "path";
+        priority = 800;
+      }
+      {
+        name = "buffer";
+        priority = 600;
+      }
       { name = "cmp-ai"; }
-      { name = "conventionalcommits"; priority = 1200; }
+      {
+        name = "conventionalcommits";
+        priority = 1200;
+      }
     ];
     mapping = {
       __raw = ''
@@ -32,7 +44,7 @@
             end
           end,
         })
-        '';
+      '';
     };
     window = {
       completion = {
@@ -43,7 +55,11 @@
       };
     };
     formatting = {
-      fields = [ "kind" "abbr" "menu" ];
+      fields = [
+        "kind"
+        "abbr"
+        "menu"
+      ];
     };
   };
 }

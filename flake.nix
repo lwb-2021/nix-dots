@@ -8,7 +8,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -26,7 +25,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-
     catppuccin = {
       url = "github:catppuccin/nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -41,7 +39,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-
     ags.url = "github:Aylur/ags";
 
     hyprland.url = "git+https://github.com/hyprwm/Hyprland.git?shallow=1";
@@ -50,7 +47,13 @@
       inputs.hyprland.follows = "hyprland";
     };
   };
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: 
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      ...
+    }@inputs:
     let
       system = "x86_64-linux";
       pkgs-native = import nixpkgs {
@@ -63,28 +66,34 @@
       };
 
       pkgs = import nixpkgs {
-        inherit (import ./nixpkgs-settings { inherit pkgs-native inputs; inherit (nixpkgs) lib; }) config overlays;
+        inherit
+          (import ./nixpkgs-settings {
+            inherit pkgs-native inputs;
+            inherit (nixpkgs) lib;
+          })
+          config
+          overlays
+          ;
         localSystem = {
           inherit system;
         };
 
       };
     in
-      {
-      nixosConfigurations.lwb =   
-        nixpkgs.lib.nixosSystem {
-          inherit pkgs;
-          specialArgs = { inherit pkgs-native inputs; };
-          modules =  [
+    {
+      nixosConfigurations.lwb = nixpkgs.lib.nixosSystem {
+        inherit pkgs;
+        specialArgs = { inherit pkgs-native inputs; };
+        modules = [
 
-            inputs.impermanence.nixosModules.impermanence
-            ./configuration.nix 
-            inputs.nixvim.nixosModules.default
-            ./nixvim
-            inputs.catppuccin.nixosModules.catppuccin
-            inputs.sops-nix.nixosModules.sops
-          ];
-        };
+          inputs.impermanence.nixosModules.impermanence
+          ./configuration.nix
+          inputs.nixvim.nixosModules.default
+          ./nixvim
+          inputs.catppuccin.nixosModules.catppuccin
+          inputs.sops-nix.nixosModules.sops
+        ];
+      };
       homeConfigurations.lwb = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 

@@ -19,10 +19,6 @@
       action = "<c-w>l";
     }
 
-
-
-
-
     {
       key = "<leader>e";
       mode = "n";

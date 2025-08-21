@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   enable = true;
   grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
     python
@@ -8,11 +9,11 @@
   ];
   settings = {
     indent = {
-          enable = true;
-        };
+      enable = true;
+    };
 
     highlight = {
-          enable = true;
+      enable = true;
     };
   };
 }

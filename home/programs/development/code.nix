@@ -1,4 +1,8 @@
-{ config, lib, pkgs, ... }: {
+{
+  pkgs,
+  ...
+}:
+{
   programs.vscode = {
     enable = true;
     package = pkgs.vscodium;
@@ -40,27 +44,24 @@
           };
         };
       };
-      extensions = with pkgs.vscode-marketplace;[
+      extensions = with pkgs.vscode-marketplace; [
         # Basic
         alefragnani.project-manager
         usernamehw.errorlens
 
-        
         # Git
         codezombiech.gitignore
         donjayamanne.githistory
         mhutchie.git-graph
         vivaxy.vscode-conventional-commits
-        
+
         github.vscode-github-actions
         github.vscode-pull-request-github
-
 
         # Nix
         mkhl.direnv
         # bbenoist.nix
         jnoortheen.nix-ide
-
 
         # Languages
 
@@ -74,7 +75,6 @@
         ms-toolsai.jupyter-renderers
         ms-toolsai.jupyter-keymap
 
-        
         ## Rust
         rust-lang.rust-analyzer
 
@@ -87,5 +87,7 @@
       ];
     };
   };
-
+  home.packages = with pkgs; [
+    nixfmt
+  ];
 }

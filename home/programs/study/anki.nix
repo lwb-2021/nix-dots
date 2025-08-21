@@ -1,7 +1,8 @@
-{ config, pkgs, ... }: rec {
+{ config, pkgs, ... }:
+rec {
   programs.anki = {
     enable = true;
-    addons = with pkgs.ankiAddons;[
+    addons = with pkgs.ankiAddons; [
       anki-connect
     ];
     language = "zh_CN";

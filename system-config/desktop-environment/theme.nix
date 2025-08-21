@@ -1,5 +1,11 @@
-{ config, lib, pkgs, ... }: {
-  environment.systemPackages = with pkgs;[
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+{
+  environment.systemPackages = with pkgs; [
     phinger-cursors
     beauty-line-icon-theme
     (catppuccin-gtk.override {
@@ -14,6 +20,5 @@
     accent = "mauve";
     flavor = "mocha";
   };
-
 
 }

@@ -1,5 +1,11 @@
-{ config, pkgs, lib, ... }: {
-  home.packages = with pkgs;[
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
+{
+  home.packages = with pkgs; [
     libsForQt5.qtstyleplugin-kvantum
     kdePackages.qtstyleplugin-kvantum
   ];

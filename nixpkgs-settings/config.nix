@@ -1,60 +1,63 @@
-{ lib, ... }: {
-  allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-    "p7zip"
+{ lib, ... }:
+{
+  allowUnfreePredicate =
+    pkg:
+    builtins.elem (lib.getName pkg) [
+      "p7zip"
 
-    #####
-    "nvidia-x11"
-    "nvidia-settings"
+      #####
+      "nvidia-x11"
+      "nvidia-settings"
 
-    "cuda-merged"
-    "cuda_cuobjdump"
-    "cuda_gdb"
-    "cuda_nvcc"
-    "cuda_nvdisasm"
-    "cuda_nvprune"
-    "cuda_cccl"
-    "cuda_cudart"
-    "cuda_cupti"
-    "cuda_cuxxfilt"
-    "cuda_nvml_dev"
-    "cuda_nvrtc"
-    "cuda_nvtx"
-    "cuda_profiler_api"
-    "cuda_sanitizer_api"
+      "cuda-merged"
+      "cuda_cuobjdump"
+      "cuda_gdb"
+      "cuda_nvcc"
+      "cuda_nvdisasm"
+      "cuda_nvprune"
+      "cuda_cccl"
+      "cuda_cudart"
+      "cuda_cupti"
+      "cuda_cuxxfilt"
+      "cuda_nvml_dev"
+      "cuda_nvrtc"
+      "cuda_nvtx"
+      "cuda_profiler_api"
+      "cuda_sanitizer_api"
 
-    "libcublas"
-    "libcufft"
-    "libcurand"
-    "libcusolver"
-    "libcusparse"
+      "libcublas"
+      "libcufft"
+      "libcurand"
+      "libcusolver"
+      "libcusparse"
 
-    "libnvjitlink"
-    
-    "libnpp"
-    ##### SO NVIDIA FUCK YOU
+      "libnvjitlink"
 
-    "steam"
-    "steam-original"
-    "steam-unwrapped"
-    "steam-run"
-    "xow_dongle-firmware"
+      "libnpp"
+      ##### SO NVIDIA FUCK YOU
 
-    "zerotierone"
+      "steam"
+      "steam-original"
+      "steam-unwrapped"
+      "steam-run"
+      "xow_dongle-firmware"
 
-    "qq"
-    "wechat"
+      "zerotierone"
 
-    "wemeet"
-    "libwemeetwrap"
+      "qq"
+      "wechat"
 
-    "obsidian"
+      "wemeet"
+      "libwemeetwrap"
 
-    "tampermonkey"
+      "obsidian"
 
-    "vscode-extension-ms-python-vscode-pylance"
-    "vscode-extension-mhutchie-git-graph"
-    "vscode-extension-github-copilot"
-  ];
+      "tampermonkey"
+
+      "vscode-extension-ms-python-vscode-pylance"
+      "vscode-extension-mhutchie-git-graph"
+      "vscode-extension-github-copilot"
+    ];
   cudaSupport = true;
   packageOverrides = pkgs: {
     intel-vaapi-driver = pkgs.intel-vaapi-driver.override { enableHybridCodec = true; };

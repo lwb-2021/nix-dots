@@ -1,4 +1,5 @@
-{ config, pkgs, inputs,... }:{
+{ ... }:
+{
   home.username = "lwb";
   home.homeDirectory = "/home/lwb";
   home.stateVersion = "25.05";
@@ -16,13 +17,11 @@
     ./config/sops.nix
     ./config/thunar.nix
 
-
     ./programs/media/lyrics.nix
     ./programs/media/mpd.nix
     ./programs/media/mpris.nix
     ./programs/media/mpv.nix
     ./programs/media/ncmpcpp.nix
-
 
     ./programs/apps.nix
 
@@ -35,10 +34,9 @@
     ./programs/desktop
     ./programs/desktop/ags
     ./programs/desktop/hypr
-    
+
     ./programs/desktop/apps/nomacs.nix
     ./programs/desktop/apps/copyq.nix
-
 
     ./programs/desktop/apps/launcher
     ./programs/desktop/apps/screenshot
@@ -63,7 +61,6 @@
     ./programs/network/syncthing.nix
     ./programs/network/thunderbird.nix
 
-    
     ./programs/research/zotero.nix
 
     ./programs/security/keepassxc.nix

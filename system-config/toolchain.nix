@@ -1,5 +1,6 @@
-{ pkgs-native, ... }: {
-  environment.systemPackages = with pkgs-native;[
+{ pkgs-native, ... }:
+{
+  environment.systemPackages = with pkgs-native; [
     cmake
     gcc
   ];

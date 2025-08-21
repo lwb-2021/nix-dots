@@ -1,5 +1,6 @@
-{ pkgs, config, ... }: { 
-  home.packages = with pkgs;[
+{ pkgs, config, ... }:
+{
+  home.packages = with pkgs; [
     source-han-sans
     nerd-fonts.jetbrains-mono
   ];
@@ -11,5 +12,5 @@
       monospace = [ "JetBrainsMono NF" ];
     };
   };
-  
+
 }

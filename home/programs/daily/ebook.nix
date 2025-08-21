@@ -1,8 +1,9 @@
-{ pkgs, ... }: {
-  home.packages = with pkgs;[
+{ pkgs, ... }:
+{
+  home.packages = with pkgs; [
     tesseract
     ocrmypdf
-    
+
     readest
   ];
 }

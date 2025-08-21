@@ -1,21 +1,24 @@
-{ pkgs, ... }: {
-  environment.systemPackages = with pkgs;[
+{ pkgs, ... }:
+{
+  environment.systemPackages = with pkgs; [
     (buildFHSEnv {
       name = "fhs";
-      targetPkgs = pkgs: (with pkgs;[
-        stdenv.cc
-        
-        wayland
-        glib
-        libGL
-        fontconfig
+      targetPkgs =
+        pkgs:
+        (with pkgs; [
+          stdenv.cc
 
-        udev
-        fuse
-        libusb1
+          wayland
+          glib
+          libGL
+          fontconfig
 
-        zstd
-      ]);
-    })  
+          udev
+          fuse
+          libusb1
+
+          zstd
+        ]);
+    })
   ];
 }

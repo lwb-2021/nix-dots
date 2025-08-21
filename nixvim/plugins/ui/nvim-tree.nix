@@ -1,4 +1,4 @@
 {
-    enable = true;
-    openOnSetup = true;
+  enable = true;
+  openOnSetup = true;
 }

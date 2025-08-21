@@ -1,5 +1,11 @@
-{ config, lib, pkgs, ... }@params: {
-  home.packages = with pkgs;[
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}@params:
+{
+  home.packages = with pkgs; [
     qq
     (pkgs.makeDesktopItem {
       name = "WeChat";
@@ -13,7 +19,6 @@
     })
     (import ../../pkgs/wechat-pak.nix params)
 
-    
     wemeet
 
     obsidian

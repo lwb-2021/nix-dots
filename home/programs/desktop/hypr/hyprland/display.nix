@@ -1,5 +1,11 @@
-{ config, pkgs, lib, ... }: {
-  home.packages = with pkgs;[xorg.xrdb];
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
+{
+  home.packages = with pkgs; [ xorg.xrdb ];
   wayland.windowManager.hyprland.settings = {
     monitor = ", highres, auto, 1.6";
 
@@ -12,5 +18,5 @@
       "cat ~/.Xresources | xrdb -merge"
     ];
 
-  };   
+  };
 }

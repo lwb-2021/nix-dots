@@ -1,5 +1,11 @@
-{ config, pkgs, lib, ... }: {
-  imports = [ 
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
+{
+  imports = [
     ./colorscheme.nix
     ./keymaps.nix
     ./plugins
@@ -28,7 +34,6 @@
       mapleader = " ";
       maplocalleader = " ";
     };
-
 
   };
 }

@@ -1,5 +1,11 @@
-{ config, lib, pkgs, ... }: {
-  home.packages = with pkgs;[
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+{
+  home.packages = with pkgs; [
     nomacs-qt6
   ];
   xdg.mimeApps.defaultApplications = {
@@ -7,6 +13,5 @@
     "image/png" = "nomacs.desktop";
     "image/bmp" = "nomacs.desktop";
   };
-
 
 }

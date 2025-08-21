@@ -1,4 +1,10 @@
-{ config, lib, pkgs, ... }:{
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+{
   programs.nixvim.plugins = {
     lsp = {
       enable = true;
@@ -11,9 +17,9 @@
         # Python
         pyright = {
           enable = true;
-            
+
         };
-        
+
         # Typescript
         ts_ls = {
           enable = true;
@@ -27,11 +33,10 @@
           settings = {
             checkOnSave = true;
             diagnostics = {
-              disabled = ["unresolved-proc-macro"];
+              disabled = [ "unresolved-proc-macro" ];
             };
           };
         };
-
 
       };
     };

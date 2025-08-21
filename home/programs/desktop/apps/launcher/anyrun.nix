@@ -1,11 +1,20 @@
-{ ... }: {
+{ ... }:
+{
   programs.anyrun = {
     enable = true;
     config = {
-      x = { fraction = 0.5; };
-      y = { fraction = 0.4; };
-      width = { fraction = 0.35; };
-      height = { fraction = 0.2;};
+      x = {
+        fraction = 0.5;
+      };
+      y = {
+        fraction = 0.4;
+      };
+      width = {
+        fraction = 0.35;
+      };
+      height = {
+        fraction = 0.2;
+      };
       hideIcons = false;
       ignoreExclusiveZones = false;
       layer = "overlay";
@@ -20,12 +29,13 @@
         "libwebsearch.so"
       ];
     };
-    extraCss = /*css */ ''
+    extraCss = # css
+      ''
         window {
           background-color: transparent;
           * { background-color: unset; }
         }
-    '';
+      '';
     extraConfigFiles = {
       "websearch.ron".text = ''
         Config(

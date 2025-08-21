@@ -1,14 +1,22 @@
-{ config, lib, pkgs, ... }: 
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 let
   inherit (lib) concatStringsSep;
   inherit (pkgs) runtimeShell writeScript;
   inherit (config.xdg) configHome dataHome;
   inherit (config.xdg.userDirs) download;
-  aria2-pkg = pkgs.aria2.overrideAttrs (final: prev: { patches = (prev.patches or []) ++ [ ./aria2-fast.patch ]; });
+  aria2-pkg = pkgs.aria2.overrideAttrs (
+    final: prev: { patches = (prev.patches or [ ]) ++ [ ./aria2-fast.patch ]; }
+  );
   aria2-bin = "${aria2-pkg}/bin/aria2c";
   coreutils-bin = "${pkgs.coreutils}/bin";
   sessionFile = "${dataHome}/aria2/session";
-in {
+in
+{
   programs.aria2 = {
     enable = true;
     package = aria2-pkg;
@@ -30,7 +38,7 @@ in {
             fi
           '';
         in
-          "${prestart}";
+        "${prestart}";
 
       ExecStart = concatStringsSep " " [
         "${aria2-bin}"

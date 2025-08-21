@@ -1,5 +1,6 @@
-{ config, lib, ... }: {
-  options = with lib;{
+{ config, lib, ... }:
+{
+  options = with lib; {
     wayland.launcher.exec = mkOption {
       type = types.str;
     };
@@ -26,16 +27,18 @@
 
           ", Print, exec, ${config.wayland.screenshot.exec}"
         ]
-          ++ (
-            builtins.concatLists(builtins.genList(i:
-              let ws = i + 1;
-              in [
-                "$mod, code:1${toString i}, workspace, ${toString ws}"
-                "$mod SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
-              ]
-            )
-              10) 
-          );
+        ++ (builtins.concatLists (
+          builtins.genList (
+            i:
+            let
+              ws = i + 1;
+            in
+            [
+              "$mod, code:1${toString i}, workspace, ${toString ws}"
+              "$mod SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
+            ]
+          ) 10
+        ));
         bindm = [
           "$mod, mouse:272, movewindow"
           "$mod, mouse:273, resizewindow"

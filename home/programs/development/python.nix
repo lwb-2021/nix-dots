@@ -1,15 +1,23 @@
-{ config, lib, pkgs, ... }: {
-  home.packages = with pkgs;[
-    (python3.withPackages (ps: with ps; [
-      pandas
-      matplotlib
-      numpy
-      ipython
-      requests
-    ]))
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+{
+  home.packages = with pkgs; [
+    (python3.withPackages (
+      ps: with ps; [
+        pandas
+        matplotlib
+        numpy
+        ipython
+        requests
+      ]
+    ))
     (buildFHSEnv {
       name = "conda-shell";
-      targetPkgs = _: with pkgs;[ micromamba ]; 
+      targetPkgs = _: with pkgs; [ micromamba ];
       runScript = "env CONDA_SHELL=1 fish";
     })
   ];

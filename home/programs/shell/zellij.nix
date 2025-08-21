@@ -1,4 +1,10 @@
-{ config, lib, pkgs, ... }: {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+{
   programs.zellij = {
     enable = true;
     enableFishIntegration = false;
@@ -7,17 +13,18 @@
       default_mode = "locked";
     };
   };
-  programs.fish.shellInitLast = /* fish */ ''
-if status is-interactive
-    if test "$TERM_PROGRAM" != "vscode"
-        and not set -q ZELLIJ
+  programs.fish.shellInitLast = # fish
+    ''
+      if status is-interactive
+          if test "$TERM_PROGRAM" != "vscode"
+              and not set -q ZELLIJ
 
-        zellij attach -c default
-    else
-        fastfetch | lolcat
-    end
-end
+              zellij attach -c default
+          else
+              fastfetch | lolcat
+          end
+      end
 
-  '';
+    '';
 
 }

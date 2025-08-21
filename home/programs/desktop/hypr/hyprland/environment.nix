@@ -1,10 +1,16 @@
-{ config, pkgs, lib, ... }: {
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
+{
   wayland.windowManager.hyprland = {
     systemd = {
-      variables = ["--all"];
+      variables = [ "--all" ];
     };
     settings = {
-      env = [];
+      env = [ ];
     };
   };
   home.sessionVariables = {

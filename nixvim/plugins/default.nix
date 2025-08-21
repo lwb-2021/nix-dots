@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   programs.nixvim.plugins = {
     alpha = import ./ui/alpha.nix;
     bufferline = import ./ui/bufferline.nix;
@@ -10,8 +11,6 @@
 
     cmp = import ./cmp/cmp.nix;
     cmp-ai = import ./cmp/cmp-ai.nix;
-
-
 
     treesitter = import ./highlight/treesitter.nix pkgs;
     web-devicons.enable = true;

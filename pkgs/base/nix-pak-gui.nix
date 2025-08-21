@@ -4,11 +4,13 @@
   pkgs,
   sloth,
   ...
-}: let
+}:
+let
   envSuffix = envKey: suffix: sloth.concat' (sloth.env envKey) suffix;
   cursorTheme = pkgs.phinger-cursors;
   iconTheme = pkgs.beauty-line-icon-theme;
-in {
+in
+{
   config = {
     dbus.policies = {
       "${config.flatpak.appId}" = "own";
@@ -65,15 +67,19 @@ in {
         "/tmp"
       ];
       env = {
-        XDG_DATA_DIRS = lib.mkForce (lib.makeSearchPath "share" [
-          iconTheme
-          cursorTheme
-          pkgs.shared-mime-info
-        ]);
-        XCURSOR_PATH = lib.mkForce (lib.concatStringsSep ":" [
-          "${cursorTheme}/share/icons"
-          "${cursorTheme}/share/pixmaps"
-        ]);
+        XDG_DATA_DIRS = lib.mkForce (
+          lib.makeSearchPath "share" [
+            iconTheme
+            cursorTheme
+            pkgs.shared-mime-info
+          ]
+        );
+        XCURSOR_PATH = lib.mkForce (
+          lib.concatStringsSep ":" [
+            "${cursorTheme}/share/icons"
+            "${cursorTheme}/share/pixmaps"
+          ]
+        );
       };
     };
   };

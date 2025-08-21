@@ -5,12 +5,11 @@
 { pkgs, ... }:
 
 {
-  imports = [ # Include the results of the hardware scan.
+  imports = [
+    # Include the results of the hardware scan.
     ./hardware-configuration.nix
 
     ./system-config/toolchain.nix
-
-
 
     ./system-config/system/bootloader.nix
     ./system-config/system/kernel.nix
@@ -22,7 +21,6 @@
     ./system-config/devices/audio.nix
     ./system-config/devices/bluetooth.nix
 
-
     ./system-config/devices/render/nvidia.nix
     ./system-config/devices/render/va-api.nix
 
@@ -33,17 +31,14 @@
     ./system-config/devices/network/openssh.nix
     ./system-config/devices/network/zerotier.nix
 
-
     ./system-config/security/sops.nix
     ./system-config/security/crypt.nix
-
 
     ./system-config/desktop-environment/applications.nix
     ./system-config/desktop-environment/dm.nix
     ./system-config/desktop-environment/hyprland.nix
     ./system-config/desktop-environment/theme.nix
     ./system-config/desktop-environment/xdg.nix
-
 
     ./system-config/software/appimage.nix
     ./system-config/software/command-line.nix
@@ -61,7 +56,6 @@
   # Use the systemd-boot EFI boot loader.
   #boot.loader.systemd-boot.enable = true;
   #boot.loader.efi.canTouchEfiVariables = true;
-
 
   # networking.hostName = "nixos"; # Define your hostname.
   # Pick only one of the below networking options.
@@ -83,12 +77,12 @@
   #   useXkbConfig = true; # use xkb.options in tty.
   # };
   i18n.defaultLocale = "en_US.UTF-8";
-  i18n.supportedLocales = ["en_US.UTF-8/UTF-8" "zh_CN.UTF-8/UTF-8"];
+  i18n.supportedLocales = [
+    "en_US.UTF-8/UTF-8"
+    "zh_CN.UTF-8/UTF-8"
+  ];
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
-
-
-
 
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
@@ -104,8 +98,6 @@
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
 
-
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   # users.users.alice = {
   #   isNormalUser = true;
@@ -116,13 +108,19 @@
   # };
   users.users.lwb = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "gamemode" "networkmanager" "plugdev" "dialout" ];
+    extraGroups = [
+      "wheel"
+      "gamemode"
+      "networkmanager"
+      "plugdev"
+      "dialout"
+    ];
     hashedPassword = "$2b$12$r02jnhT1jH6OkfUj.wZ6r.gj20Wgp9t2orHiYgoVSnyV1/f9mSQMy";
   };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs;[
+  environment.systemPackages = with pkgs; [
     #neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     git
@@ -151,8 +149,6 @@
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   networking.firewall.enable = false;
-  
-
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
@@ -178,4 +174,3 @@
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "25.05"; # Did you read the comment?
 }
-
