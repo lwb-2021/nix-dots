@@ -44,47 +44,51 @@
           };
         };
       };
-      extensions = with pkgs.vscode-marketplace; [
-        # Basic
-        alefragnani.project-manager
-        usernamehw.errorlens
+      extensions =
+        with pkgs.vscode-marketplace;
+        [
+          # Basic
+          alefragnani.project-manager
+          usernamehw.errorlens
 
-        # Git
-        codezombiech.gitignore
-        donjayamanne.githistory
-        mhutchie.git-graph
-        vivaxy.vscode-conventional-commits
+          # Git
+          codezombiech.gitignore
+          donjayamanne.githistory
+          mhutchie.git-graph
+          vivaxy.vscode-conventional-commits
 
-        github.vscode-github-actions
-        github.vscode-pull-request-github
+          github.vscode-github-actions
+          github.vscode-pull-request-github
 
-        # Nix
-        mkhl.direnv
-        # bbenoist.nix
-        jnoortheen.nix-ide
+          # Nix
+          mkhl.direnv
+          # bbenoist.nix
+          jnoortheen.nix-ide
 
-        # Languages
+          # Languages
 
-        ## Python
-        ms-python.python
-        ms-python.vscode-pylance
+          ## Python
+          ms-python.python
+          ms-python.vscode-pylance
+          charliermarsh.ruff
 
-        ms-toolsai.jupyter
-        ms-toolsai.vscode-jupyter-slideshow
-        ms-toolsai.vscode-jupyter-cell-tags
-        ms-toolsai.jupyter-renderers
-        ms-toolsai.jupyter-keymap
+          ## Rust
+          rust-lang.rust-analyzer
 
-        ## Rust
-        rust-lang.rust-analyzer
+          ## TOML
+          tamasfe.even-better-toml
 
-        ## TOML
-        tamasfe.even-better-toml
+          # AI
+          github.copilot
 
-        # AI
-        github.copilot
-
-      ];
+        ]
+        ++ (with pkgs.vscode-extensions; [
+          ms-toolsai.jupyter
+          ms-toolsai.vscode-jupyter-slideshow
+          ms-toolsai.vscode-jupyter-cell-tags
+          ms-toolsai.jupyter-renderers
+          ms-toolsai.jupyter-keymap
+        ]);
     };
   };
   home.packages = with pkgs; [
