@@ -5,7 +5,7 @@
 {
   programs.vscode = {
     enable = true;
-    package = pkgs.vscodium;
+    package = pkgs.vscodium-fhs;
     mutableExtensionsDir = false;
     profiles.default = {
       enableExtensionUpdateCheck = false;
@@ -26,6 +26,7 @@
 
         "window.dialogueStyle" = "custom";
 
+        # Nix
         "nix.enableLanguageServer" = true;
         "nix.serverPath" = "${pkgs.nixd}/bin/nixd";
         "nix.serverSettings" = {
@@ -43,6 +44,12 @@
             };
           };
         };
+
+        # Python
+        "python.venvFolders" = [
+          "~/.micromamba/envs"
+        ];
+        "python.venvPath" = "~/.micromamba/envs";
       };
       extensions =
         with pkgs.vscode-marketplace;
@@ -50,6 +57,7 @@
           # Basic
           alefragnani.project-manager
           usernamehw.errorlens
+          asvetliakov.vscode-neovim
 
           # Git
           codezombiech.gitignore
