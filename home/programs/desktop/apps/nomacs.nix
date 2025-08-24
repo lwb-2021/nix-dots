@@ -1,6 +1,4 @@
 {
-  config,
-  lib,
   pkgs,
   ...
 }:
@@ -9,9 +7,9 @@
     nomacs-qt6
   ];
   xdg.mimeApps.defaultApplications = {
-    "image/jpeg" = "nomacs.desktop";
-    "image/png" = "nomacs.desktop";
-    "image/bmp" = "nomacs.desktop";
+    "image/jpeg" = "org.nomacs.ImageLounge.desktop";
+    "image/png" = "org.nomacs.ImageLounge.desktop";
+    "image/bmp" = "org.nomacs.ImageLounge.desktop";
   };
 
 }
