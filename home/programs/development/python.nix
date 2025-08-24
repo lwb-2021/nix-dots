@@ -1,6 +1,5 @@
 {
   config,
-  lib,
   pkgs,
   ...
 }:
@@ -15,10 +14,11 @@
         requests
       ]
     ))
+    micromamba
     (buildFHSEnv {
       name = "conda-shell";
-      targetPkgs = _: with pkgs; [ micromamba ];
-      runScript = "env CONDA_SHELL=1 fish";
+      # targetPkgs = _: with pkgs; [ ];
+      runScript = "fish";
     })
   ];
   home.file.".condarc".text = ''
@@ -49,9 +49,7 @@
       conda = "micromamba";
     };
     shellInit = ''
-      if test $CONDA_SHELL
-        micromamba shell hook -s fish --root-prefix ~/.micromamba |source
-      end
+      micromamba shell hook -s fish --root-prefix ~/.micromamba |source
     '';
   };
   programs.uv = {
