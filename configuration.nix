@@ -42,6 +42,7 @@
 
     ./system-config/software/appimage.nix
     ./system-config/software/command-line.nix
+    ./system-config/software/editor.nix
     ./system-config/software/fhs.nix
     ./system-config/software/virt/docker.nix
 
