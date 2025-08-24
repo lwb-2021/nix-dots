@@ -26,6 +26,10 @@
 
         "window.dialogueStyle" = "custom";
 
+        "extensions.experimental.affinity" = {
+          "asvetliakov.vscode-neovim" = 1;
+        };
+
         # Nix
         "nix.enableLanguageServer" = true;
         "nix.serverPath" = "${pkgs.nixd}/bin/nixd";
