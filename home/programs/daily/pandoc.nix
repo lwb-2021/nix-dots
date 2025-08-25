@@ -7,9 +7,6 @@
   programs.pandoc = {
     enable = true;
     defaults = {
-      metadata = {
-        author = "lwb";
-      };
       pdf-engine = "xelatex";
       filters = [
         "${config.home.homeDirectory}/.config/pandoc-filters/zotero.lua"
