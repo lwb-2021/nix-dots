@@ -30,6 +30,9 @@
           "asvetliakov.vscode-neovim" = 1;
         };
 
+        # Git
+        "gitblame.inlineMessageEnabled" = true;
+
         # Nix
         "nix.enableLanguageServer" = true;
         "nix.serverPath" = "${pkgs.nixd}/bin/nixd";
@@ -62,12 +65,15 @@
           alefragnani.project-manager
           usernamehw.errorlens
           asvetliakov.vscode-neovim
+          ms-vscode.hexeditor
+          formulahendry.code-runner
 
           # Git
           codezombiech.gitignore
           donjayamanne.githistory
           mhutchie.git-graph
           vivaxy.vscode-conventional-commits
+          waderyan.gitblame
 
           github.vscode-github-actions
           github.vscode-pull-request-github
@@ -77,7 +83,9 @@
           # bbenoist.nix
           jnoortheen.nix-ide
 
-          # Languages
+          # Completions and Linting
+          ## No Language
+          christian-kohler.path-intellisense
 
           ## Python
           ms-python.python
@@ -95,11 +103,15 @@
 
         ]
         ++ (with pkgs.vscode-extensions; [
+          # Languages
+          ## Python
+          ### Jupyter
           ms-toolsai.jupyter
           ms-toolsai.vscode-jupyter-slideshow
           ms-toolsai.vscode-jupyter-cell-tags
           ms-toolsai.jupyter-renderers
           ms-toolsai.jupyter-keymap
+
         ]);
     };
   };
