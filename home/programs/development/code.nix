@@ -87,6 +87,9 @@
           ## No Language
           christian-kohler.path-intellisense
 
+          ## Java
+          vscjava.vscode-java-pack
+
           ## Python
           ms-python.python
           ms-python.vscode-pylance
