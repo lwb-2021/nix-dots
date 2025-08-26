@@ -57,6 +57,8 @@
       "vscode-extension-ms-python-vscode-pylance"
       "vscode-extension-mhutchie-git-graph"
       "vscode-extension-github-copilot"
+
+      "idea-ultimate"
     ];
   cudaSupport = true;
   packageOverrides = pkgs: {

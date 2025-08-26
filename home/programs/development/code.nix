@@ -90,12 +90,6 @@
           ## No Language
           christian-kohler.path-intellisense
 
-          ## Java
-          redhat.java
-          vscjava.vscode-java-dependency
-          vscjava.vscode-java-debug
-          vscjava.vscode-gradle
-
           ## Python
           ms-python.python
           ms-python.vscode-pylance
