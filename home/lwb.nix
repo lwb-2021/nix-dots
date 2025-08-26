@@ -27,6 +27,8 @@
 
     ./programs/compatibility/wine.nix
 
+    ./programs/creation/gimp.nix
+
     ./programs/daily/office.nix
     ./programs/daily/pandoc.nix
     ./programs/daily/ebook.nix
