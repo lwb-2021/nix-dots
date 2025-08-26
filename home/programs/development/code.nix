@@ -88,7 +88,10 @@
           christian-kohler.path-intellisense
 
           ## Java
-          vscjava.vscode-java-pack
+          redhat.java
+          vscjava.vscode-java-dependency
+          vscjava.vscode-java-debug
+          vscjava.vscode-gradle
 
           ## Python
           ms-python.python
