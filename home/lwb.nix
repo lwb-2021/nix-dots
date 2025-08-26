@@ -52,7 +52,6 @@
     ./programs/development/code.nix
     ./programs/development/python.nix
     ./programs/development/git.nix
-    ./programs/development/java.nix
     ./programs/development/neovim.nix
 
     ./programs/game/lutris.nix

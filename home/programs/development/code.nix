@@ -33,6 +33,9 @@
         # Git
         "gitblame.inlineMessageEnabled" = true;
 
+        # Java
+        "redhat.telemetry.enabled" = true;
+
         # Nix
         "nix.enableLanguageServer" = true;
         "nix.serverPath" = "${pkgs.nixd}/bin/nixd";
