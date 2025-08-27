@@ -54,6 +54,7 @@
 
       "qq"
       "wechat"
+      "wpsoffice-cn"
 
       "wemeet"
       "libwemeetwrap"
@@ -67,6 +68,8 @@
       "vscode-extension-github-copilot"
 
       "idea-ultimate"
+
+      "drawio"
     ];
   cudaSupport = true;
   packageOverrides = pkgs: {
