@@ -5,7 +5,7 @@
 {
   programs.vscode = {
     enable = true;
-    package = pkgs.vscodium-fhs;
+    package = pkgs.vscodium;
     mutableExtensionsDir = false;
     profiles.default = {
       enableExtensionUpdateCheck = false;
@@ -57,11 +57,6 @@
           };
         };
 
-        # Python
-        "python.venvFolders" = [
-          "~/.micromamba/envs"
-        ];
-        "python.venvPath" = "~/.micromamba/envs";
       };
       extensions =
         with pkgs.vscode-marketplace;
