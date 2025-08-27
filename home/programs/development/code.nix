@@ -18,6 +18,8 @@
         "editor.cursorSmoothCaretAnimation" = "on";
         "editor.smoothScrolling" = true;
 
+        "editor.fontLigatures" = true;
+
         "editor.formatOnPaste" = true;
         "editor.formatOnSave" = true;
 
