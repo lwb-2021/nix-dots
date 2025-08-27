@@ -16,7 +16,7 @@
   programs.fish.shellInitLast = # fish
     ''
       if status is-interactive
-          if test "$TERM_PROGRAM" != "vscode"
+          if test "$TERM_PROGRAM" != "vscode" && test "$TERMINAL_EMULATOR" != "JetBrains-JediTerm"
               and not set -q ZELLIJ
 
               zellij attach -c default
