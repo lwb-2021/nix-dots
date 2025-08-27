@@ -12,6 +12,11 @@
         numpy
         ipython
         requests
+
+        torch-bin
+        torchvision-bin
+
+        jupyter-kernel
       ]
     ))
     micromamba

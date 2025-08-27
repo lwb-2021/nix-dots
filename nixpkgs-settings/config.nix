@@ -34,6 +34,13 @@
       "libnvjitlink"
 
       "libnpp"
+
+      # For PyTorch
+      "triton"
+      "torch"
+      "cudnn"
+      "libcusparse_lt"
+      "libcufile"
       ##### SO NVIDIA FUCK YOU
 
       "steam"
