@@ -42,7 +42,6 @@ in
         ];
 
         sockets = {
-          # x11 = true;
           wayland = true;
           pipewire = true;
         };
