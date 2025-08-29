@@ -1,8 +1,4 @@
-{
-  pkgs,
-  inputs,
-  ...
-}:
+{ pkgs, ... }:
 {
   imports = [
     ./autostart.nix
@@ -17,7 +13,7 @@
   wayland.windowManager.hyprland = {
     enable = true;
     package = null;
-    plugins = with inputs.hyprland-plugins.packages.${pkgs.system}; [
+    plugins = with pkgs.hyprlandPlugins; [
       hyprexpo
       hyprscrolling
     ];

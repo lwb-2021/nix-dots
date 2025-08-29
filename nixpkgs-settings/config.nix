@@ -55,6 +55,7 @@
       "qq"
       "wechat"
       "wpsoffice-cn"
+      "ttf-wps-fonts"
 
       "wemeet"
       "libwemeetwrap"
@@ -70,6 +71,7 @@
       "idea-ultimate"
 
       "drawio"
+
     ];
   cudaSupport = true;
   packageOverrides = pkgs: {
