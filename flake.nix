@@ -27,6 +27,8 @@
 
     #
 
+    ags.url = "github:Aylur/ags";
+
     catppuccin = {
       url = "github:catppuccin/nix";
       inputs.nixpkgs.follows = "nixpkgs";
