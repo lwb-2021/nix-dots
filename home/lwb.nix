@@ -50,11 +50,11 @@
     ./programs/desktop/themes.nix
 
     ./programs/development
-    ./programs/development/code.nix
-    ./programs/development/python.nix
     ./programs/development/git.nix
-    ./programs/development/idea.nix
-    ./programs/development/neovim.nix
+    ./programs/development/editors/code.nix
+    ./programs/development/editors/neovim.nix
+    ./programs/development/editors/idea.nix
+    ./programs/development/languages/python.nix
 
     ./programs/game/lutris.nix
     ./programs/game/minecraft.nix
