@@ -22,18 +22,14 @@ in
           "org.gnome.Shell.Screencast" = "talk";
           "org.freedesktop.Notifications" = "talk";
           "org.kde.StatusNotifierWatcher" = "talk";
-
-          "org.freedesktop.portal.Documents" = "talk";
-          "org.freedesktop.portal.Flatpak" = "talk";
-          "org.freedesktop.portal.FileChooser" = "talk";
         };
       };
       bubblewrap = {
         bind.rw = [
           (sloth.mkdir (
             sloth.concat [
-              sloth.xdgDocumentsDir
-              "/WeChat"
+              sloth.homeDir
+              "/xwechat_files"
             ]
           ))
         ];
