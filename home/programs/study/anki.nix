@@ -1,7 +1,9 @@
-{ config, pkgs, ... }:
-rec {
+{ pkgs, ... }:
+{
+
   programs.anki = {
     enable = true;
+    package = pkgs.stable.anki; # TODO: move anki to unstable after fixed
     addons = with pkgs.ankiAddons; [
       anki-connect
     ];
