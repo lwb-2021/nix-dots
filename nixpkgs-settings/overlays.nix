@@ -1,4 +1,4 @@
-{ pkgs-native, inputs }:
+{ inputs }:
 [
   (final: prev: {
     nur = import inputs.nur {

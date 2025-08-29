@@ -9,8 +9,6 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
 
-    ./system-config/toolchain.nix
-
     ./system-config/system/bootloader.nix
     ./system-config/system/kernel.nix
     ./system-config/system/gc.nix
