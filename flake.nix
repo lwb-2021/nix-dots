@@ -25,8 +25,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    #
+
     catppuccin = {
       url = "github:catppuccin/nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nh = {
+      url = "github:nix-community/nh";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
