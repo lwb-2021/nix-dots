@@ -66,12 +66,17 @@
       extensions =
         with pkgs.vscode-marketplace;
         [
-          # Basic
+          # Functionality
           alefragnani.project-manager
+          gruntfuggly.todo-tree
+          formulahendry.code-runner
+          adpyke.codesnap
+
+          # Edit
           usernamehw.errorlens
           asvetliakov.vscode-neovim
+          ## File Supports
           ms-vscode.hexeditor
-          formulahendry.code-runner
 
           # Git
           codezombiech.gitignore
