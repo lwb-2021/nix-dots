@@ -5,6 +5,15 @@
       nurpkgs = prev;
       pkgs = prev;
     };
+    stable = import inputs.nixpkgs-stable {
+      localSystem = "x86_64-linux";
+    };
+    noCuda = import inputs.nixpkgs {
+      localSystem = "x86_64-linux";
+      config = {
+        cudaSupport = false;
+      };
+    };
   })
   (final: prev: {
     wechat = prev.wechat.overrideAttrs {
@@ -15,7 +24,7 @@
     };
   })
   (final: prev: {
-    anyrun = prev.anyrun.overrideAttrs {
+    anyrun = prev.anyrun.overrideAttrs rec {
       version = "25.9.0.pre-release.1-unstable-2025-08-19";
       src = prev.fetchFromGitHub {
         owner = "anyrun-org";
@@ -23,7 +32,10 @@
         rev = "af1ffe4f17921825ff2a773995604dce2b2df3cd";
         hash = "sha256-PKxVhfjd2AlzTopuVEx5DJMC4R7LnM5NIoMmirKMsKI=";
       };
-      cargoHash = "sha256-KpAnfytTtCJunhpk9exv8LYtF8mKDGFUUbsPP47M+Kk=";
+      cargoDeps = final.rustPlatform.fetchCargoVendor {
+        inherit src;
+        hash = "sha256-KpAnfytTtCJunhpk9exv8LYtF8mKDGFUUbsPP47M+Kk=";
+      };
       meta.homepage = "https://github.com/anyrun-org/anyrun";
     };
     python3 = prev.python3.override {

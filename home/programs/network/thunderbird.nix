@@ -2,6 +2,7 @@
 {
   programs.thunderbird = {
     enable = true;
+    package = pkgs.noCuda.thunderbird;
     profiles.default = {
       isDefault = true;
       extensions = [ ];

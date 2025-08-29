@@ -2,6 +2,7 @@
 {
   programs.firefox = {
     enable = true;
+    package = pkgs.noCuda.firefox;
     languagePacks = [
       "zh-CN"
       "en-US"
