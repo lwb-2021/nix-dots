@@ -1,9 +1,4 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}:
+{ pkgs, ... }:
 {
   xdg.configFile = {
     "xfce4/helpers.rc".text = ''
@@ -12,6 +7,6 @@
   };
   xdg.dataFile = {
     "Thunar/sendto/kdeconnect-thunar.desktop".source =
-      "${pkgs.plasma5Packages.kdeconnect-kde}/share/Thunar/sendto/kdeconnect-thunar.desktop";
+      "${pkgs.kdePackages.kdeconnect-kde}/share/Thunar/sendto/kdeconnect-thunar.desktop";
   };
 }
