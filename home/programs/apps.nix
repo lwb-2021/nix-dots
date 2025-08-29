@@ -7,16 +7,6 @@
 {
   home.packages = with pkgs; [
     qq
-    (pkgs.makeDesktopItem {
-      name = "WeChat";
-      desktopName = "WeChat";
-      exec = "wechat %U";
-      terminal = false;
-      icon = "wechat";
-      type = "Application";
-      categories = [ "Utility" ];
-      comment = "微信桌面版";
-    })
     (import ../../pkgs/wechat-pak.nix params)
 
     wemeet

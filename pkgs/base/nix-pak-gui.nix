@@ -12,14 +12,17 @@ let
 in
 {
   config = {
-    dbus.policies = {
-      "${config.flatpak.appId}" = "own";
-      "org.freedesktop.DBus" = "talk";
-      "org.gtk.vfs.*" = "talk";
-      "org.gtk.vfs" = "talk";
-      "ca.desrt.dconf" = "talk";
-      "org.freedesktop.portal.*" = "talk";
-      "org.a11y.Bus" = "talk";
+    dbus = {
+      enable = true;
+      policies = {
+        "${config.flatpak.appId}" = "own";
+        "org.freedesktop.DBus" = "talk";
+        "org.gtk.vfs.*" = "talk";
+        "org.gtk.vfs" = "talk";
+        "ca.desrt.dconf" = "talk";
+        "org.freedesktop.portal.*" = "talk";
+        "org.a11y.Bus" = "talk";
+      };
     };
     # https://github.com/nixpak/nixpak/blob/master/modules/gpu.nix
     gpu = {

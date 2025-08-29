@@ -15,14 +15,12 @@ in
     {
       flatpak = {
         appId = "com.tencent.wechat";
+        desktopFile = "wechat.desktop";
       };
-      dbus = {
-        enable = true;
-        policies = {
-          "org.gnome.Shell.Screencast" = "talk";
-          "org.freedesktop.Notifications" = "talk";
-          "org.kde.StatusNotifierWatcher" = "talk";
-        };
+      dbus.policies = {
+        "org.gnome.Shell.Screencast" = "talk";
+        "org.freedesktop.Notifications" = "talk";
+        "org.kde.StatusNotifierWatcher" = "talk";
       };
       bubblewrap = {
         bind.rw = [
@@ -58,4 +56,4 @@ in
         ./base/nix-pak-network.nix
       ];
     };
-}).config.script
+}).config.env
