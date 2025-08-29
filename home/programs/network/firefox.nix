@@ -49,7 +49,7 @@
           zotero-connector
 
           # Security
-          noscript
+          # noscript # 会导致B站崩溃以及拖慢网页加载速度
 
           # Improvements
           ublock-origin
