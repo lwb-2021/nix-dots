@@ -43,6 +43,7 @@
 
     ./programs/desktop/apps/notification/mako.nix
     ./programs/desktop/apps/bar/waybar.nix
+    ./programs/desktop/apps/bar/quickshell.nix
     ./programs/desktop/apps/launcher/anyrun.nix
     ./programs/desktop/apps/screenshot/grim.nix
     ./programs/desktop/apps/terminal/kitty.nix
