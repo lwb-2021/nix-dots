@@ -23,10 +23,16 @@
         "editor.formatOnPaste" = true;
         "editor.formatOnSave" = true;
 
-        "file.autoSave" = "afterDelay";
-        "file.autoGuessEncoding" = true;
+        "files.autoSave" = "afterDelay";
+        "files.autoGuessEncoding" = true;
 
-        "window.dialogueStyle" = "custom";
+        "files.readonlyInclude" = {
+          "**/.cargo/registry/src/**/*.rs" = true;
+          "**/.cargo/git/checkouts/**/*.rs" = true;
+          "**/lib/rustlib/src/rust/library/**/*.rs" = true;
+        };
+
+        "window.dialogStyle" = "custom";
 
         "extensions.experimental.affinity" = {
           "asvetliakov.vscode-neovim" = 1;
@@ -36,7 +42,6 @@
         "gitblame.inlineMessageEnabled" = true;
 
         # Java
-        "redhat.telemetry.enabled" = true;
 
         # Nix
         "nix.enableLanguageServer" = true;
@@ -89,7 +94,7 @@
 
           ## Python
           ms-python.python
-          ms-python.vscode-pylance
+          # ms-python.vscode-pylance
           charliermarsh.ruff
 
           ## Rust
