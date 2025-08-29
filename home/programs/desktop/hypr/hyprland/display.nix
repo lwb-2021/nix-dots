@@ -15,7 +15,7 @@
     };
 
     exec-once = [
-      "cat ~/.Xresources | xrdb -merge"
+      "xrdb ~/.Xresources"
     ];
 
   };
