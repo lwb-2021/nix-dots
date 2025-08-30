@@ -32,18 +32,17 @@
 
     ./programs/daily/office.nix
     ./programs/daily/pandoc.nix
+    ./programs/daily/todoist.nix
     ./programs/daily/ebook.nix
 
     ./programs/desktop
-    # ./programs/desktop/ags
     ./programs/desktop/hypr
 
     ./programs/desktop/apps/nomacs.nix
     ./programs/desktop/apps/copyq.nix
 
     ./programs/desktop/apps/notification/mako.nix
-    ./programs/desktop/apps/bar/waybar.nix
-    ./programs/desktop/apps/bar/quickshell.nix
+    ./programs/desktop/apps/bar/ags
     ./programs/desktop/apps/launcher/anyrun.nix
     ./programs/desktop/apps/screenshot/grim.nix
     ./programs/desktop/apps/terminal/kitty.nix
