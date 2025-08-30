@@ -61,7 +61,10 @@
             };
           };
         };
-
+        # Qt
+        "qt-qml.qmlls.customExePath" = "${pkgs.qt6.qtdeclarative}/bin/qmlls";
+        "qt-qml.doNotAskForQmllsDownload" = true;
+        "qt-qml.qmlls.useQmlImportPathEnvVar" = true;
       };
       extensions =
         with pkgs.vscode-marketplace;
@@ -101,6 +104,10 @@
           ms-python.python
           # ms-python.vscode-pylance
           charliermarsh.ruff
+
+          ## Qt
+          theqtcompany.qt-core
+          theqtcompany.qt-qml
 
           ## Rust
           rust-lang.rust-analyzer
