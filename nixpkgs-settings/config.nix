@@ -71,6 +71,7 @@
       "idea-ultimate"
 
       "drawio"
+      "todoist-electron"
 
     ];
   cudaSupport = true;
