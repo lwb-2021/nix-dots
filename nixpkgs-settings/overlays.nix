@@ -16,6 +16,15 @@
     };
   })
   (final: prev: {
+    inherit (final.lixPackageSets.stable)
+      nixpkgs-review
+      nix-direnv
+      nix-eval-jobs
+      nix-fast-build
+      colmena
+      ;
+  })
+  (final: prev: {
     wechat = prev.wechat.overrideAttrs {
       src = prev.fetchurl {
         url = "https://dldir1v6.qq.com/weixin/Universal/Linux/WeChatLinux_x86_64.AppImage";
