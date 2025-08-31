@@ -9,9 +9,12 @@
         pandas
         matplotlib
         numpy
-        ipython
         requests
-        jupyter-kernel
+
+        tabulate
+
+        ipython
+        ipykernel
       ]
     ))
   ];
