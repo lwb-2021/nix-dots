@@ -11,7 +11,6 @@
 
     ./system-config/system/bootloader.nix
     ./system-config/system/kernel.nix
-    ./system-config/system/gc.nix
     ./system-config/system/nix.nix
     ./system-config/system/stateless.nix
     ./system-config/system/swap.nix
