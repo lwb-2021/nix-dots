@@ -54,6 +54,7 @@
 
       "qq"
       "wechat"
+      "dingtalk"
       "wpsoffice-cn"
       "ttf-wps-fonts"
 
@@ -74,6 +75,7 @@
       "todoist-electron"
 
     ];
+  permittedInsecurePackages = [ "openssl-1.1.1w" ];
   cudaSupport = true;
   packageOverrides = pkgs: {
     intel-vaapi-driver = pkgs.intel-vaapi-driver.override { enableHybridCodec = true; };
