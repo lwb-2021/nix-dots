@@ -78,6 +78,7 @@
           # Edit
           usernamehw.errorlens
           asvetliakov.vscode-neovim
+          formulahendry.auto-rename-tag
           ## File Supports
           ms-vscode.hexeditor
 
