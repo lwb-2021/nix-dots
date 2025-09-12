@@ -9,6 +9,7 @@
     enable = true;
     configDir = null;
     extraPackages = with inputs.ags.packages.${pkgs.system}; [
+      apps
       battery
       mpris
       tray
