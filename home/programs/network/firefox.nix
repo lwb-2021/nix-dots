@@ -55,6 +55,9 @@
           ublock-origin
           redirector
 
+          # Vim
+          vimium-c
+
           tampermonkey # Script
         ];
         settings = {
