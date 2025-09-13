@@ -2,7 +2,9 @@
   description = "My NixOS flake";
   inputs = {
     nixpkgs.url = "git+https://github.com/NixOS/nixpkgs?shallow=1&ref=nixos-unstable";
-    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.05";
+    nixpkgs-stable = {
+      url = "github:NixOS/nixpkgs/fe83bbdde2ccdc2cb9573aa846abe8363f79a97a";
+    };
 
     nur = {
       url = "github:nix-community/NUR";
