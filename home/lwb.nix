@@ -65,6 +65,7 @@
     ./programs/network/chat.nix
     ./programs/network/firefox.nix
     ./programs/network/kdeconnect.nix
+    ./programs/network/localsend.nix
     ./programs/network/syncthing.nix
     ./programs/network/thunderbird.nix
 
