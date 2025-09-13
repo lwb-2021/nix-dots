@@ -81,7 +81,7 @@
     ./programs/shell/navi.nix
     ./programs/shell/pay-respect.nix
     ./programs/shell/yazi.nix
-    ./programs/shell/zellij.nix
+    ./programs/shell/zellij
 
     ./programs/study/anki.nix
   ];

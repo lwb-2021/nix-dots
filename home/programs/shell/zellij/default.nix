@@ -1,15 +1,11 @@
 {
+  pkgs,
   ...
 }:
 {
-  programs.zellij = {
-    enable = true;
-    enableFishIntegration = false;
-    settings = {
-      show_startup_tips = false;
-      default_mode = "locked";
-    };
-  };
+  home.packages = with pkgs; [
+    zellij
+  ];
   programs.fish.shellInitLast = # fish
     ''
       if status is-interactive
@@ -23,5 +19,6 @@
       end
 
     '';
+  xdg.configFile."zellij/config.kdl".source = ./config.kdl;
 
 }
