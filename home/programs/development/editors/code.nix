@@ -90,7 +90,6 @@
           waderyan.gitblame
 
           github.vscode-github-actions
-          github.vscode-pull-request-github
 
           # Nix
           mkhl.direnv
@@ -129,6 +128,8 @@
           ms-toolsai.vscode-jupyter-cell-tags
           ms-toolsai.jupyter-renderers
           ms-toolsai.jupyter-keymap
+
+          github.vscode-pull-request-github
 
         ]);
     };
