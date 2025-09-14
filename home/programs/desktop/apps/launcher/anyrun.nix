@@ -1,7 +1,8 @@
-{ ... }:
+{ pkgs, ... }:
 {
   programs.anyrun = {
     enable = true;
+    package = pkgs.stable.anyrun;
     config = {
       x = {
         fraction = 0.5;
