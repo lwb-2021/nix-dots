@@ -252,7 +252,6 @@ load_plugins {
 // Choose the theme that is specified in the themes section.
 // Default: default
 // 
-// theme "dracula"
 theme "catppuccin-mocha"
 
 // Choose the base input mode of zellij.
@@ -349,7 +348,7 @@ default_mode "locked"
  
 // Enable automatic copying (and clearing) of selection when releasing mouse
 // Default: true
-// 
+//
 // copy_on_select true
  
 // Path to the default editor to use to edit pane scrollbuffer
@@ -433,4 +432,4 @@ show_startup_tips false
 // Whether to show release notes on first version run
 // Default: true
 // 
-// show_release_notes false
+show_release_notes false
