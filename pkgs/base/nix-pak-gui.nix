@@ -16,11 +16,17 @@ in
       enable = true;
       policies = {
         "${config.flatpak.appId}" = "own";
+        "${config.flatpak.appId}.*" = "own";
         "org.freedesktop.DBus" = "talk";
         "org.gtk.vfs.*" = "talk";
         "org.gtk.vfs" = "talk";
         "ca.desrt.dconf" = "talk";
         "org.freedesktop.portal.*" = "talk";
+        "org.freedesktop.portal.Documents" = "talk";
+        "org.freedesktop.portal.Flatpak" = "talk";
+        "org.freedesktop.portal.Desktop" = "talk";
+        "org.freedesktop.portal.FileChooser" = "talk";
+
         "org.a11y.Bus" = "talk";
       };
     };

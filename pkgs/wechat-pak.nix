@@ -15,7 +15,6 @@ in
     {
       flatpak = {
         appId = "com.tencent.wechat";
-        desktopFile = "wechat.desktop";
       };
       dbus.policies = {
         "org.gnome.Shell.Screencast" = "talk";
@@ -24,12 +23,10 @@ in
       };
       bubblewrap = {
         bind.rw = [
-          (sloth.mkdir (
-            sloth.concat [
-              sloth.homeDir
-              "/xwechat_files"
-            ]
-          ))
+          [
+            (sloth.mkdir (sloth.concat' sloth.xdgDocumentsDir "/WeChat"))
+            (sloth.concat' sloth.homeDir "/xwechat_files")
+          ]
         ];
         bind.ro = [
           "/etc/passwd"
@@ -56,4 +53,4 @@ in
         ./base/nix-pak-network.nix
       ];
     };
-}).config.env
+}).config.script

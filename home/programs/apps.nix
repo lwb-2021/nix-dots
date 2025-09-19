@@ -9,6 +9,19 @@
     qq
     (import ../../pkgs/wechat-pak.nix params)
     (import ../../pkgs/dingtalk-pak.nix params)
+    (pkgs.makeDesktopItem {
+      name = "com.tencent.wechat";
+      desktopName = "WeChat";
+      genericName = "wechat";
+      categories = [ "Chat" ];
+      keywords = [ "wechat" ];
+      icon = "wechat";
+      exec = "wechat %U";
+      startupNotify = true;
+      extraConfig = {
+        "Name[zh_CN]" = "微信";
+      };
+    })
 
     wemeet
 
