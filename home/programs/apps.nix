@@ -6,7 +6,6 @@
 }@params:
 {
   home.packages = with pkgs; [
-    qq
     (import ../../pkgs/wechat-pak.nix params)
     (import ../../pkgs/dingtalk-pak.nix params)
     (pkgs.makeDesktopItem {
