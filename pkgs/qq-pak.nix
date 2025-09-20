@@ -44,10 +44,11 @@ in
       };
       app = {
         package = pkgs.qq;
+        binPath = "bin/qq";
       };
       imports = [
         ./base/nix-pak-gui.nix
         ./base/nix-pak-network.nix
       ];
     };
-}).config.script
+}).config.env
