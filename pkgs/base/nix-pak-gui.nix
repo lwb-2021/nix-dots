@@ -62,6 +62,7 @@ in
         "/run/dbus"
       ];
       bind.ro = [
+
         (envSuffix "XDG_RUNTIME_DIR" "/doc")
         (sloth.concat' sloth.xdgConfigHome "/gtk-2.0")
         (sloth.concat' sloth.xdgConfigHome "/gtk-3.0")
@@ -81,6 +82,7 @@ in
             iconTheme
             cursorTheme
             pkgs.shared-mime-info
+            pkgs.gsettings-desktop-schemas
           ]
         );
         XCURSOR_PATH = lib.mkForce (

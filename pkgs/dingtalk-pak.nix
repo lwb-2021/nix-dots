@@ -31,7 +31,10 @@ in
             (sloth.mkdir (sloth.concat' sloth.xdgDocumentsDir "/DingTalk/dot-ut_storage"))
             (sloth.concat' sloth.homeDir "/.ut_storage")
           ]
-          (sloth.mkdir (sloth.concat' sloth.homeDir "/Downloads/DingTalk"))
+          [
+            (sloth.mkdir (sloth.concat' sloth.xdgDownloadDir "/Downloads/DingTalk"))
+            sloth.xdgDownloadDir
+          ]
 
         ];
 
@@ -39,6 +42,7 @@ in
           "/run/current-system/sw/bin/cat"
           "/bin/sh"
           "/etc/os-release"
+          "/etc/machine-id"
         ];
 
         sockets = {
