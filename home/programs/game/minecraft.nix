@@ -7,8 +7,8 @@
 
       # Change Java runtimes available to Prism Launcher
       jdks = [
-        jre21_minimal
-        jre17_minimal
+        jdk21
+        jdk17
         jre8
       ];
     })
