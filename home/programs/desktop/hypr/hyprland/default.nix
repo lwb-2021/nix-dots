@@ -6,6 +6,7 @@
     ./effects.nix
     ./environment.nix
     ./keymap.nix
+    ./permissions.nix
     ./rules.nix
     ./plugins/hyprexpo.nix
     ./plugins/hyprscrolling.nix
