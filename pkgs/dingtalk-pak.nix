@@ -24,15 +24,21 @@ in
       bubblewrap = {
         bind.rw = [
           [
-            (sloth.mkdir (sloth.concat' sloth.xdgDocumentsDir "/DingTalk/DingTalkConfig"))
-            (sloth.concat' sloth.xdgConfigHome "/DingTalk")
+            (sloth.mkdir (sloth.concat' sloth.xdgDocumentsDir "/DingTalk/dot-config"))
+            sloth.xdgConfigHome
           ]
           [
-            (sloth.mkdir (sloth.concat' sloth.xdgDocumentsDir "/DingTalk/UTStorage"))
+            (sloth.mkdir (sloth.concat' sloth.xdgDocumentsDir "/DingTalk/dot-ut_storage"))
             (sloth.concat' sloth.homeDir "/.ut_storage")
           ]
           (sloth.mkdir (sloth.concat' sloth.homeDir "/Downloads/DingTalk"))
 
+        ];
+
+        bind.ro = [
+          "/run/current-system/sw/bin/cat"
+          "/bin/sh"
+          "/etc/os-release"
         ];
 
         sockets = {
@@ -44,8 +50,6 @@ in
           "/dev/video0"
           "/dev/video1"
         ];
-        env = {
-        };
       };
       app = {
         package = pkgs.nur.repos.xddxdd.dingtalk;
