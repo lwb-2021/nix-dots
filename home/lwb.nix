@@ -80,6 +80,7 @@
     ./programs/shell/jq.nix
     ./programs/shell/navi.nix
     ./programs/shell/pay-respect.nix
+    ./programs/shell/starship.nix
     ./programs/shell/yazi.nix
     ./programs/shell/zellij
 
