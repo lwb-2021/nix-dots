@@ -74,6 +74,8 @@
 
               pinnedNoUnload = false;
 
+              hideFoldedTabs = true;
+
               syncUseFirefox = false;
             };
           };
