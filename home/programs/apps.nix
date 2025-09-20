@@ -7,6 +7,7 @@
 {
   home.packages = with pkgs; [
     (import ../../pkgs/wechat-pak.nix params)
+    (import ../../pkgs/qq-pak.nix params)
     (import ../../pkgs/dingtalk-pak.nix params)
     (pkgs.makeDesktopItem {
       name = "com.tencent.wechat";

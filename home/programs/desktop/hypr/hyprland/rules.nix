@@ -28,6 +28,7 @@
         "noblur, class:(waydroid)(.*)"
 
         "float, title:(扩展： (Aria2 下载器集成组件))(.*)"
+        "float, title:()"
 
         "opacity 0.9, class:^(kitty)$"
       ];

@@ -30,6 +30,7 @@ in
         ];
         bind.ro = [
           "/etc/passwd"
+          "/etc/machine-id"
         ];
 
         sockets = {

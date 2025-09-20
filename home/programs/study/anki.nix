@@ -1,10 +1,11 @@
 { pkgs, ... }:
 {
+  home.packages = with pkgs;[
+    pkgs.stable.anki
+  ];
   programs.anki = {
-    enable = true;
-    package = pkgs.anki.override {
-      python3Packages = pkgs.python312Packages;
-    };
+    # enable = true; 
+    # TODO wait for pr 438958 to be merged
     addons = with pkgs.ankiAddons; [
       anki-connect
     ];
