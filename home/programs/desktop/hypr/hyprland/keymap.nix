@@ -25,6 +25,8 @@
           "$mod, H, layoutmsg, move -col"
           "$mod, L, layoutmsg, move +col"
 
+          "$mod, ESC, exec, hyprlock"
+
           ", Print, exec, ${config.wayland.screenshot.exec}"
         ]
         ++ (builtins.concatLists (

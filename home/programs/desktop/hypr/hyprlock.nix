@@ -1,9 +1,4 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}:
+{ pkgs, ... }:
 {
   home.packages = with pkgs; [
     nixos-artwork.wallpapers.catppuccin-mocha
@@ -37,6 +32,24 @@
           shadow_passes = 2;
         }
       ];
+    };
+  };
+  services.hypridle = {
+    enable = true;
+    settings = {
+      general = {
+        lock_cmd = "pidof hyprlock || hyprlock";
+      };
+      # listener = [
+      #   {
+      #     timeout = 300;
+      #     on-timeout = "loginctl lock-session";
+      #   }
+      #   {
+      #     timeout = 600;
+      #     on-timeout = "systemctl suspend";
+      #   }
+      # ];
     };
   };
 }
