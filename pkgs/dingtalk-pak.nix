@@ -32,7 +32,7 @@ in
             (sloth.concat' sloth.homeDir "/.ut_storage")
           ]
           [
-            (sloth.mkdir (sloth.concat' sloth.xdgDownloadDir "/Downloads/DingTalk"))
+            (sloth.mkdir (sloth.concat' sloth.xdgDownloadDir "/DingTalk"))
             sloth.xdgDownloadDir
           ]
 
