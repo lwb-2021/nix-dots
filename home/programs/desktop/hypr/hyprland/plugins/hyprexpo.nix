@@ -9,7 +9,7 @@
       gesture_distance = 300;
     };
     hyprexpo-gesture = [
-      "3, down, expo:on"
+      "3, down, expo"
     ];
   };
 }
