@@ -13,7 +13,7 @@
       name = "com.tencent.wechat";
       desktopName = "WeChat";
       genericName = "wechat";
-      categories = [ "Chat" ];
+      categories = [ "Network" "Chat" ];
       keywords = [ "wechat" ];
       icon = "wechat";
       exec = "wechat %U";
@@ -22,6 +22,16 @@
         "Name[zh_CN]" = "微信";
       };
     })
+     (pkgs.makeDesktopItem {
+      name = "com.tencent.qq";
+      desktopName = "QQ";
+      genericName = "qq";
+      categories = [ "Network" "Chat" ];
+      keywords = [ "qq" ];
+      icon = "qq";
+      exec = "qq %U";
+      startupNotify = true;
+    })   
 
     wemeet
 

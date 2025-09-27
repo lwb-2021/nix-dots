@@ -27,9 +27,12 @@ in
             (sloth.mkdir (sloth.concat' sloth.xdgDocumentsDir "/QQ"))
             (sloth.concat' sloth.xdgConfigHome "/QQ")
           ]
-          (sloth.mkdir (sloth.concat' sloth.xdgDownloadDir "/QQ"))
+          [
+            (sloth.mkdir (sloth.concat' sloth.xdgDownloadDir "/QQ"))
+            (sloth.concat' sloth.homeDir "/QQ")
+          ]
         ];
-        
+
         bind.ro = [
           "/etc/machine-id"
         ];
@@ -51,4 +54,4 @@ in
         ./base/nix-pak-network.nix
       ];
     };
-}).config.env
+}).config.script
