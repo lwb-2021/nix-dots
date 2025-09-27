@@ -65,5 +65,5 @@ in
 
     Install.WantedBy = [ "graphical-session.target" ];
   };
-
+  home.packages = with pkgs; [ ariang ];
 }
