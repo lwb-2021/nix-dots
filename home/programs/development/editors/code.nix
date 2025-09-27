@@ -119,6 +119,10 @@
           github.copilot
 
         ]
+        ++ (with pkgs.open-vsx; [
+
+          jeanp413.open-remote-ssh
+        ])
         ++ (with pkgs.vscode-extensions; [
           # Languages
           ## Python
