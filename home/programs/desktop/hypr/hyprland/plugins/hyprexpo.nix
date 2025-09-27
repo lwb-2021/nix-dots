@@ -5,9 +5,9 @@
     enable_gesture = true;
 
     workspace_method = "first 1";
-    gesture_fingers = 3;
     gesture_distance = 300;
-    gesture_positive = true;
   };
-
+  hyprexpo-gesture = [
+    "3, down, expo:on"
+  ];
 }
