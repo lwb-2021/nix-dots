@@ -39,7 +39,6 @@
 
     ./system-config/software/appimage.nix
     ./system-config/software/command-line.nix
-    ./system-config/software/editor.nix
     ./system-config/software/fhs.nix
     ./system-config/software/virt/docker.nix
 
@@ -119,7 +118,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    #neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     git
     gparted
