@@ -1,11 +1,7 @@
 { pkgs, ... }:
 {
-  home.packages = with pkgs;[
-    pkgs.stable.anki
-  ];
   programs.anki = {
-    # enable = true; 
-    # TODO wait for pr 438958 to be merged
+    enable = true;
     addons = with pkgs.ankiAddons; [
       anki-connect
     ];
@@ -16,7 +12,7 @@
       autoSync = true;
       autoSyncMediaMinutes = 120;
       username = "lwb-2021@qq.com";
-      passwordFile = ./anki-pwd.txt;
+      keyFile = ./anki-pwd.txt;
     };
   };
 
