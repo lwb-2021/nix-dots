@@ -1,6 +1,5 @@
 {
   pkgs,
-  inputs,
   ...
 }:
 {
@@ -24,7 +23,6 @@
     cyme
     dust
     eza
-    fastfetch
     fd
     fzf
     glow
