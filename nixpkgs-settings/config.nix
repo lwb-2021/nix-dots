@@ -54,6 +54,7 @@
 
       "qq"
       "wechat"
+      "wechat-uos"
       "dingtalk"
       "wpsoffice-cn"
       "ttf-wps-fonts"
