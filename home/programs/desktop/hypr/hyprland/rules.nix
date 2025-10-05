@@ -24,9 +24,15 @@
         "float, class:org.kde.kdeconnect.handler"
         "center, class:org.kde.kdeconnect.handler"
 
+        "float, class:(Waydroid)(.*)"
+        "noblur, class:(Waydroid)(.*)"
+        "fullscreen, class:(Waydroid)(.*)"
+
         "float, class:(waydroid)(.*)"
         "noblur, class:(waydroid)(.*)"
+        "fullscreen, class:(waydroid)(.*)"
 
+        
         "float, title:(扩展： (Aria2 下载器集成组件))(.*)"
         "float, title:()"
 
