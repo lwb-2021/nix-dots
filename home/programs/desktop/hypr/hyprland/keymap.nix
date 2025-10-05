@@ -13,7 +13,8 @@
       settings = {
         "$mod" = "SUPER";
         bind = [
-          "$mod, Q, exec, kitty -1"
+          "$mod, Q, exec, kitty -1 zellij a -c default"
+          "$mod, T, exec, kitty -1"
           "$mod, E, exec, thunar"
           "$mod, R, exec, ${config.wayland.launcher.exec}"
           "$mod, C, killactive"
