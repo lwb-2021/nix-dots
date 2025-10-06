@@ -1,25 +1,28 @@
 { pkgs, ... }:
-let neovim = (pkgs.buildFHSEnv {
-  name = "nvim";
-  targetPkgs = (
-    pkgs: with pkgs; [
-      stdenv.cc
-      neovim-unwrapped
-      unzip
-      lua
-      luarocks
-      nodejs
-      cargo
+let
+  neovim = (
+    pkgs.buildFHSEnv {
+      name = "nvim";
+      targetPkgs = (
+        pkgs: with pkgs; [
+          stdenv.cc
+          neovim-unwrapped
+          unzip
+          lua
+          luarocks
+          nodejs
+          cargo
 
-      tree-sitter
+          tree-sitter
 
-      wl-clipboard
-    ]
+          wl-clipboard
+        ]
+      );
+      runScript = "nvim";
+    }
   );
-  runScript = "nvim";
-});
 in
-  {
+{
 
   home.packages = [
     neovim
@@ -42,5 +45,9 @@ in
         mode = "native";
       };
     };
+  };
+  xdg.mimeApps.defaultApplications = {
+    "text/plain" = "neovide.desktop";
+    "text/markdown" = "neovide.desktop";
   };
 }
