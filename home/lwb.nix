@@ -45,7 +45,7 @@
     ./programs/desktop/apps/bar/ags
     ./programs/desktop/apps/launcher/anyrun.nix
     ./programs/desktop/apps/screenshot/grim.nix
-    ./programs/desktop/apps/terminal/kitty.nix
+    ./programs/desktop/apps/terminal/wezterm.nix
 
     ./programs/desktop/fonts.nix
     ./programs/desktop/rime.nix
