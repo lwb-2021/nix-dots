@@ -7,14 +7,16 @@
     wayland.screenshot.exec = mkOption {
       type = types.str;
     };
+    wayland.terminal.exec = mkOption {
+      type = types.str;
+    };
   };
   config = {
     wayland.windowManager.hyprland = {
       settings = {
         "$mod" = "SUPER";
         bind = [
-          "$mod, Q, exec, kitty -1 zellij a -c default"
-          "$mod, T, exec, kitty -1"
+          "$mod, Q, exec, ${config.wayland.terminal.exec}"
           "$mod, E, exec, thunar"
           "$mod, R, exec, ${config.wayland.launcher.exec}"
           "$mod, C, killactive"
