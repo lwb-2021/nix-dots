@@ -92,7 +92,6 @@
           github.vscode-github-actions
 
           # Nix
-          mkhl.direnv
           # bbenoist.nix
           jnoortheen.nix-ide
 
@@ -104,10 +103,6 @@
           ms-python.python
           # ms-python.vscode-pylance
           charliermarsh.ruff
-
-          ## Qt
-          theqtcompany.qt-core
-          theqtcompany.qt-qml
 
           ## Rust
           rust-lang.rust-analyzer
@@ -125,6 +120,7 @@
         ])
         ++ (with pkgs.vscode-extensions; [
           # Languages
+          mkhl.direnv
           ## Python
           ### Jupyter
           ms-toolsai.jupyter
