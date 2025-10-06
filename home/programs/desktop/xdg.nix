@@ -23,11 +23,8 @@
       mimeApps = {
         enable = true;
         defaultApplications = {
-          "text/plain" = "nvim.desktop";
-          "text/markdown" = "nvim.desktop";
           "inode/directory" = "thunar.desktop";
           "application/zip" = "xarchiver.desktop";
-
         };
       };
       portal = {
