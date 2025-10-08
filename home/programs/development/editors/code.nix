@@ -110,6 +110,9 @@
           ## TOML
           tamasfe.even-better-toml
 
+          ## TS & Vue
+          vue.volar
+
           # AI
           github.copilot
 
