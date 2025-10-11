@@ -47,7 +47,7 @@ in
         };
       };
       app = {
-        package = pkgs.wechat-uos;
+        package = pkgs.wechat;
       };
       imports = [
         ./base/nix-pak-gui.nix
