@@ -27,7 +27,7 @@
     wechat = prev.wechat.overrideAttrs {
       src = prev.fetchurl {
         url = "https://dldir1v6.qq.com/weixin/Universal/Linux/WeChatLinux_x86_64.AppImage";
-        hash = "sha256-gBWcNQ1o1AZfNsmu1Vi1Kilqv3YbR+wqOod4XYAeVKo=";
+        hash = "sha256-d/zdb69gmIcgAFCbWLKGfmD8ZFfuDlYdOy7vUJ7SiXc=";
       };
     };
     beauty-line-icon-theme = prev.beauty-line-icon-theme.overrideAttrs rec {
