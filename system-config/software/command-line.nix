@@ -39,6 +39,8 @@
 
     gemini-cli
 
+    rustfmt
+
     fishPlugins.fzf-fish
     fishPlugins.sponge
 
