@@ -12,6 +12,7 @@
         { family = "JetBrainsMono NF", weight = "Medium", italic = false },
         { family = "Source Han Sans SC", weight = "Medium", italic = false },
       })
+      config.color_scheme = "Catppuccin Mocha"
 
       -- config.initial_cols = 110
       -- config.initial_rows = 30
