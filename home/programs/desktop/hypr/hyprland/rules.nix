@@ -7,10 +7,12 @@
 {
   wayland.windowManager.hyprland = {
     settings = {
-      workspace = [
-        "w[tv1], gapsout:0, gapsin:0"
-        "f[1], gapsout:0, gapsin:0"
-      ];
+      /*
+        workspace = [
+          "w[tv1], gapsout:0, gapsin:0"
+          "f[1], gapsout:0, gapsin:0"
+        ];
+      */
       windowrule = [
         "bordersize 0, floating:0, onworkspace:w[tv1]"
         "rounding 0, floating:0, onworkspace:w[tv1]"
@@ -32,7 +34,6 @@
         "noblur, class:(waydroid)(.*)"
         "fullscreen, class:(waydroid)(.*)"
 
-        
         "float, title:(扩展： (Aria2 下载器集成组件))(.*)"
         "float, title:()"
 
