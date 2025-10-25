@@ -27,8 +27,8 @@
           "$mod, Tab, hyprexpo:expo, toggle"
           "$mod, H, layoutmsg, move -col"
           "$mod, L, layoutmsg, move +col"
-          "$mod, -, layoutmsg, colresize +conf"
-          "$mod, =, layoutmsg, colresize -conf"
+          "$mod, EQUAL, layoutmsg, colresize +conf"
+          "$mod, SUBTRACT, layoutmsg, colresize -conf"
 
           "$mod, ESC, exec, hyprlock"
 
