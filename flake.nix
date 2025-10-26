@@ -23,6 +23,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
+
     sops-nix = {
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -86,6 +88,8 @@
           ./configuration.nix
           inputs.catppuccin.nixosModules.catppuccin
           inputs.sops-nix.nixosModules.sops
+
+          inputs.nix-flatpak.nixosModules.nix-flatpak
         ];
       };
       homeConfigurations.lwb = home-manager.lib.homeManagerConfiguration {
@@ -94,6 +98,9 @@
         modules = [
           inputs.sops-nix.homeManagerModules.sops
           inputs.catppuccin.homeModules.catppuccin
+
+          inputs.nix-flatpak.homeManagerModules.nix-flatpak
+
           ./home/lwb.nix
         ];
         extraSpecialArgs = { inherit inputs; };
