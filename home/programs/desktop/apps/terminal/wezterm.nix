@@ -13,7 +13,7 @@
         { family = "Source Han Sans SC", weight = "Medium", italic = false },
       })
       config.color_scheme = "Catppuccin Mocha"
-      window_background_opacity = 1.0
+      config.window_background_opacity = 0.8
       -- config.initial_cols = 110
       -- config.initial_rows = 30
 
