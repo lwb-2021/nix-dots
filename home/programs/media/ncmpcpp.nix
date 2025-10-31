@@ -1,12 +1,10 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}:
+{ pkgs, ... }:
 {
   programs.ncmpcpp = {
     enable = true;
+    package = pkgs.ncmpcpp.override {
+      visualizerSupport = true;
+    };
     settings = {
       user_interface = "alternative";
       alternative_header_first_line_format = "$(white)─┤ $b$(magenta)%a$(end)$/b ├─$(end)";
