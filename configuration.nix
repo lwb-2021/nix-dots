@@ -40,6 +40,7 @@
     ./system-config/software/appimage.nix
     ./system-config/software/command-line.nix
     ./system-config/software/fhs.nix
+    ./system-config/software/flatpak.nix
     ./system-config/software/virt/docker.nix
 
     ./system-config/software/apps/android.nix
@@ -146,8 +147,6 @@
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   networking.firewall.enable = false;
-
-  services.flatpak.enable = true;
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
