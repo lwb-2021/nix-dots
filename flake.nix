@@ -27,11 +27,17 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Deps
+    rust-overlay = {
+      url = "git+https://github.com/oxalica/rust-overlay?shallow=1";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     #
 
     ags = {
       url = "github:Aylur/ags";
-      inputs.nixpkgs.follows = "nixpkgs";
+      # inputs.nixpkgs.follows = "nixpkgs";
     };
 
     catppuccin = {
@@ -55,7 +61,10 @@
     };
     wezterm = {
       url = "git+https://github.com/wezterm/wezterm?dir=nix&shallow=1";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        rust-overlay.follows = "rust-overlay";
+      };
     };
   };
   outputs =
