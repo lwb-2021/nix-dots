@@ -2,9 +2,6 @@
   description = "My NixOS flake";
   inputs = {
     nixpkgs.url = "git+https://github.com/NixOS/nixpkgs?shallow=1&ref=nixos-unstable";
-    nixpkgs-stable = {
-      url = "github:NixOS/nixpkgs/fe83bbdde2ccdc2cb9573aa846abe8363f79a97a";
-    };
 
     nur = {
       url = "github:nix-community/NUR";
@@ -43,11 +40,16 @@
       url = "github:nix-community/nix-vscode-extensions";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    quickshell = {
-      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
+    /*
+      quickshell = {
+        url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
+        inputs.nixpkgs.follows = "nixpkgs";
+      };
+    */
+    vicinae = {
+      url = "git+https://github.com/vicinaehq/vicinae?shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     wezterm = {
       url = "git+https://github.com/wezterm/wezterm?dir=nix&shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -98,6 +100,7 @@
         modules = [
           inputs.sops-nix.homeManagerModules.sops
           inputs.catppuccin.homeModules.catppuccin
+          inputs.vicinae.homeManagerModules.default
 
           inputs.nix-flatpak.homeManagerModules.nix-flatpak
 
