@@ -19,7 +19,7 @@
           "$mod, Q, exec, ${config.wayland.terminal.exec}"
           "$mod, E, exec, thunar"
           "$mod, R, exec, ${config.wayland.launcher.exec}"
-          "ALT, SPACE, exec ${config.wayland.launcher.exec}"
+          "ALT, SPACE, exec, ${config.wayland.launcher.exec}"
           "$mod, C, killactive"
           "$mod, F, togglefloating"
           "$mod, K, movefocus, u"
