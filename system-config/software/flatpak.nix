@@ -1,5 +1,6 @@
 { config, pkgs, ... }:
 {
+  services.flatpak.enable = true;
   system.fsPackages = [ pkgs.bindfs ];
 
   fileSystems =
