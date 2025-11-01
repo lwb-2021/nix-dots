@@ -39,7 +39,7 @@
     ./programs/desktop/hypr
 
     ./programs/desktop/apps/nomacs.nix
-    ./programs/desktop/apps/copyq.nix
+    # ./programs/desktop/apps/copyq.nix
 
     ./programs/desktop/apps/bar/ags
 
