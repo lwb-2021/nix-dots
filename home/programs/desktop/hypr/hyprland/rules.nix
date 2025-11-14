@@ -35,6 +35,9 @@
         # "opacity 0.9, class:^(kitty)$"
 
         "float, class:waypaper"
+
+        "float, class:(OSD Lyrics)"
+        "pin, class:(OSD Lyrics)"
       ];
     };
   };
