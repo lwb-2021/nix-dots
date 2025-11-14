@@ -47,6 +47,7 @@
           # Connector
           keepassxc-browser
           zotero-connector
+          web-clipper-obsidian
 
           # Security
           # noscript # 会导致B站崩溃以及拖慢网页加载速度
@@ -59,6 +60,8 @@
           vimium-c
 
           tampermonkey # Script
+
+          
         ];
         settings = {
           "{3c078156-979c-498b-8990-85f7987dd929}".settings = {
