@@ -31,8 +31,9 @@
     ./programs/creation/drawio.nix
 
     ./programs/daily/office.nix
+    ./programs/daily/note.nix
     ./programs/daily/pandoc.nix
-    ./programs/daily/todoist.nix
+    # ./programs/daily/todoist.nix
     ./programs/daily/ebook.nix
 
     ./programs/desktop

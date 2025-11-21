@@ -61,7 +61,7 @@
       "com.tencent.wemeet"
       "com.dingtalk.DingTalk"
 
-      "md.obsidian.Obsidian"
+      # "md.obsidian.Obsidian"
     ];
   };
 
