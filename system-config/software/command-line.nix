@@ -37,7 +37,8 @@
     ffmpeg-full
     p7zip-rar
 
-    gemini-cli
+    # gemini-cli
+    qwen-code
 
     fishPlugins.fzf-fish
     fishPlugins.sponge
