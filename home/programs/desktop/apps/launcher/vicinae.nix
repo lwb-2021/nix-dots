@@ -1,10 +1,13 @@
-{ ... }:
+{ pkgs, ... }:
 {
   services.vicinae = {
     enable = true;
     autoStart = true;
     settings = {
-      theme.name = "vicinae-dark";
+      theme = {
+        name = "vicinae-dark";
+        iconTheme = "BeautyLine";
+      };
       window = {
         csd = true;
         opacity = 0.9;
