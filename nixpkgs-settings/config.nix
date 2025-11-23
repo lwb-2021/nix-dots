@@ -58,7 +58,7 @@
         "wechat-uos"
         "dingtalk"
       */
-      "wpsoffice-cn"
+      # "wpsoffice-cn"
       "ttf-wps-fonts"
 
       "pantum-driver"

@@ -60,8 +60,8 @@
       "com.qq.QQ"
       "com.tencent.wemeet"
       "com.dingtalk.DingTalk"
+      "com.wps.Office"
 
-      # "md.obsidian.Obsidian"
     ];
   };
 
