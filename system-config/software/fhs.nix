@@ -8,16 +8,45 @@
         (with pkgs; [
           stdenv.cc
 
+          # Hardware
+          udev
+          fuse
+          libusb1
+
+          # Libraries
+          curl
+
+          zstd
+          libz
+
+          # Wayland
           wayland
           glib
           libGL
           fontconfig
 
-          udev
-          fuse
-          libusb1
+          # Gtk + Webview
+          gtk3
+          pango
+          cairo
+          harfbuzz
+          at-spi2-atk
+          atkmm
+          gdk-pixbuf
 
-          zstd
+          glib
+          libdbusmenu-gtk3
+
+          librsvg
+          libsoup_3
+
+          libayatana-common
+          libayatana-indicator
+          libayatana-appindicator
+          ayatana-ido
+
+          # Unknown
+          libepoxy
         ]);
     })
   ];
