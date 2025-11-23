@@ -81,6 +81,8 @@
       "drawio"
       "todoist-electron"
 
+      "android-studio-stable"
+
     ];
   permittedInsecurePackages = [ "openssl-1.1.1w" ];
   cudaSupport = true;
