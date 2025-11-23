@@ -55,6 +55,7 @@
         in
         lib.concatStringsSep "\n" [
           shebang
+          "xrdb ~/.Xresources"
           pre
           dex
           post

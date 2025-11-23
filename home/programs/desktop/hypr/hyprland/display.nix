@@ -14,9 +14,5 @@
       create_abstract_socket = true;
     };
 
-    exec-once = [
-      "xrdb ~/.Xresources"
-    ];
-
   };
 }
