@@ -4,6 +4,10 @@
   ...
 }:
 {
+  imports = [
+    ./xdg.nix
+    ./vars.nix
+  ];
 
   options = with lib; {
     wayland.launcher.exec = mkOption {
@@ -17,10 +21,6 @@
     };
   };
   config = {
-    imports = [
-      ./xdg.nix
-      ./vars.nix
-    ];
     home.packages = with pkgs; [
       xarchiver
     ];

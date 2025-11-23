@@ -1,6 +1,6 @@
 { config, ... }:
 {
-  programs.niri.settings.bind =
+  programs.niri.settings.binds =
     with config.lib.niri.actions;
     let
       mod = "Super";
