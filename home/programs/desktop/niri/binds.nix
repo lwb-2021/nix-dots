@@ -6,8 +6,21 @@
       mod = "Super";
     in
     {
-      "${mod}+T".action = spawn "${config.wayland.terminal.exec}";
-      "${mod}+R".action = spawn "${config.wayland.launcher.exec}";
-      "Print".action = spawn "${config.wayland.screenshot.exec}";
+      "${mod}+T".action = spawn-sh "${config.wayland.terminal.exec}";
+      "${mod}+R".action = spawn-sh "${config.wayland.launcher.exec}";
+      "${mod}+C".action = close-window;
+      "Alt+Space".action = spawn-sh "${config.wayland.launcher.exec}";
+
+      "${mod}+H".action = focus-column-left;
+      "${mod}+J".action = focus-window-down;
+      "${mod}+K".action = focus-window-up;
+      "${mod}+L".action = focus-column-right;
+
+      "${mod}+Minus".action = set-column-width "-10%";
+      "${mod}+Equal".action = set-column-width "+10%";
+
+      "${mod}+Shift+Escape".action = quit;
+
+      "Print".action = spawn-sh "${config.wayland.screenshot.exec}";
     };
 }

@@ -2,6 +2,7 @@
 {
   imports = [
     ./binds.nix
+    ./layout.nix
   ];
   programs.niri = {
     enable = true;
