@@ -6,6 +6,13 @@ let
       targetPkgs = (
         pkgs: with pkgs; [
           stdenv.cc
+
+          systemdLibs
+          libinput
+          libgbm
+          fontconfig
+          freetype
+
           neovim-unwrapped
           unzip
           lua
