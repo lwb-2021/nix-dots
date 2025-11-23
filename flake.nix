@@ -45,6 +45,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    niri = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nix-vscode-extensions = {
       url = "github:nix-community/nix-vscode-extensions";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -99,11 +104,10 @@
         modules = [
 
           inputs.impermanence.nixosModules.impermanence
-          ./configuration.nix
           inputs.catppuccin.nixosModules.catppuccin
           inputs.sops-nix.nixosModules.sops
-
           inputs.nix-flatpak.nixosModules.nix-flatpak
+          ./configuration.nix
         ];
       };
       homeConfigurations.lwb = home-manager.lib.homeManagerConfiguration {
@@ -113,6 +117,7 @@
           inputs.sops-nix.homeManagerModules.sops
           inputs.catppuccin.homeModules.catppuccin
           inputs.vicinae.homeManagerModules.default
+          inputs.niri.homeModules.niri
 
           inputs.nix-flatpak.homeManagerModules.nix-flatpak
 

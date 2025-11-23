@@ -38,6 +38,7 @@
 
     ./programs/desktop
     ./programs/desktop/hypr
+    ./programs/desktop/niri
 
     ./programs/desktop/apps/nomacs.nix
     # ./programs/desktop/apps/copyq.nix
