@@ -3,6 +3,7 @@
   imports = [
     ./binds.nix
     ./layout.nix
+    ./rules.nix
   ];
   programs.niri = {
     enable = true;
@@ -13,6 +14,7 @@
           natural-scroll = false;
         };
       };
+      prefer-no-csd = true;
       spawn-at-startup = [
         { argv = [ "~/.config/autostart.sh" ]; }
         { argv = [ "${lib.getExe pkgs.xwayland-satellite}" ]; }
