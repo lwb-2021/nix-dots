@@ -17,8 +17,11 @@
       prefer-no-csd = true;
       spawn-at-startup = [
         { argv = [ "~/.config/autostart.sh" ]; }
-        { argv = [ "${lib.getExe pkgs.xwayland-satellite}" ]; }
       ];
+      xwayland-satellite = {
+        enable = true;
+        path = lib.getExe pkgs.xwayland-satellite;
+      };
     };
   };
 }
