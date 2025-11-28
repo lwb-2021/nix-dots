@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 {
   imports = [
     ./binds.nix
@@ -10,6 +10,7 @@
     settings = {
       spawn-at-startup = [
         { argv = [ "~/.config/autostart.sh" ]; }
+        { argv = [ "${lib.getExe pkgs.xwayland-satellite}" ]; }
       ];
     };
   };
