@@ -6,7 +6,7 @@
     wayland.windowManager.hyprland = {
       systemd = {
         enable = true;
-        enableXdgAutostart = false;
+        enableXdgAutostart = true;
         extraCommands = [
           "systemctl --user stop hyprpolkitagent.service"
           "systemctl --user stop hyprland-session.target"

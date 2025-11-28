@@ -40,16 +40,12 @@
         createDirectories = true;
       };
     };
-    home.packages = with pkgs; [
-      dex
-    ];
     home.file.".config/autostart.sh" = {
       executable = true;
       text =
         let
           shebang = "#!/usr/bin/env bash";
           pre = lib.concatStringsSep "\n" config.autostart.prepareCommands;
-          dex = "dex -a";
           post = lib.concatStringsSep "\n" config.autostart.commands;
 
         in
@@ -57,7 +53,6 @@
           shebang
           "xrdb ~/.Xresources"
           pre
-          dex
           post
         ];
     };
