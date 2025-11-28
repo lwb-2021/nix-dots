@@ -22,7 +22,7 @@
       "${mod}+Shift+Escape".action = quit;
 
       "Print".action = spawn-sh "${config.wayland.screenshot.exec}";
-      "Alt+Print".action = screenshot-window;
+      # "Alt+Print".action = screenshot-window;
 
       "${mod}+1".action = focus-workspace 1;
       "${mod}+2".action = focus-workspace 2;
