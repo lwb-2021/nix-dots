@@ -15,21 +15,10 @@
 
     impermanence.url = "github:nix-community/impermanence";
 
-    nixpak = {
-      url = "github:nixpak/nixpak";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
 
     sops-nix = {
       url = "github:Mic92/sops-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    # Deps
-    rust-overlay = {
-      url = "git+https://github.com/oxalica/rust-overlay?shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -54,15 +43,8 @@
       url = "github:nix-community/nix-vscode-extensions";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    /*
-      quickshell = {
-        url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
-        inputs.nixpkgs.follows = "nixpkgs";
-      };
-    */
     vicinae = {
       url = "git+https://github.com/vicinaehq/vicinae?shallow=1";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
     wezterm = {
       url = "git+https://github.com/wezterm/wezterm?dir=nix&shallow=1";
