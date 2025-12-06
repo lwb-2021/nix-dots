@@ -52,21 +52,9 @@
 
       "zerotierone"
 
-      /*
-        "qq"
-        "wechat"
-        "wechat-uos"
-        "dingtalk"
-      */
-      # "wpsoffice-cn"
       "ttf-wps-fonts"
 
       "pantum-driver"
-
-      /*
-        "wemeet"
-        "libwemeetwrap"
-      */
 
       "obsidian"
 
