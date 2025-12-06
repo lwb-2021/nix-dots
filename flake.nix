@@ -45,13 +45,7 @@
     };
     vicinae = {
       url = "git+https://github.com/vicinaehq/vicinae?shallow=1";
-    };
-    wezterm = {
-      url = "git+https://github.com/wezterm/wezterm?dir=nix&shallow=1";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        rust-overlay.follows = "rust-overlay";
-      };
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
   outputs =

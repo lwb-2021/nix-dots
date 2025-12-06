@@ -1,8 +1,7 @@
-{ pkgs, inputs, ... }:
+{ ... }:
 {
   programs.wezterm = {
     enable = true;
-    package = inputs.wezterm.packages.${pkgs.system}.default;
     extraConfig = ''
       local wezterm = require 'wezterm'
       local config = wezterm.config_builder()
