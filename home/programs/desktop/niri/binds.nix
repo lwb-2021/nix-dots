@@ -14,6 +14,7 @@
 
         "${mod}+T".action = spawn-sh "${config.wayland.terminal.exec}";
         "${mod}+R".action = spawn-sh "${config.wayland.launcher.exec}";
+        "${mod}+E".action = spawn "thunar";
         "${mod}+C".action = close-window;
         "Alt+Space".action = spawn-sh "${config.wayland.launcher.exec}";
 
