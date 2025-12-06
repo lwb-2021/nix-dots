@@ -115,6 +115,7 @@
 
           # AI
           github.copilot
+          qwenlm.qwen-code-vscode-ide-companion
 
         ]
         ++ (with pkgs.open-vsx; [
