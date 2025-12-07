@@ -15,8 +15,8 @@
         '';
       })
     */
-    nur.repos.rewine.ttf-wps-fonts
   ];
+
   programs.java = {
     enable = true;
     package = pkgs.openjdk21;

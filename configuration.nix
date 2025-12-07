@@ -43,6 +43,7 @@
     ./system-config/software/command-line.nix
     ./system-config/software/fhs.nix
     ./system-config/software/flatpak.nix
+    ./system-config/software/fonts.nix
     ./system-config/software/virt/docker.nix
 
     ./system-config/software/apps/android.nix

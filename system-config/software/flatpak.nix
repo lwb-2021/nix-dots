@@ -35,8 +35,4 @@
       "/usr/share/icons" = mkRoSymBind "${aggregated}/share/icons";
     };
 
-  fonts.packages = with pkgs; [
-    source-han-sans
-    nerd-fonts.jetbrains-mono
-  ];
 }
