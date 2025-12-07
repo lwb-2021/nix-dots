@@ -27,6 +27,10 @@
         "${mod}+Shift+K".action = move-window-up;
         "${mod}+Shift+L".action = move-column-right;
 
+        "${mod}+F".action = toggle-window-floating;
+        "${mod}+Shift+M".action = toggle-windowed-fullscreen;
+
+        "${mod}+M".action = maximize-column;
         "${mod}+Minus".action = set-column-width "-10%";
         "${mod}+Equal".action = set-column-width "+10%";
 
