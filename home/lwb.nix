@@ -53,7 +53,6 @@
     ./programs/desktop/apps/wallpaper
     ./programs/desktop/apps/wallpaper/swww.nix
 
-    ./programs/desktop/fonts.nix
     ./programs/desktop/rime.nix
     ./programs/desktop/themes.nix
 
