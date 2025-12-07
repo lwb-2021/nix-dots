@@ -22,6 +22,7 @@
 
         "editor.formatOnPaste" = true;
         "editor.formatOnSave" = true;
+        "editor.autoIndentOnPaste" = true;
 
         "files.autoSave" = "afterDelay";
         "files.autoGuessEncoding" = true;
@@ -61,10 +62,6 @@
             };
           };
         };
-        # Qt
-        "qt-qml.qmlls.customExePath" = "${pkgs.qt6.qtdeclarative}/bin/qmlls";
-        "qt-qml.doNotAskForQmllsDownload" = true;
-        "qt-qml.qmlls.useQmlImportPathEnvVar" = true;
       };
       extensions =
         with pkgs.vscode-marketplace;
