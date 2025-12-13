@@ -7,6 +7,7 @@
   imports = [ inputs.ags.homeManagerModules.default ];
   programs.ags = {
     enable = true;
+    systemd.enable = true;
     configDir = null;
     extraPackages = with inputs.ags.packages.${pkgs.system}; [
       apps
@@ -21,5 +22,4 @@
       wireplumber
     ];
   };
-  autostart.prepareCommands = [ "ags run & sleep 1s" ];
 }

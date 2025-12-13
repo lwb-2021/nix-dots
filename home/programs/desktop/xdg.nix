@@ -40,23 +40,41 @@
         createDirectories = true;
       };
     };
-    home.file.".config/autostart.sh" = {
-      executable = true;
-      text =
-        let
-          shebang = "#!/usr/bin/env bash";
-          pre = lib.concatStringsSep "\n" config.autostart.prepareCommands;
-          post = lib.concatStringsSep "\n" config.autostart.commands;
+    home.file =
+      let
+        shebang = "#!/usr/bin/env bash";
+        pre = lib.concatStringsSep "\n" (config.autostart.prepareCommands ++ [ "xrdb ~/.Xresources" ]);
+        post = lib.concatStringsSep "\n" config.autostart.commands;
 
-        in
-        lib.concatStringsSep "\n" [
-          shebang
-          "xrdb ~/.Xresources"
-          pre
-          post
-        ];
+      in
+      {
+        ".config/autostart.sh" = {
+          executable = true;
+          text = lib.concatStringsSep "\n" [
+            shebang
+            post
+          ];
+        };
+        ".config/prepare-wayland.sh" = {
+          executable = true;
+          text = lib.concatStringsSep "\n" [
+            shebang
+            pre
+          ];
+        };
+      };
+    systemd.user.services.prepare-wayland = {
+      Unit = {
+        PartOf = [ "graphical-session.target" ];
+        After = [ "graphical-session-pre.target" ];
+      };
+      Service = {
+        ExecStart = "${config.home.homeDirectory}/.config/prepare-wayland.sh";
+      };
+      Install = {
+        WantedBy = [ "graphical-session.target" ];
+      };
     };
-
   };
 
 }
