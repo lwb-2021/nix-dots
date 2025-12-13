@@ -1,12 +1,12 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}:
+{ ... }:
 {
   networking = {
     hostName = "lwb";
-    networkmanager.enable = true;
+    networkmanager = {
+      enable = true;
+    };
+    nftables = {
+      enable = true;
+    };
   };
 }
