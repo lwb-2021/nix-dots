@@ -34,7 +34,6 @@
       ];
     };
   };
-  catppuccin.cache.enable = true;
 
   boot.loader.grub.configurationLimit = 4;
 
