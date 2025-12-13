@@ -36,7 +36,6 @@
     # ./system-config/desktop-environment/hyprland.nix
     ./system-config/desktop-environment/niri.nix
     ./system-config/desktop-environment/security.nix
-    ./system-config/desktop-environment/theme.nix
     ./system-config/desktop-environment/xdg.nix
 
     ./system-config/software/appimage.nix

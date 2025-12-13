@@ -108,26 +108,6 @@
         "type": "github"
       }
     },
-    "catppuccin": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1764885363,
-        "narHash": "sha256-P6UHmw6enwxmP5wP4Lv722+tgpq1PFDAPAdtj7l/16U=",
-        "owner": "catppuccin",
-        "repo": "nix",
-        "rev": "95042630028d613080393e0f03c694b77883c7db",
-        "type": "github"
-      },
-      "original": {
-        "owner": "catppuccin",
-        "repo": "nix",
-        "type": "github"
-      }
-    },
     "firefox-gnome-theme": {
       "flake": false,
       "locked": {
@@ -448,7 +428,6 @@
     "root": {
       "inputs": {
         "ags": "ags",
-        "catppuccin": "catppuccin",
         "home-manager": "home-manager",
         "impermanence": "impermanence",
         "niri": "niri",
