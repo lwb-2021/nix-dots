@@ -10,7 +10,6 @@
       max-icon-size = 64;
       default-timeout = 5000;
       ignore-timeout = 0;
-      font = "\"Source Han Sans CN\" 12";
     };
   };
   home.packages = with pkgs; [

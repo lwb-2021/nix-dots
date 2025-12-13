@@ -1,21 +1,29 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
   services.vicinae = {
     enable = true;
     autoStart = true;
     settings = {
       theme = {
-        name = "vicinae-dark";
+        # name = "vicinae-dark";
         iconTheme = "BeautyLine";
       };
       window = {
         csd = true;
-        opacity = 0.9;
         rounding = 10;
       };
 
       faviconService = "twenty";
     };
+    extensions = with inputs.vicinae-extensions.packages.${pkgs.stdenv.hostPlatform.system}; [
+      bluetooth
+      firefox
+      niri
+      nix
+      player-pilot
+      process-manager
+      wifi-commander
+    ];
   };
   wayland.launcher.exec = "vicinae toggle";
 }

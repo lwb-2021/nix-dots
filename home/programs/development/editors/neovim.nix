@@ -40,14 +40,6 @@ in
     package = pkgs.neovide.override { inherit neovim; };
     settings = {
       maximized = true;
-      font = {
-        normal = [
-          {
-            family = "JetBrainsMono Nerd Font";
-          }
-        ];
-        size = 12.0;
-      };
       box-drawing = {
         mode = "native";
       };

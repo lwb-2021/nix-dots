@@ -20,5 +20,4 @@
       flavor = "mocha";
     };
   */
-  catppuccin.cache.enable = true;
 }

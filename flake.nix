@@ -108,6 +108,7 @@
           inputs.niri.homeModules.niri
 
           ./stylix
+          ./stylix/home.nix
 
           ./home/lwb.nix
         ];

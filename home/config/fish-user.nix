@@ -39,5 +39,4 @@
       fi
     '';
   };
-  catppuccin.fish.enable = false;
 }

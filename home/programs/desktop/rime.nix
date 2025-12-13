@@ -17,16 +17,8 @@
               "TriggerKeys/0" = "Alt+Shift+Shift_R";
             };
           };
-          addons = {
-            classicui.globalSection = {
-              Theme = "catppuccin-mocha-mauve";
-
-            };
-          };
         };
       };
     };
   };
-  catppuccin.fcitx5.apply = false;
-  catppuccin.fcitx5.enableRounded = true;
 }
