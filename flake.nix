@@ -22,6 +22,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    stylix = {
+      url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     #
 
     ags = {
@@ -80,9 +85,13 @@
         modules = [
 
           inputs.impermanence.nixosModules.impermanence
+          inputs.stylix.nixosModules.stylix
           inputs.catppuccin.nixosModules.catppuccin
           inputs.sops-nix.nixosModules.sops
           inputs.nix-flatpak.nixosModules.nix-flatpak
+
+          ./stylix
+
           ./configuration.nix
         ];
       };
@@ -91,11 +100,14 @@
 
         modules = [
           inputs.sops-nix.homeManagerModules.sops
+          inputs.stylix.homeModules.stylix
           inputs.catppuccin.homeModules.catppuccin
+          inputs.nix-flatpak.homeManagerModules.nix-flatpak
+
           inputs.vicinae.homeManagerModules.default
           inputs.niri.homeModules.niri
 
-          inputs.nix-flatpak.homeManagerModules.nix-flatpak
+          ./stylix
 
           ./home/lwb.nix
         ];
