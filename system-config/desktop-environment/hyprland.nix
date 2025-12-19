@@ -5,6 +5,7 @@
   ];
   programs.hyprland = {
     enable = true;
+    package = null;
     xwayland.enable = true;
   };
 }

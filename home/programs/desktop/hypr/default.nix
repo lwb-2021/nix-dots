@@ -2,7 +2,7 @@
 {
   imports = [
     ./hyprlock.nix
-    ./hyprsunset.nix
-    ./hyprland
+    # ./hyprsunset.nix
+    # ./hyprland
   ];
 }
