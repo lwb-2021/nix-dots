@@ -7,10 +7,12 @@
       platform = "qtct";
     };
     gtk = {
+
       colors.override = with config.lib.stylix.colors; {
-        base0E = base0D;
-        base0D = base0E; # apply gtk accent to Base0D
+        base0E-hex = base0D-hex;
+        base0D-hex = base0E-hex; # apply gtk accent to Base0D
       };
+
       flatpakSupport.enable = true;
     };
   };
