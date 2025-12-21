@@ -64,7 +64,7 @@
       "vscode-extension-mhutchie-git-graph"
       "vscode-extension-github-copilot"
 
-      "idea-ultimate"
+      "idea"
 
       "drawio"
       "todoist-electron"
