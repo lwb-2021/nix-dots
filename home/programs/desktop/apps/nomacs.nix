@@ -4,7 +4,7 @@
 }:
 {
   home.packages = with pkgs; [
-    nomacs-qt6
+    nomacs
   ];
   xdg.mimeApps.defaultApplications = {
     "image/jpeg" = "org.nomacs.ImageLounge.desktop";
