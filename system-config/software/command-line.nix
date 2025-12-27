@@ -36,6 +36,7 @@
 
     ffmpeg-full
     p7zip-rar
+    unrar
 
     # gemini-cli
     qwen-code

@@ -4,6 +4,7 @@
     pkg:
     builtins.elem (lib.getName pkg) [
       "p7zip"
+      "unrar"
 
       #####
       "nvidia-x11"
