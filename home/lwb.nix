@@ -88,7 +88,8 @@
     ./programs/shell/pay-respect.nix
     ./programs/shell/starship.nix
     ./programs/shell/yazi.nix
-    ./programs/shell/zellij
+    ./programs/shell/zoxide.nix
+    # ./programs/shell/zellij
 
     ./programs/study/anki.nix
   ];
