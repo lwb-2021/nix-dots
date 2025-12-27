@@ -16,5 +16,6 @@
     commitizen-go
     commitlint-rs
     husky
+    lazygit
   ];
 }

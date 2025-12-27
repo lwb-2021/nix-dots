@@ -33,6 +33,10 @@
       url = "github:Aylur/ags";
       # inputs.nixpkgs.follows = "nixpkgs";
     };
+    my-neovim = {
+      url = "github:lwb-2021/neovim-config";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     niri = {
       url = "github:sodiboo/niri-flake";

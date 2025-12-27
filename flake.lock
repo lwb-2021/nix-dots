@@ -127,6 +127,29 @@
     "flake-parts": {
       "inputs": {
         "nixpkgs-lib": [
+          "my-neovim",
+          "nixPatch",
+          "neovim-nightly-overlay",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1765835352,
+        "narHash": "sha256-XswHlK/Qtjasvhd1nOa1e8MgZ8GS//jBoTqWtrS1Giw=",
+        "owner": "hercules-ci",
+        "repo": "flake-parts",
+        "rev": "a34fae9c08a15ad73f295041fec82323541400a9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hercules-ci",
+        "repo": "flake-parts",
+        "type": "github"
+      }
+    },
+    "flake-parts_2": {
+      "inputs": {
+        "nixpkgs-lib": [
           "nur",
           "nixpkgs"
         ]
@@ -145,7 +168,7 @@
         "type": "github"
       }
     },
-    "flake-parts_2": {
+    "flake-parts_3": {
       "inputs": {
         "nixpkgs-lib": [
           "stylix",
@@ -233,6 +256,67 @@
       "original": {
         "owner": "nix-community",
         "repo": "impermanence",
+        "type": "github"
+      }
+    },
+    "my-neovim": {
+      "inputs": {
+        "nixPatch": "nixPatch",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1766299662,
+        "narHash": "sha256-PBuPt+XshoPwtQHvl3ZXP7S/TBm7LghcVcS9QwjKh2s=",
+        "owner": "lwb-2021",
+        "repo": "neovim-config",
+        "rev": "e278631847e300bf8c0ee9f80aadf6c74f00dfe8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "lwb-2021",
+        "repo": "neovim-config",
+        "type": "github"
+      }
+    },
+    "neovim-nightly-overlay": {
+      "inputs": {
+        "flake-parts": "flake-parts",
+        "neovim-src": "neovim-src",
+        "nixpkgs": [
+          "my-neovim",
+          "nixPatch",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1766189079,
+        "narHash": "sha256-K+xdRPIfIE8Xr3JHKNkVNnxPnihrPtW+D1rtcjHx1u4=",
+        "owner": "nix-community",
+        "repo": "neovim-nightly-overlay",
+        "rev": "7e47a8c64312e726aafc0789a5d9043501a7e3ae",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "neovim-nightly-overlay",
+        "type": "github"
+      }
+    },
+    "neovim-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1766187129,
+        "narHash": "sha256-SqvXXTi+nLihMFhHUT7/1JtNqWk2cMKiCvWxYKE03r8=",
+        "owner": "neovim",
+        "repo": "neovim",
+        "rev": "eac2f0443e032ba238ca6b4a9e2fd6135be454b3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "neovim",
+        "repo": "neovim",
         "type": "github"
       }
     },
@@ -330,6 +414,29 @@
         "type": "github"
       }
     },
+    "nixPatch": {
+      "inputs": {
+        "neovim-nightly-overlay": "neovim-nightly-overlay",
+        "nixpkgs": [
+          "my-neovim",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1766244321,
+        "narHash": "sha256-cJ2PgSlfzRAsdUNt+MWsgF1UtUD5tGviIwTL5SyURg8=",
+        "ref": "refs/heads/main",
+        "rev": "051bf14b1458c28682cac928a128897ed5ec4664",
+        "shallow": true,
+        "type": "git",
+        "url": "https://codeberg.org/NicoElbers/nixPatch-nvim"
+      },
+      "original": {
+        "shallow": true,
+        "type": "git",
+        "url": "https://codeberg.org/NicoElbers/nixPatch-nvim"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1763966396,
@@ -381,7 +488,7 @@
     },
     "nur": {
       "inputs": {
-        "flake-parts": "flake-parts",
+        "flake-parts": "flake-parts_2",
         "nixpkgs": [
           "nixpkgs"
         ]
@@ -430,6 +537,7 @@
         "ags": "ags",
         "home-manager": "home-manager",
         "impermanence": "impermanence",
+        "my-neovim": "my-neovim",
         "niri": "niri",
         "nix-flatpak": "nix-flatpak",
         "nix-vscode-extensions": "nix-vscode-extensions",
@@ -468,7 +576,7 @@
         "base16-helix": "base16-helix",
         "base16-vim": "base16-vim",
         "firefox-gnome-theme": "firefox-gnome-theme",
-        "flake-parts": "flake-parts_2",
+        "flake-parts": "flake-parts_3",
         "gnome-shell": "gnome-shell",
         "nixpkgs": [
           "nixpkgs"
