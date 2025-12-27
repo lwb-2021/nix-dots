@@ -1,7 +1,7 @@
 {
   description = "My NixOS flake";
   inputs = {
-    nixpkgs.url = "git+https://github.com/NixOS/nixpkgs?shallow=1&ref=nixos-unstable";
+    nixpkgs.url = "git+https://mirrors.tuna.tsinghua.edu.cn/git/nixpkgs.git?shallow=1&ref=nixos-unstable";
 
     nur = {
       url = "github:nix-community/NUR";

@@ -2,7 +2,7 @@
 {
   services.vicinae = {
     enable = true;
-    autoStart = true;
+    systemd.autoStart = true;
     settings = {
       theme = {
         # name = "vicinae-dark";
