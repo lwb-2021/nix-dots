@@ -246,11 +246,11 @@
     },
     "impermanence": {
       "locked": {
-        "lastModified": 1737831083,
-        "narHash": "sha256-LJggUHbpyeDvNagTUrdhe/pRVp4pnS6wVKALS782gRI=",
-        "owner": "nix-community",
+        "lastModified": 1766843250,
+        "narHash": "sha256-RrFEHXe58Y/25aD3p1RXUACcXMrsxgjfNiY4HoENBlo=",
+        "owner": "lwb-2021",
         "repo": "impermanence",
-        "rev": "4b3e914cdf97a5b536a889e939fb2fd2b043a170",
+        "rev": "e3e87f151d732f459a2aa7e4eaf97315f3528dc2",
         "type": "github"
       },
       "original": {
@@ -267,11 +267,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1766792941,
-        "narHash": "sha256-awGC2knyvOM3a4S1ji760uXQLLuyswhvhdNo4Gck1Ig=",
+        "lastModified": 1766915187,
+        "narHash": "sha256-PEkl/O0ZJnMHBm+3LkKEc76rkFkykBo4SyqHwrH9TQA=",
         "owner": "lwb-2021",
         "repo": "neovim-config",
-        "rev": "40ceb406f811dec7d89d275e0dad448a8039435c",
+        "rev": "0a6ed39dcd63e4f21f3ab7bf306838577879ab6a",
         "type": "github"
       },
       "original": {

@@ -10,6 +10,5 @@
   # fileSystems."/etc/ssh".neededForBoot = true;
   environment.systemPackages = [ pkgs.sops ];
   sops.secrets = {
-
   };
 }

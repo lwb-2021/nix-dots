@@ -40,10 +40,16 @@
         createDirectories = true;
       };
     };
+    data.directories = [
+      "Music"
+      "Documents"
+    ];
     home.file =
       let
         shebang = "#!/usr/bin/env bash";
-        pre = lib.concatStringsSep "\n" (config.autostart.prepareCommands ++ [ "xrdb ~/.Xresources" ]);
+        pre = lib.concatStringsSep "\n" (
+          config.autostart.prepareCommands ++ [ "${lib.getExe pkgs.xorg.xrdb} ~/.Xresources" ]
+        );
         post = lib.concatStringsSep "\n" config.autostart.commands;
 
       in

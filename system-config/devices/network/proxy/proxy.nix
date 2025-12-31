@@ -11,12 +11,6 @@
     webui = pkgs.metacubexd;
     configFile = ./mihomo-config.yaml;
   };
-  environment.persistence."/nix/persistence" = {
-    directories = [
-
-    ];
-
-  };
   environment.systemPackages = [
     (pkgs.makeDesktopItem {
       desktopName = "Mihomo WebUI";

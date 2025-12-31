@@ -106,6 +106,7 @@
         modules = [
           inputs.sops-nix.homeManagerModules.sops
           inputs.stylix.homeModules.stylix
+          inputs.impermanence.homeManagerModules.impermanence
           inputs.nix-flatpak.homeManagerModules.nix-flatpak
 
           inputs.vicinae.homeManagerModules.default

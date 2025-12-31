@@ -17,6 +17,8 @@
     ./config/sops.nix
     ./config/thunar.nix
 
+    ./data
+
     ./programs/media/lyrics.nix
     ./programs/media/mpd.nix
     ./programs/media/mpris.nix
