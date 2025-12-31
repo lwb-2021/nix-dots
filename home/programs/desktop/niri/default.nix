@@ -22,6 +22,9 @@
         enable = true;
         path = lib.getExe pkgs.xwayland-satellite;
       };
+      debug = {
+        honor-xdg-activation-with-invalid-serial = true;
+      };
     };
   };
 }
