@@ -13,6 +13,19 @@
       };
 
       faviconService = "twenty";
+
+      providers = {
+        "@knoopx/nix-0" = {
+          preferences = {
+            githubToken = (import ../../../../../secrets.nix).githubToken.nixpkgsPRTracker;
+          };
+        };
+        clipboard = {
+          preferences = {
+            encryption = true;
+          };
+        };
+      };
     };
     extensions = with inputs.vicinae-extensions.packages.${pkgs.stdenv.hostPlatform.system}; [
       bluetooth
