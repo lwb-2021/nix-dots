@@ -2,7 +2,6 @@
 {
   services.vicinae = {
     enable = true;
-    systemd.autoStart = true;
     settings = {
       theme = {
         # name = "vicinae-dark";
@@ -26,4 +25,5 @@
     ];
   };
   wayland.launcher.exec = "vicinae toggle";
+  autostart.commands = [ "vicinae server" ];
 }

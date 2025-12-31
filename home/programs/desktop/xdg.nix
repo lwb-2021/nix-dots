@@ -17,6 +17,10 @@
   };
 
   config = {
+    autostart = {
+      prepareCommands = lib.mkDefault [ ];
+      commands = lib.mkDefault [ ];
+    };
     xdg = {
       autostart.enable = true;
       mime.enable = true;
