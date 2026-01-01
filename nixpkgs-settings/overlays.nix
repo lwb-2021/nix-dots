@@ -13,14 +13,6 @@
     };
   })
   (final: prev: {
-    inherit (final.lixPackageSets.stable)
-      nixpkgs-review
-      nix-eval-jobs
-      nix-fast-build
-      colmena
-      ;
-  })
-  (final: prev: {
   })
   (final: prev: {
   })
