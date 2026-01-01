@@ -15,7 +15,7 @@
   services.gvfs.enable = true;
   services.tumbler.enable = true;
   environment.systemPackages = with pkgs; [
-    xfce-exo
+    xfce4-exo
     kitty
 
     wl-clipboard
