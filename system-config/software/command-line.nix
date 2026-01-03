@@ -39,7 +39,9 @@
     unrar
 
     # gemini-cli
-    qwen-code
+
+    # TODO
+    # qwen-code
 
     fishPlugins.fzf-fish
     fishPlugins.sponge
