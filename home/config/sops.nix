@@ -6,6 +6,7 @@
     secrets = {
       "rclone/crypt/password" = { };
       "rclone/jianguoyun/password" = { };
+      "restic/password" = { };
     };
   };
 

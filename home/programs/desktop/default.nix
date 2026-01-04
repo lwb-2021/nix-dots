@@ -21,9 +21,6 @@
     };
   };
   config = {
-    home.packages = with pkgs; [
-      xarchiver
-    ];
   };
 
 }

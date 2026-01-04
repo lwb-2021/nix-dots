@@ -16,9 +16,12 @@
   services.tumbler.enable = true;
   environment.systemPackages = with pkgs; [
     xfce4-exo
-    kitty
+    xarchiver
 
-    wl-clipboard
+    wl-clipboard-rs
+
+    ffmpegthumbnailer
+
   ];
 
 }

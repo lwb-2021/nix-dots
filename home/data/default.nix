@@ -61,27 +61,35 @@
     programs.rclone = {
       enable = true;
       remotes = {
-        remotes-sync = {
+        remote = {
           config = {
             type = "compress";
             compress-mode = "zstd";
-            remote = "remotes-sync-encrypted:Compressed";
+            remote = "remote-encrypted:/";
+          };
+          mounts = {
+            "" = {
+              mountPoint = "${config.home.homeDirectory}/Cloud";
+              options = {
+                fuse-flag = "x-gvfs-hide";
+              };
+            };
           };
         };
 
-        remotes-sync-encrypted = {
+        remote-encrypted = {
           config = {
             type = "crypt";
-            remote = "remotes-sync-raw:Encrypted";
+            remote = "remote-raw:EncryptedData";
           };
           secrets.password = config.sops.secrets."rclone/crypt/password".path;
         };
-        remotes-sync-raw = {
+        remote-raw = {
           config = {
             # type = "union";
-            # upstreams = "jianguoyun:Sync";
+            # upstreams = "jianguoyun:/";
             type = "alias";
-            remote = "jianguoyun:Sync";
+            remote = "jianguoyun:/";
           };
         };
         jianguoyun = {
@@ -95,14 +103,22 @@
         };
       };
     };
-    systemd.user.services.sync-home-data = {
-      Unit = {
-        After = [ "network-online.target" ];
+
+    services.restic = {
+      enable = true;
+      backups = {
+        home-data = {
+          initialize = true;
+          passwordFile = config.sops.secrets."restic/password".path;
+          paths = [
+            "/nix/persistence/${config.home.username}"
+          ];
+          repository = "rclone:remote-raw:Backups/${config.home.username}-home-data";
+          extraBackupArgs = [ "--compression" ];
+          pruneOpts = [ "--keep-last 4" ];
+        };
       };
-      Service = {
-        ExecStart = "${lib.getExe pkgs.rclone}  bisync /nix/persistence/${config.home.username} remotes-sync:NixOS/${config.home.username} --checksum";
-      };
-      Install.WantedBy = [ "default.target" ];
     };
+
   };
 }
