@@ -90,7 +90,6 @@
 
           # Nix
           # bbenoist.nix
-          jnoortheen.nix-ide
 
           # Completions and Linting
           ## No Language
@@ -132,6 +131,8 @@
 
           github.vscode-pull-request-github
 
+          ## Nix
+          jnoortheen.nix-ide
         ]);
     };
   };

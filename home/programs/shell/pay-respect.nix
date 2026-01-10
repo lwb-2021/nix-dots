@@ -12,4 +12,5 @@
   programs.nix-index = {
     enable = true;
   };
+  data.local.directories = [ ".cache/nix-index" ];
 }

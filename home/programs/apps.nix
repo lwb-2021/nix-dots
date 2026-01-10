@@ -71,4 +71,6 @@
   home.sessionVariables = {
     GIO_MODULE_DIR = "${pkgs.glib-networking}/lib/gio/modules/";
   };
+
+  data.directories = [ ".var/app" ];
 }

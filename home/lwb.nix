@@ -82,6 +82,7 @@
     ./programs/security/keepassxc.nix
     ./programs/security/keyring.nix
 
+    ./programs/shell
     ./programs/shell/bat.nix
     ./programs/shell/eza.nix
     ./programs/shell/fastfetch.nix
@@ -107,5 +108,4 @@
       port = 993;
     };
   };
-  programs.home-manager.enable = true;
 }

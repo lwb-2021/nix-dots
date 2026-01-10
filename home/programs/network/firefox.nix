@@ -1,5 +1,10 @@
 { config, pkgs, ... }:
 {
+  data = {
+    local.directories = [
+      ".cache/mozilla"
+    ];
+  };
   programs.firefox = {
     enable = true;
     package = pkgs.noCuda.firefox;
@@ -61,7 +66,6 @@
 
           tampermonkey # Script
 
-          
         ];
         settings = {
           "{3c078156-979c-498b-8990-85f7987dd929}".settings = {

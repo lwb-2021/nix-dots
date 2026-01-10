@@ -5,6 +5,11 @@
   ...
 }:
 {
+
+  imports = [
+    ./home-data-preclude.nix
+  ];
+
   options = with lib; {
     data = {
       directories = mkOption {
@@ -33,9 +38,8 @@
       };
     };
     home.persistence = {
-      "/nix/persistence/${config.home.username}" = {
+      "/nix/persistence" = {
         hideMounts = true;
-        allowOther = false;
         directories = [
 
         ]
@@ -45,11 +49,9 @@
         ]
         ++ config.data.files;
       };
-      "/nix/persistence/local/home/${config.home.username}" = {
+      "/nix/persistence/local" = {
         hideMounts = true;
-        allowOther = false;
         directories = [
-          ".cache"
         ]
         ++ config.data.local.directories;
         files = [
