@@ -24,7 +24,6 @@ in
     shellAliases = {
     };
     shellAbbrs = {
-      ls = "eza";
     };
     functions = {
       gitignore = "curl -sL https://www.gitignore.io/api/$argv";
