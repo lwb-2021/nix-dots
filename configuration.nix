@@ -135,9 +135,6 @@
   environment.variables = {
     EDITOR = "nvim";
   };
-  systemd.services.home-manager-lwb.serviceConfig = {
-    RemainAfterExit = "yes";
-  };
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
