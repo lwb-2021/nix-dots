@@ -95,9 +95,34 @@
           inputs.sops-nix.nixosModules.sops
           inputs.nix-flatpak.nixosModules.nix-flatpak
 
+          inputs.home-manager.nixosModules.home-manager
+
           ./stylix
 
           ./configuration.nix
+
+          {
+
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              backupFileExtension = "hm.bak";
+              users.lwb.imports = [
+                inputs.sops-nix.homeManagerModules.sops
+                inputs.nix-flatpak.homeManagerModules.nix-flatpak
+
+                inputs.vicinae.homeManagerModules.default
+                inputs.niri.homeModules.niri
+
+                ./stylix
+                ./stylix/home.nix
+
+                ./home/lwb.nix
+              ];
+              extraSpecialArgs = { inherit inputs; };
+
+            };
+          }
         ];
       };
       homeConfigurations.lwb = home-manager.lib.homeManagerConfiguration {
@@ -106,7 +131,6 @@
         modules = [
           inputs.sops-nix.homeManagerModules.sops
           inputs.stylix.homeModules.stylix
-          inputs.impermanence.homeManagerModules.impermanence
           inputs.nix-flatpak.homeManagerModules.nix-flatpak
 
           inputs.vicinae.homeManagerModules.default

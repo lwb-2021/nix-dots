@@ -131,7 +131,6 @@
     git
     gparted
     #inputs.firefox.packages.${pkgs.system}.firefox-nightly-bin
-    home-manager
   ];
   environment.variables = {
     EDITOR = "nvim";

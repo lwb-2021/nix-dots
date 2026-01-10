@@ -1,11 +1,13 @@
 { pkgs, ... }:
 {
-  programs.adb.enable = true;
   users.users.lwb.extraGroups = [ "adbusers" ];
   virtualisation.waydroid = {
     enable = true;
   };
-  environment.systemPackages = with pkgs; [ waydroid-helper ];
+  environment.systemPackages = with pkgs; [
+    android-tools
+    waydroid-helper
+  ];
   services.udev.extraRules = ''
     SUBSYSTEMS=="usb", ATTRS{idVendor}=="05c6", ATTRS{idProduct}=="9006", MODE="0666", GROUP="plugdev"
 
