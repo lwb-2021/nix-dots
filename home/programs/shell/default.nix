@@ -24,6 +24,7 @@ in
     shellAliases = {
     };
     shellAbbrs = {
+      cd = "z";
     };
     functions = {
       gitignore = "curl -sL https://www.gitignore.io/api/$argv";
@@ -39,6 +40,8 @@ in
     plugins = [
       (plug "fzf-fish")
       (plug "sponge")
+      (plug "grc")
+      (plug "done")
     ];
   };
   programs.bash = {
