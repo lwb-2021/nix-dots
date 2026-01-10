@@ -12,7 +12,6 @@
     email = "lwb-2021@qq.com";
   };
   imports = [
-    ./config/fish-user.nix
     ./config/i18n.nix
     ./config/sops.nix
     ./config/thunar.nix
@@ -83,17 +82,18 @@
     ./programs/security/keyring.nix
 
     ./programs/shell
-    ./programs/shell/bat.nix
-    ./programs/shell/eza.nix
-    ./programs/shell/fastfetch.nix
-    ./programs/shell/jq.nix
-    ./programs/shell/navi.nix
+    ./programs/shell/atuin.nix
     ./programs/shell/pay-respect.nix
-    ./programs/shell/ripgrep.nix
     ./programs/shell/starship.nix
-    ./programs/shell/yazi.nix
-    ./programs/shell/zoxide.nix
-    # ./programs/shell/zellij
+
+    ./programs/shell/cli-tools/bat.nix
+    ./programs/shell/cli-tools/eza.nix
+    ./programs/shell/cli-tools/fastfetch.nix
+    ./programs/shell/cli-tools/jq.nix
+    ./programs/shell/cli-tools/navi.nix
+    ./programs/shell/cli-tools/ripgrep.nix
+    ./programs/shell/cli-tools/yazi.nix
+    ./programs/shell/cli-tools/zoxide.nix
 
     ./programs/study/anki.nix
   ];
