@@ -40,11 +40,11 @@
           librsvg
           libsoup_3
 
-          libayatana-common
-          libayatana-indicator
-          libayatana-appindicator
-          ayatana-ido
-
+          # libayatana-common
+          # libayatana-indicator
+          # libayatana-appindicator
+          # ayatana-ido
+          #
           # Unknown
           libepoxy
         ]);

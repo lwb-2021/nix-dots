@@ -1,19 +1,30 @@
 {
-  config,
-  lib,
   pkgs,
   ...
 }:
+let
+  plug = name: {
+    inherit name;
+    src = pkgs.fishPlugins.${name}.src;
+  };
+in
 {
 
   programs.fish = {
     enable = true;
 
+    interactiveShellInit = ''
+      set fish_greeting
+      fish_vi_key_bindings
+    '';
+
     shellInit = ''
       test ! -e "$HOME/.x-cmd.root/local/data/fish/rc.fish" || source "$HOME/.x-cmd.root/local/data/fish/rc.fish"
     '';
     shellAliases = {
-      ls = "eza --icons=auto";
+    };
+    shellAbbrs = {
+      ls = "eza";
     };
     functions = {
       gitignore = "curl -sL https://www.gitignore.io/api/$argv";
@@ -26,10 +37,15 @@
         end
       '';
     };
+    plugins = [
+      (plug "fzf-fish")
+      (plug "sponge")
+    ];
   };
   programs.bash = {
     enable = true;
   };
-  data.files = [
-  ];
+  data = {
+    local.directories = [ ".cache/fish" ];
+  };
 }

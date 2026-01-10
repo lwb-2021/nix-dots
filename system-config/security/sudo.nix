@@ -1,12 +1,9 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}:
+{ ... }:
 {
   security.sudo = {
     enable = true;
-
+    extraConfig = ''
+      Defaults lecture = always
+    '';
   };
 }

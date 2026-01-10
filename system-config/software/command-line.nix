@@ -3,9 +3,7 @@
   ...
 }:
 {
-  programs.fish = {
-    enable = true;
-  };
+
   environment.systemPackages = with pkgs; [
     nix-output-monitor
 
@@ -15,15 +13,12 @@
 
     nettools
     psmisc
-    jq
 
     asciinema
     bat
     btop-cuda
     cyme
     dust
-    eza
-    fastfetch
     fd
     fzf
     glow
@@ -38,21 +33,9 @@
     p7zip-rar
     unrar
 
-    # gemini-cli
-
     # TODO
     # qwen-code
-
-    fishPlugins.fzf-fish
-    fishPlugins.sponge
-
   ];
-  programs.fish = {
-    interactiveShellInit = ''
-      set fish_greeting
-      fish_vi_key_bindings
-    '';
-  };
 
   programs.nh = {
     enable = true;
