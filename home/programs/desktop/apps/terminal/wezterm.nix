@@ -12,6 +12,7 @@
         },
       }
       config.default_gui_startup_args = { "connect", "unix" }
+      config.default_prog = { "fish" }
       return config
     '';
   };
