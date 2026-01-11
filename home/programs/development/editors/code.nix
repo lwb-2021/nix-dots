@@ -33,6 +33,8 @@
           "**/lib/rustlib/src/rust/library/**/*.rs" = true;
         };
 
+        "terminal.integrated.defaultProfile.linux" = "fish";
+
         "window.dialogStyle" = "custom";
 
         "extensions.experimental.affinity" = {
