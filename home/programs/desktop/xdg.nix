@@ -17,10 +17,10 @@
   };
 
   config = {
-    autostart = {
-      prepareCommands = lib.mkDefault [ ];
-      commands = lib.mkDefault [ ];
-    };
+    data.directories = [
+      "Music"
+      "Documents"
+    ];
     xdg = {
       autostart.enable = true;
       mime.enable = true;
@@ -50,10 +50,7 @@
         };
       };
     };
-    data.directories = [
-      "Music"
-      "Documents"
-    ];
+
     home.file =
       let
         shebang = "#!/usr/bin/env bash";
@@ -91,6 +88,11 @@
         WantedBy = [ "graphical-session.target" ];
       };
     };
+    autostart = {
+      prepareCommands = lib.mkDefault [ ];
+      commands = lib.mkDefault [ ];
+    };
+
   };
 
 }
