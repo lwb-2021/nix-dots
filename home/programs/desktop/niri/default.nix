@@ -27,4 +27,11 @@
       };
     };
   };
+  xdg.portal.config = {
+    niri = {
+      "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ]; # or "kde"
+      "org.freedesktop.impl.portal.ScreenCast" = [ "gnome" ];
+    };
+  };
+
 }

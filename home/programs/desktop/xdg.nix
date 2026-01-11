@@ -43,6 +43,12 @@
         enable = true;
         createDirectories = true;
       };
+      terminal-exec = {
+        enable = true;
+        settings = {
+          default = [ "org.wezfurlong.wezterm.desktop" ];
+        };
+      };
     };
     data.directories = [
       "Music"
