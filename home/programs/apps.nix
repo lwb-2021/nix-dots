@@ -72,5 +72,26 @@
     GIO_MODULE_DIR = "${pkgs.glib-networking}/lib/gio/modules/";
   };
 
-  data.directories = [ ".var/app" ];
+  data.directories =
+    let
+      appData = name: ".var/app/${name}/data";
+      appConfig = name: ".var/app/${name}/config";
+      appFile = name: filename: ".var/app/${name}/${filename}";
+      appAll = name: [
+        (appConfig name)
+        (appData name)
+      ];
+    in
+    [
+
+      (appFile "com.tencent.WeChat" "xwechat_files")
+      (appFile "com.tencent.WeChat" ".xwechat")
+
+      (appConfig "com.qq.QQ")
+
+      (appData "com.tencent.wemeet")
+
+      (appConfig "com.wps.Office")
+    ]
+    ++ (appAll "com.dingtalk.DingTalk");
 }
