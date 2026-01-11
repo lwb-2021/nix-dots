@@ -9,6 +9,7 @@ let
   };
 in
 {
+  home.packages = with pkgs; [ grc ];
 
   programs.fish = {
     enable = true;
