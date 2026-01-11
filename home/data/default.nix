@@ -113,10 +113,10 @@
           initialize = true;
           passwordFile = config.sops.secrets."restic/password".path;
           paths = [
-            "/nix/persistence/${config.home.username}"
+            "/nix/persistence/home/${config.home.username}"
           ];
           repository = "rclone:remote-raw:Backups/${config.home.username}-home-data";
-          extraBackupArgs = [ "--compression" ];
+          extraBackupArgs = [ "--compression auto" ];
           pruneOpts = [ "--keep-last 4" ];
         };
       };
