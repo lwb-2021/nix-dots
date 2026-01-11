@@ -13,17 +13,17 @@
   options = with lib; {
     data = {
       directories = mkOption {
-        type = types.listOf types.str;
+        type = types.listOf types.anything;
       };
       files = mkOption {
-        type = types.listOf types.str;
+        type = types.listOf types.anything;
       };
       local = {
         directories = mkOption {
-          type = types.listOf types.str;
+          type = types.listOf types.anything;
         };
         files = mkOption {
-          type = types.listOf types.str;
+          type = types.listOf types.anything;
         };
       };
     };
@@ -52,6 +52,7 @@
       "/nix/persistence/local" = {
         hideMounts = true;
         directories = [
+          ".cache/rclone"
         ]
         ++ config.data.local.directories;
         files = [
@@ -107,7 +108,7 @@
     };
 
     services.restic = {
-      enable = true;
+      # enable = true;
       backups = {
         home-data = {
           initialize = true;

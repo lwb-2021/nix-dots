@@ -49,6 +49,11 @@ in
     enable = true;
   };
   data = {
-    local.directories = [ ".cache/fish" ];
+    files = [
+      {
+        file = ".local/share/fish/fish_history";
+        method = "symlink";
+      }
+    ];
   };
 }
