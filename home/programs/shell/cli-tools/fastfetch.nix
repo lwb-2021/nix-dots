@@ -4,6 +4,6 @@
     enable = true;
   };
   programs.fish.shellInitLast = ''
-    fastfetch | lolcat
+    fastfetch
   '';
 }
