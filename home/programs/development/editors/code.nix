@@ -67,7 +67,6 @@
         with pkgs.vscode-marketplace;
         [
           # Functionality
-          alefragnani.project-manager
           gruntfuggly.todo-tree
           formulahendry.code-runner
           adpyke.codesnap
@@ -119,8 +118,12 @@
           jeanp413.open-remote-ssh
         ])
         ++ (with pkgs.vscode-extensions; [
-          # Languages
+          # Features
           mkhl.direnv
+          ms-vscode.live-server
+          alefragnani.project-manager
+
+          # Languages
           ## Python
           ### Jupyter
           ms-toolsai.jupyter
