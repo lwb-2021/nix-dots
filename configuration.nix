@@ -26,7 +26,7 @@
     ./system-config/devices/network/network.nix
     ./system-config/devices/network/proxy
     ./system-config/devices/network/openssh.nix
-    ./system-config/devices/network/zerotier.nix
+    ./system-config/devices/network/vpn.nix
 
     ./system-config/security/sops.nix
     ./system-config/security/crypt.nix
