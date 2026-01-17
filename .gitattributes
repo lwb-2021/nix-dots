@@ -1,3 +1,1 @@
-home/programs/study/anki-pwd.txt filter=git-crypt diff=git-crypt
 system-config/devices/network/proxy/bridges.nix filter=git-crypt diff=git-crypt
-secrets.nix filter=git-crypt diff=git-crypt

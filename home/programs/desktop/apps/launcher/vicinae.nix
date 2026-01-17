@@ -1,8 +1,27 @@
-{ pkgs, inputs, ... }:
 {
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
+{
+  sops.templates."vicinae.json".content = ''
+    {
+    	"providers": {
+    		"@knoopx/nix-0": {
+    			"preferences": {
+    				"githubToken": "${config.sops.placeholder."vicinae/nix/github-token"}"
+    			}
+    		}
+    	}
+    }
+  '';
   services.vicinae = {
     enable = true;
     settings = {
+      imports = [
+        config.sops.templates."vicinae.json".path
+      ];
       theme = {
         # name = "vicinae-dark";
         iconTheme = "BeautyLine";
@@ -17,7 +36,6 @@
       providers = {
         "@knoopx/nix-0" = {
           preferences = {
-            githubToken = (import ../../../../../secrets.nix).githubToken.nixpkgsPRTracker;
           };
         };
         clipboard = {

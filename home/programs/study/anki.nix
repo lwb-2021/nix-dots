@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 {
   programs.anki = {
     enable = true;
@@ -12,7 +12,7 @@
       autoSync = true;
       autoSyncMediaMinutes = 120;
       username = "lwb-2021@qq.com";
-      keyFile = ./anki-pwd.txt;
+      keyFile = config.sops.secrets."anki/password".path;
     };
   };
 
