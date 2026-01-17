@@ -68,7 +68,6 @@
       "idea"
 
       "drawio"
-      "todoist-electron"
 
       "android-studio-stable"
 
