@@ -1,8 +1,16 @@
-{ pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 {
   services.vicinae = {
     enable = true;
     settings = {
+      imports = [
+        config.sops.secrets."vicinae.json".path
+      ];
       theme = {
         # name = "vicinae-dark";
         iconTheme = "BeautyLine";
@@ -17,7 +25,6 @@
       providers = {
         "@knoopx/nix-0" = {
           preferences = {
-            githubToken = (import ../../../../../secrets.nix).githubToken.nixpkgsPRTracker;
           };
         };
         clipboard = {
