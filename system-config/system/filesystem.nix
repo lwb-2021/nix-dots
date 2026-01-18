@@ -34,6 +34,14 @@
     ];
   };
 
+  system.etc.overlay = {
+    enable = true;
+    mutable = false;
+  };
+
+  # Required by system.etc.overlay.mutable = false;
+  services.userborn.enable = true;
+
   environment.variables.NIX_REMOTE = "daemon";
 
   systemd.services.nix-daemon = {

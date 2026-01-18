@@ -12,8 +12,7 @@
     ./system-config/system/bootloader.nix
     ./system-config/system/kernel.nix
     ./system-config/system/nix.nix
-    ./system-config/system/stateless.nix
-    ./system-config/system/swap.nix
+    ./system-config/system/filesystem.nix
 
     ./system-config/devices/audio.nix
     ./system-config/devices/bluetooth.nix
@@ -49,6 +48,7 @@
     ./system-config/software/apps/obs-studio.nix
     ./system-config/software/apps/zenity.nix
 
+    ./system-config/optimize.nix
     ./system-config/fix.nix
   ];
 
