@@ -21,5 +21,12 @@
         fontSize = lib.mkForce 32;
       };
     };
+    initrd = {
+      systemd = {
+        enable = true;
+
+      };
+    };
   };
+
 }
