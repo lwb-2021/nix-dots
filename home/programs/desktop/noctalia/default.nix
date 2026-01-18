@@ -2,6 +2,7 @@
 {
   programs.noctalia-shell = {
     enable = true;
-    package = null;
+    systemd.enable = true;
+    settings = import ./settings.nix;
   };
 }
