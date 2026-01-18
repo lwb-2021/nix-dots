@@ -29,10 +29,9 @@
 
     #
 
-    ags = {
-      url = "github:Aylur/ags";
-      # inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # ags = {
+    #   url = "github:Aylur/ags";
+    # };
     my-neovim = {
       url = "github:lwb-2021/neovim-config";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -40,6 +39,11 @@
 
     niri = {
       url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -113,6 +117,7 @@
 
                 inputs.vicinae.homeManagerModules.default
                 inputs.niri.homeModules.niri
+                inputs.noctalia.homeModules.default
 
                 ./stylix
                 ./stylix/home.nix

@@ -37,16 +37,14 @@
     ./programs/daily/ebook.nix
 
     ./programs/desktop
-    ./programs/desktop/hypr
+    # ./programs/desktop/hypr
     ./programs/desktop/niri
 
-    ./programs/desktop/apps/nomacs.nix
-    # ./programs/desktop/apps/copyq.nix
+    ./programs/desktop/noctalia
 
-    ./programs/desktop/apps/bar/ags
+    ./programs/desktop/apps/nomacs.nix
 
     ./programs/desktop/apps/launcher/vicinae.nix
-    ./programs/desktop/apps/notification/mako.nix
     ./programs/desktop/apps/screenshot/grim.nix
     ./programs/desktop/apps/terminal/wezterm.nix
 
