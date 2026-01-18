@@ -34,7 +34,6 @@
     ./system-config/desktop-environment/dm.nix
     # ./system-config/desktop-environment/hyprland.nix
     ./system-config/desktop-environment/niri.nix
-    ./system-config/desktop-environment/noctalia-shell.nix
     ./system-config/desktop-environment/security.nix
 
     ./system-config/software/appimage.nix

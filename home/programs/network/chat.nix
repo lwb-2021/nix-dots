@@ -5,14 +5,11 @@
   ...
 }:
 {
-  programs.element-desktop = {
-    enable = true;
-    settings = {
-    };
-
-  };
+  home.packages = with pkgs; [
+    fluffychat
+  ];
   autostart.commands = [
-    "element-desktop --hidden &"
+    # "element-desktop --hidden &"
   ];
 
 }

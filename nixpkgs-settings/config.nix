@@ -72,7 +72,9 @@
       "android-studio-stable"
 
     ];
-  permittedInsecurePackages = [ "openssl-1.1.1w" ];
+  permittedInsecurePackages = [
+    "openssl-1.1.1w"
+  ];
   cudaSupport = true;
   packageOverrides = pkgs: {
     intel-vaapi-driver = pkgs.intel-vaapi-driver.override { enableHybridCodec = true; };

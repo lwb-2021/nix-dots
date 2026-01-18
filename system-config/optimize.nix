@@ -1,9 +1,5 @@
 { ... }:
 {
-  services.tuned = {
-    enable = true;
-    ppdSupport = true;
-  };
   services.upower = {
     enable = true;
   };
