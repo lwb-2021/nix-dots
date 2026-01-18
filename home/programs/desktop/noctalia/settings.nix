@@ -2,9 +2,15 @@
   general = {
     showHibernateOnLockScreen = true;
   };
+  colorSchemes.predefinedScheme = "Catppuccin";
+
+  dock.enabled = false;
+  wallpaper.enabled = false;
+
   location = {
     name = "Shanghai";
   };
+
   bar = {
     backgroundOpacity = 0.0;
     showCapsule = false;
@@ -70,6 +76,5 @@
   controlCenter = {
     diskPath = "/nix";
   };
-  dock.enabled = false;
-  wallpaper.enabled = false;
+
 }
