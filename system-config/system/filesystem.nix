@@ -14,17 +14,16 @@
       "mode=755"
     ];
   };
+
   environment.persistence."/nix/persistence" = {
     # 不让这些映射的 mount 出现在文件管理器的侧边栏中
     hideMounts = true;
 
-    # 你要映射的文件夹
     directories = [
       "/etc/NetworkManager/system-connections"
       "/root"
     ];
 
-    # 你要映射的文件
     files = [
       "/etc/machine-id"
       "/etc/ssh/ssh_host_ed25519_key.pub"
@@ -36,10 +35,8 @@
 
   system.etc.overlay = {
     enable = true;
-    mutable = false;
   };
 
-  # Required by system.etc.overlay.mutable = false;
   services.userborn.enable = true;
 
   environment.variables.NIX_REMOTE = "daemon";
