@@ -1,27 +1,15 @@
-{ pkgs, ... }:
 {
-  programs.thunderbird = {
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+{
+  services.imapnotify = {
     enable = true;
-    package = pkgs.noCuda.thunderbird;
-    profiles.default = {
-      isDefault = true;
-      extensions = [ ];
-    };
+    package = pkgs.goimapnotify;
   };
-
-  home.packages = with pkgs; [
-    birdtray
+  data.directories = [
+    ".mail"
   ];
-  xdg.autostart.entries = [
-    "${pkgs.birdtray}/share/applications/com.ulduzsoft.Birdtray.desktop"
-  ];
-  data = {
-    directories = [
-      ".mozilla/firefox"
-    ];
-    local.directories = [
-      ".cache/thunderbird"
-    ];
-  };
-
 }

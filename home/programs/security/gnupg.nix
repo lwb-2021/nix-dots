@@ -11,6 +11,6 @@
   services.gpg-agent = {
     enable = true;
     enableFishIntegration = true;
-    # pinentry.package = ;
+    pinentry.package = pkgs.pinentry-all;
   };
 }

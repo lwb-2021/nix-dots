@@ -1,4 +1,9 @@
-{ ... }:
+{ lib, pkgs, ... }:
+let
+  utils = import ./utils {
+    inherit lib pkgs;
+  };
+in
 {
   home.username = "lwb";
   home.homeDirectory = "/home/lwb";
@@ -10,6 +15,20 @@
   programs.git.settings.user = {
     name = "lwb";
     email = "lwb-2021@qq.com";
+  };
+  accounts.email.accounts = {
+    "QQ" = (
+      utils.mkEmailAccount "QQ" {
+        address = "lwb-2021@qq.com";
+        realName = "lwb";
+        passwordCommand = "pass mail/qq/imap";
+        primary = true;
+        imap = {
+          host = "imap.qq.com";
+          port = 993;
+        };
+      }
+    );
   };
   imports = [
     ./config/i18n.nix
@@ -75,8 +94,7 @@
 
     ./programs/research/zotero.nix
 
-    ./programs/security/keepassxc.nix
-    ./programs/security/keyring.nix
+    ./programs/security
 
     ./programs/shell
     ./programs/shell/atuin.nix
@@ -94,15 +112,5 @@
 
     ./programs/study/anki.nix
   ];
-  accounts.email.accounts."QQ" = {
-    address = "lwb-2021@qq.com";
-    userName = "lwb-2021@qq.com";
-    realName = "lwb";
-    primary = true;
-    thunderbird.enable = true;
-    imap = {
-      host = "imap.qq.com";
-      port = 993;
-    };
-  };
+
 }
