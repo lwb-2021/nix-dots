@@ -1,10 +1,16 @@
-{ config, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 {
   data = {
     local.directories = [
       ".cache/mozilla"
     ];
   };
+  home.file.".mozilla/firefox/default/search.json.mozlz4".force = lib.mkForce true;
   programs.firefox = {
     enable = true;
     package = pkgs.noCuda.firefox;
