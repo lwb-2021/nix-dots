@@ -7,24 +7,20 @@
         canTouchEfiVariables = true;
         efiSysMountPoint = "/boot/efi";
       };
-      grub = {
+      limine = {
         enable = true;
         efiSupport = true;
-        device = "nodev";
         extraEntries = ''
-          menuentry "Windows"{
-              search --file --no-floppy --set=root /EFI/Microsoft/Boot/bootmgfw.efi
-                  chainloader (''${root})/EFI/Microsoft/Boot/bootmgfw.efi
-          }
+          /Windows 11
+              protocol: efi_chainload
+              path: boot():/EFI/Microsoft/Boot/bootmgfw.efi
         '';
-        font = lib.mkForce "${pkgs.unifont}/share/fonts/opentype/unifont.otf";
-        fontSize = lib.mkForce 32;
       };
+
     };
     initrd = {
       systemd = {
         enable = true;
-
       };
     };
   };
