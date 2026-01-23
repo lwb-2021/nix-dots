@@ -2,6 +2,7 @@
 {
   imports = [
     ./gnupg.nix
+    ./ssh.nix
     ./keepassxc.nix
     ./keyring.nix
   ];
