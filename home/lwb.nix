@@ -65,13 +65,13 @@
     ./programs/game/lutris.nix
     ./programs/game/minecraft.nix
 
-    ./programs/network/aria2.nix
+    ./programs/network/aria2
     ./programs/network/chat.nix
     ./programs/network/firefox.nix
     ./programs/network/kdeconnect.nix
     ./programs/network/localsend.nix
     ./programs/network/syncthing.nix
-    ./programs/network/thunderbird.nix
+    ./programs/network/mail.nix
 
     ./programs/research/zotero.nix
 
