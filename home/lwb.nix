@@ -32,7 +32,6 @@ in
   };
   imports = [
     ./config/i18n.nix
-    ./config/sops.nix
     ./config/thunar.nix
 
     ./data

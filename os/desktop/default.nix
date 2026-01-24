@@ -9,47 +9,46 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
 
-    ./system-config/system/bootloader.nix
-    ./system-config/system/kernel.nix
-    ./system-config/system/nix.nix
-    ./system-config/system/filesystem.nix
+    ./system/bootloader.nix
+    ./system/kernel.nix
+    ./system/nix.nix
+    ./system/filesystem.nix
 
-    ./system-config/devices/audio.nix
-    ./system-config/devices/bluetooth.nix
+    ./devices/audio.nix
+    ./devices/bluetooth.nix
 
-    ./system-config/devices/render/nvidia.nix
-    ./system-config/devices/render/va-api.nix
+    ./devices/render/nvidia.nix
+    ./devices/render/va-api.nix
 
-    ./system-config/devices/power/tlp.nix
+    ./devices/power/tlp.nix
 
-    ./system-config/devices/network/network.nix
-    ./system-config/devices/network/proxy
-    ./system-config/devices/network/openssh.nix
-    ./system-config/devices/network/vpn.nix
+    ./devices/network/network.nix
+    ./devices/network/proxy
+    ./devices/network/openssh.nix
+    ./devices/network/vpn.nix
 
-    ./system-config/security/sops.nix
-    ./system-config/security/crypt.nix
+    ./security/crypt.nix
 
-    ./system-config/desktop-environment/applications.nix
-    ./system-config/desktop-environment/dm.nix
-    # ./system-config/desktop-environment/hyprland.nix
-    ./system-config/desktop-environment/niri.nix
-    ./system-config/desktop-environment/security.nix
+    ./desktop-environment/applications.nix
+    ./desktop-environment/dm.nix
+    # ./desktop-environment/hyprland.nix
+    ./desktop-environment/niri.nix
+    ./desktop-environment/security.nix
 
-    ./system-config/software/appimage.nix
-    ./system-config/software/command-line.nix
-    ./system-config/software/fhs.nix
-    ./system-config/software/flatpak.nix
-    ./system-config/software/fonts.nix
-    ./system-config/software/virt/docker.nix
+    ./software/appimage.nix
+    ./software/command-line.nix
+    ./software/fhs.nix
+    ./software/flatpak.nix
+    ./software/fonts.nix
+    ./software/virt/docker.nix
 
-    ./system-config/software/apps/android.nix
-    ./system-config/software/apps/gaming.nix
-    ./system-config/software/apps/obs-studio.nix
-    ./system-config/software/apps/zenity.nix
+    ./software/apps/android.nix
+    ./software/apps/gaming.nix
+    ./software/apps/obs-studio.nix
+    ./software/apps/zenity.nix
 
-    ./system-config/optimize.nix
-    ./system-config/fix.nix
+    ./optimize.nix
+    ./fix.nix
   ];
 
   # Use the systemd-boot EFI boot loader.

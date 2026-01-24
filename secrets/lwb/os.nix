@@ -6,7 +6,7 @@
 }:
 {
   sops.age.keyFile = "/var/lib/sops-nix/keys.txt";
-  sops.defaultSopsFile = ../../secrets/lwb/system-secrets.yaml;
+  sops.defaultSopsFile = ./files/os.yaml;
   # Or
   # fileSystems."/etc/ssh".neededForBoot = true;
 

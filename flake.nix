@@ -101,9 +101,11 @@
 
           inputs.home-manager.nixosModules.home-manager
 
+          ./secrets/lwb/os.nix
+
           ./stylix
 
-          ./configuration.nix
+          ./os/desktop
 
           {
 
@@ -121,6 +123,8 @@
 
                 ./stylix
                 ./stylix/home.nix
+
+                ./secrets/lwb/home.nix
 
                 ./home/lwb.nix
               ];
