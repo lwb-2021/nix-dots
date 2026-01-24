@@ -16,6 +16,11 @@
 
   home.packages = with pkgs; [
     pass-git-helper
-    passExtensions.pass-otp
   ];
+  xdg.dataFile."passage/extensions".source = pkgs.symlinkJoin {
+    name = "passage-extensions";
+    paths = with pkgs.passExtensions; [ pass-otp ];
+    stripPrefix = "/lib/password-store/extensions";
+    failOnMissing = true;
+  };
 }
