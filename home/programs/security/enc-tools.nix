@@ -1,6 +1,4 @@
 {
-  config,
-  lib,
   pkgs,
   ...
 }:
@@ -13,4 +11,7 @@
     enableFishIntegration = true;
     pinentry.package = pkgs.pinentry-all;
   };
+  home.packages = with pkgs; [
+    age
+  ];
 }

@@ -22,10 +22,6 @@
     # but we can remove the "@your-machine" part
   ];
 
-  programs.ssh = {
-    startAgent = true;
-  };
-
   networking.firewall.allowedTCPPorts = [ 22 ];
 
 }

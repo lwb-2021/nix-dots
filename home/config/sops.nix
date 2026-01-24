@@ -1,7 +1,7 @@
 { config, ... }:
 {
   sops = {
-    age.keyFile = "${config.home.homeDirectory}/.config/sops/age/keys.txt";
+    age.keyFile = "${config.xdg.configHome}/sops/age/keys.txt";
     defaultSopsFile = ../../secrets/lwb/home-secrets.yaml;
     secrets = {
       "rclone/crypt/password" = { };
