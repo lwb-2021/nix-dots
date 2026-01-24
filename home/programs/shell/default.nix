@@ -49,6 +49,7 @@ in
   };
   programs.bash = {
     enable = true;
+    historyControl = [ "ignorespace" ];
   };
   data = {
     files = [
