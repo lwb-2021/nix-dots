@@ -6,7 +6,9 @@
     secrets = {
       "rclone/crypt/password" = { };
       "rclone/jianguoyun/password" = { };
-      "rclone/openlist/password" = { };
+      "rclone/onedrive/client-id" = { };
+      "rclone/onedrive/client-secret" = { };
+      "rclone/onedrive/token" = { };
       "restic/password" = { };
       "anki/password" = { };
       "vicinae/nix/github-token" = { };

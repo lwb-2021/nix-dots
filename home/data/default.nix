@@ -63,7 +63,7 @@
     };
 
     services.restic = {
-      # enable = true;
+      enable = true;
       backups = {
         home-data = {
           initialize = true;
@@ -71,7 +71,7 @@
           paths = [
             "/nix/persistence/home/${config.home.username}"
           ];
-          repository = "rclone:remote-raw:Backups/${config.home.username}-home-data";
+          repository = "rclone:remote-raw:备份/home/${config.home.username}";
           extraBackupArgs = [ "--compression auto" ];
           pruneOpts = [ "--keep-last 4" ];
         };

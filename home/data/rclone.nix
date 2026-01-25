@@ -22,16 +22,16 @@
       remote-encrypted = {
         config = {
           type = "crypt";
-          remote = "remote-raw:EncryptedData";
+          remote = "remote-raw:加密数据";
         };
         secrets.password = config.sops.secrets."rclone/crypt/password".path;
       };
       remote-raw = {
         config = {
-          type = "union";
-          upstreams = "jianguoyun:/:writeback ";
-          # type = "alias";
-          # remote = "jianguoyun:/";
+          # type = "union";
+          # upstreams = "onedrive:/ jianguoyun:/:writeback";
+          type = "alias";
+          remote = "onedrive:/";
         };
       };
       jianguoyun = {
@@ -42,6 +42,19 @@
           vendor = "other";
         };
         secrets.pass = config.sops.secrets."rclone/jianguoyun/password".path;
+      };
+      onedrive = {
+        config = {
+          type = "onedrive";
+          drive_id = "1D73A20E66440310";
+          drive_type = "personal";
+        };
+        secrets = {
+          client_id = config.sops.secrets."rclone/onedrive/client-id".path;
+          client_secret = config.sops.secrets."rclone/onedrive/client-secret".path;
+          token = config.sops.secrets."rclone/onedrive/token".path;
+        };
+
       };
     };
   };
