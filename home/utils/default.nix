@@ -14,5 +14,9 @@
         enable = lib.mkDefault true;
         create = "maildir";
       };
+      neomutt = {
+        enable = true;
+        mailboxType = "maildir";
+      };
     };
 }

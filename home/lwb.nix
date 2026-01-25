@@ -27,6 +27,11 @@ in
           host = "imap.qq.com";
           port = 993;
         };
+        smtp = {
+          tls.enable = true;
+          host = "smtp.qq.com";
+          port = 465; # 587
+        };
       }
     );
   };
