@@ -7,7 +7,8 @@
     enable = true;
     package = pkgs.goimapnotify;
   };
+  accounts.email.maildirBasePath = "Mail";
   data.directories = [
-    ".mail"
+    "Mail"
   ];
 }
