@@ -129,6 +129,9 @@
       "dialout"
     ];
     hashedPassword = "$2b$12$r02jnhT1jH6OkfUj.wZ6r.gj20Wgp9t2orHiYgoVSnyV1/f9mSQMy";
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEpZfuuado56VBGqlHFVPar1GuSDaRW3LQdeiCuYA38Q lwb-2021@qq.com"
+    ];
   };
 
   # List packages installed in system profile. To search, run:
