@@ -12,9 +12,11 @@
       "secrets"
     ];
   };
+
   home.packages = with pkgs; [
     gcr
     keyutils
     seahorse
   ];
+  data.directories = [ ".local/share/keyrings" ];
 }
