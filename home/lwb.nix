@@ -39,7 +39,7 @@ in
     ./config/i18n.nix
     ./config/thunar.nix
 
-    ./data
+    ./state-manage
 
     ./programs/media/lyrics.nix
     ./programs/media/mpd.nix
