@@ -6,6 +6,8 @@
 
 {
   imports = [
+    ../universal/wayland.nix
+
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
 
@@ -28,12 +30,6 @@
     ./devices/network/vpn.nix
 
     ./security/crypt.nix
-
-    ./desktop-environment/applications.nix
-    ./desktop-environment/dm.nix
-    # ./desktop-environment/hyprland.nix
-    ./desktop-environment/niri.nix
-    ./desktop-environment/security.nix
 
     ./software/appimage.nix
     ./software/command-line.nix
