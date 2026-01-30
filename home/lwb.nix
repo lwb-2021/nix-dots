@@ -79,7 +79,6 @@ in
 
     ./programs/development
     ./programs/development/git.nix
-    ./programs/development/editors/android-studio.nix
     ./programs/development/editors/code.nix
     ./programs/development/editors/neovim.nix
     ./programs/development/editors/idea.nix
