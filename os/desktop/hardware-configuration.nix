@@ -47,6 +47,7 @@
   fileSystems."/home" = {
     device = "/dev/disk/by-uuid/72ecbffd-d1fb-4ff9-93f5-a056c0cb5fb7";
     fsType = "btrfs";
+    neededForBoot = true;
     options = [
       "ssd"
       "noatime"

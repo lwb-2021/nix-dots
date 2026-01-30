@@ -69,7 +69,7 @@
 
       "drawio"
 
-      "android-studio-stable"
+      "android-studio"
 
     ];
   permittedInsecurePackages = [
