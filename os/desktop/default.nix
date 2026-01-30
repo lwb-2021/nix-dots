@@ -6,6 +6,8 @@
 
 {
   imports = [
+    ../universal/mirrors.nix
+
     ../universal/wayland.nix
 
     # Include the results of the hardware scan.
