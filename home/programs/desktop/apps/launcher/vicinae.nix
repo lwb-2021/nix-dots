@@ -38,6 +38,12 @@
           preferences = {
           };
         };
+        "@tinkerbells/pass-0" = {
+
+          preferences = {
+            passwordStorePath = "~/.local/share/password-store";
+          };
+        };
         clipboard = {
           preferences = {
             encryption = true;
@@ -50,6 +56,7 @@
       firefox
       niri
       nix
+      pass
       player-pilot
       process-manager
       wifi-commander

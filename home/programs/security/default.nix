@@ -8,19 +8,22 @@
   ];
   programs.password-store = {
     enable = true;
-    package = pkgs.passage;
+    package = pkgs.pass.withExtensions (
+      ps: with ps; [
+        pass-otp
+        pass-import
+        pass-update
+      ]
+    );
     settings = {
-      PASSAGE_IDENTITIES_FILE = "${config.xdg.configHome}/sops/age/keys.txt";
+      PASSWORD_STORE_DIR = "${config.home.homeDirectory}/.local/share/password-store";
     };
   };
 
   home.packages = with pkgs; [
     pass-git-helper
   ];
-  xdg.dataFile."passage/extensions".source = pkgs.symlinkJoin {
-    name = "passage-extensions";
-    paths = with pkgs.passExtensions; [ pass-otp ];
-    stripPrefix = "/lib/password-store/extensions";
-    failOnMissing = true;
-  };
+  data.local.directories = [
+    ".local/share/password-store"
+  ];
 }
