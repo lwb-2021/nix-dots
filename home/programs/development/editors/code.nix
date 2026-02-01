@@ -42,6 +42,7 @@
         };
 
         # Git
+        "github.gitProtocol" = "ssh";
         "gitblame.inlineMessageEnabled" = true;
 
         # Java
