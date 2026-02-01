@@ -30,7 +30,6 @@ in
       cd = "z";
     };
     functions = {
-      gitignore = "curl -sL https://www.gitignore.io/api/$argv";
       retry = ''
         while true
             $argv

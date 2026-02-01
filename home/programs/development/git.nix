@@ -17,5 +17,6 @@
     commitlint-rs
     husky
     lazygit
+    git-ignore
   ];
 }
