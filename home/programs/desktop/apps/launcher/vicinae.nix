@@ -34,12 +34,11 @@
       faviconService = "twenty";
 
       providers = {
-        "@knoopx/nix-0" = {
+        "@knoopx/${inputs.vicinae-extensions.packages.${pkgs.system}.nix.name}" = {
           preferences = {
           };
         };
-        "@tinkerbells/pass-0" = {
-
+        "@tinkerbells/${inputs.vicinae-extensions.packages.${pkgs.system}.pass.name}" = {
           preferences = {
             passwordStorePath = "~/.local/share/password-store";
           };
