@@ -7,5 +7,8 @@
     };
     settings = import ./settings.nix;
   };
-  systemd.user.services."noctalia-shell".Unit.After = lib.mkForce [ "grapical-session-pre.target" ];
+  systemd.user.services."noctalia-shell".Unit = {
+    After = lib.mkForce [ "niri.service" ];
+    Before = [ "graphical-session.target" ];
+  };
 }
