@@ -41,7 +41,9 @@
         {
           id = "Tray";
           blacklist = [ ];
-          pinned = [ ];
+          pinned = [
+            "*Obsidian"
+          ];
         }
         {
           id = "NotificationHistory";
