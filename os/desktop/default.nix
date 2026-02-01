@@ -10,6 +10,8 @@
 
     ../universal/wayland.nix
 
+    ../universal/security.nix
+
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
 
@@ -30,8 +32,6 @@
     ./devices/network/proxy
     ./devices/network/openssh.nix
     ./devices/network/vpn.nix
-
-    ./security/crypt.nix
 
     ./software/appimage.nix
     ./software/command-line.nix

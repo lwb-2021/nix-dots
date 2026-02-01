@@ -21,7 +21,7 @@ in
       utils.mkEmailAccount "QQ" {
         address = "lwb-2021@qq.com";
         realName = "lwb";
-        passwordCommand = "pass mail/qq/imap";
+        passwordCommand = "pass Mail/QQ/imap";
         primary = true;
         imap = {
           host = "imap.qq.com";
