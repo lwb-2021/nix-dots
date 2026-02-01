@@ -8,6 +8,7 @@
   data = {
     local.directories = [
       ".cache/mozilla"
+      ".mozilla/firefox" # Mozilla Sync, do not need backup
     ];
   };
   home.file.".mozilla/firefox/default/search.json.mozlz4".force = lib.mkForce true;
@@ -56,7 +57,7 @@
           sidebery
 
           # Connector
-          keepassxc-browser
+          browserpass
           zotero-connector
           web-clipper-obsidian
 
@@ -132,6 +133,10 @@
                   name = "query";
                   value = "{searchTerms}";
                 }
+                {
+                  name = "channel";
+                  value = "unstable";
+                }
               ];
             }
           ];
@@ -145,6 +150,17 @@
           urls = [ { template = "https://wiki.nixos.org/w/index.php?search={searchTerms}"; } ];
           iconMapObj."16" = "https://wiki.nixos.org/favicon.ico";
           definedAliases = [ "@nw" ];
+        };
+
+        github = {
+          name = "Github";
+          urls = [
+            {
+              template = "https://github.com/search?q={searchTerms}";
+            }
+          ];
+          iconMapObj."16" = "https://github.com/favicon.ico";
+          definedAliases = [ "@github" ];
         };
       };
 
