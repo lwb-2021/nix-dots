@@ -27,6 +27,7 @@
       };
     };
   };
+  # TODO fix screenshare
   xdg.portal.config = {
     niri = {
       "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ]; # or "kde"

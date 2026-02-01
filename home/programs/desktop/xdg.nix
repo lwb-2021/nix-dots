@@ -37,7 +37,6 @@
           xdg-desktop-portal
           xdg-desktop-portal-gtk
         ];
-        config.common.default = "*";
       };
       userDirs = {
         enable = true;
