@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }:
+{ pkgs, ... }:
 {
   boot = {
     tmp.useTmpfs = true;
@@ -10,9 +10,12 @@
       limine = {
         enable = true;
         efiSupport = true;
+        maxGenerations = 4;
+        secureBoot.enable = true;
+        enrollConfig = true;
         extraEntries = ''
           /Windows 11
-              protocol: efi_chainload
+              protocol: efi
               path: boot():/EFI/Microsoft/Boot/bootmgfw.efi
         '';
       };
@@ -24,5 +27,8 @@
       };
     };
   };
+  environment.systemPackages = with pkgs; [
+    sbctl
+  ];
 
 }
