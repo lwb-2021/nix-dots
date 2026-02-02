@@ -1,12 +1,11 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}:
+{ pkgs, ... }:
 {
   programs.mpv = {
     enable = true;
+    scripts = with pkgs.mpvScripts; [
+      evafast
+      modernz
+    ];
   };
   xdg.mimeApps.defaultApplications = {
     "audio/mpeg" = "mpv.desktop";

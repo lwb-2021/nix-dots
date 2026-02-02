@@ -69,8 +69,7 @@
 
       "drawio"
 
-      "android-studio"
-
+      "evafast"
     ];
   permittedInsecurePackages = [
     "openssl-1.1.1w"
