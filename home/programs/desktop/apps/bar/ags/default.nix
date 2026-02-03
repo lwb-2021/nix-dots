@@ -9,7 +9,7 @@
     enable = true;
     systemd.enable = true;
     configDir = null;
-    extraPackages = with inputs.ags.packages.${pkgs.system}; [
+    extraPackages = with inputs.ags.packages.${pkgs.stdenv.hostPlatform.system}; [
       apps
       battery
       mpris

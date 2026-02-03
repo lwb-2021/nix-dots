@@ -2,7 +2,7 @@
 {
 
   home.packages = [
-    inputs.my-neovim.packages.${pkgs.system}.default
+    inputs.my-neovim.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
   programs.neovide = {
     enable = true;

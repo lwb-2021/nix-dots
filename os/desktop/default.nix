@@ -139,7 +139,6 @@
     wget
     git
     gparted
-    #inputs.firefox.packages.${pkgs.system}.firefox-nightly-bin
   ];
   environment.variables = {
     EDITOR = "nvim";

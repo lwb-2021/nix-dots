@@ -4,6 +4,9 @@
   inputs,
   ...
 }:
+let
+  localSystem = pkgs.stdenv.hostPlatform.system;
+in
 {
   sops.templates."vicinae.json".content = ''
     {
@@ -34,11 +37,11 @@
       faviconService = "twenty";
 
       providers = {
-        "@knoopx/${inputs.vicinae-extensions.packages.${pkgs.system}.nix.name}" = {
+        "@knoopx/${inputs.vicinae-extensions.packages.${localSystem}.nix.name}" = {
           preferences = {
           };
         };
-        "@tinkerbells/${inputs.vicinae-extensions.packages.${pkgs.system}.pass.name}" = {
+        "@tinkerbells/${inputs.vicinae-extensions.packages.${localSystem}.pass.name}" = {
           preferences = {
             passwordStorePath = "~/.local/share/password-store";
           };
