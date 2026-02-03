@@ -49,7 +49,7 @@
       "steam-original"
       "steam-unwrapped"
       "steam-run"
-      "xow_dongle-firmware"
+      "xone-dongle-firmware"
 
       "zerotierone"
 
