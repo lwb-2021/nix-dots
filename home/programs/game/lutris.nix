@@ -1,16 +1,9 @@
+{ pkgs, ... }@params:
 {
-  config,
-  lib,
-  pkgs,
-  ...
-}:
-{
-  home.packages = with pkgs; [
-    (lutris.override {
-      extraLibraries =
-        pkgs: with pkgs; [
-        ];
-    })
-  ];
+  programs.lutris = {
+    enable = true;
+    defaultWinePackage = pkgs.proton-ge-bin;
+    steamPackage = if params ? osConfig then params.osConfig.programs.steam.package else pkgs.steam;
+  };
 
 }
