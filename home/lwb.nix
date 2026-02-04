@@ -64,6 +64,8 @@ in
 
     ./programs/desktop/noctalia
 
+    ./programs/desktop/apps/notification-push.nix
+
     ./programs/desktop/apps/nomacs.nix
 
     ./programs/desktop/apps/launcher/vicinae.nix
