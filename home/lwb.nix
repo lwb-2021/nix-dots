@@ -60,7 +60,6 @@ in
     ./programs/daily/ebook.nix
 
     ./programs/desktop
-    # ./programs/desktop/hypr
     ./programs/desktop/niri
 
     ./programs/desktop/noctalia
