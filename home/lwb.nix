@@ -76,7 +76,6 @@ in
     ./programs/desktop/apps/wallpaper/swww.nix
 
     ./programs/desktop/rime.nix
-    ./programs/desktop/themes.nix
 
     ./programs/development
     ./programs/development/git.nix

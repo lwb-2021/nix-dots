@@ -103,7 +103,7 @@
 
           ./secrets/lwb/os.nix
 
-          ./stylix
+          ./style
 
           ./os/desktop
 
@@ -121,8 +121,8 @@
                 inputs.niri.homeModules.niri
                 inputs.noctalia.homeModules.default
 
-                ./stylix
-                ./stylix/home.nix
+                ./style
+                ./style/home.nix
 
                 ./secrets/lwb/home.nix
 
@@ -145,8 +145,8 @@
           inputs.vicinae.homeManagerModules.default
           inputs.niri.homeModules.niri
 
-          ./stylix
-          ./stylix/home.nix
+          ./style
+          ./style/home.nix
 
           ./home/lwb.nix
         ];
